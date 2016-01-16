@@ -1,18 +1,13 @@
-"If someone hands you a piece of lead, hand it back and ask for a piece of gold; the magic is inspiring the person to give you gold."
+"If you're busy and someone hands you a lemon, hand it back and ask for lemonade."
 
-- [Abstract](##abstract)
+This document presents *Zen Beer Garden*, a proven approach for defending systems against work-based [high-density attacks](##hd). 
 
-~abstract
-## Abstract
-This technical report presents *Zen Beer Garden*, an approach for defending systems against work-based [high-density attacks](##hd). 
+Today’s applications, frameworks, languages, and servers crumble when subjected to high- density attacks.
 
-Today’s applications, frameworks, languages, and servers crumble when subjected to high- density attacks. Beer Garden defends against these attacks using a simple approach: it treats the server like a crowded beer garden and defends it using a “doorman” and a “bouncer.” The Doorman limits the attack rate by charging each request an admission fee, while the Bouncer evicts old requests to make room for new requests. Beer Garden also uses a Signature Service to develop signatures for high-density requests, which helps the Doorman charge greater admission fees for suspicious requests.
+Zen Beer Garden defends against these attacks using a [simple approach](##abstract-simple).
 
-We tested Beer Garden’s ability to defend four web applications, each implemented in a different language (PHP, Python, Java, and Ruby). We subjected the applications to a suite of 10 different attacks of varying sophistication.
+We have [experimentally verified](##abstract-exp) that Zen Beer Garden succeeds.
 
-Our experimental results show that Beer Garden effectively defends web applications that have low memory footprints and fast restart times, such as those implemented in PHP and Python.
-
-In addition to describing the Beer Garden defense and its experimental results, this technical report also presents a survey of high-density vulnerabilities and a comparative analysis of high- density attacks, as compared to conventional DoS attacks.
 
 ~hd
 ## High-density attacks
@@ -29,7 +24,11 @@ With high-density attacks, you don’t need an entire army to attack your enemie
 
 High-density attacks allow [small forces to defeat larger forces](##hd-asym).
 
-Lately, attackers have been increasingly utilizing high-density attacks since the defenses against conventional DoS attacks are becoming increasingly effective.
+High-density attacks are [quite different](##hd-compare) from conventional attacks.
+
+High-density [vulnerabilities](##hd-survey) are everywhere.
+
+[Lately](##hd-lately), attackers have been increasingly utilizing high-density attacks since the defenses against conventional DoS attacks are becoming increasingly effective.
 
 ~hd-ex
 ## Example work-based high-density attack
@@ -42,6 +41,168 @@ For the sake of brevity, throughout the rest of this document the term *high-den
 ~hd-asym
 ## Small forces defeat larger forces
 
-For example, the Rebels used high-density attacks to destroy the Death Star twice.
+For example, the Rebels used high-density attacks to destroy the Death Star, twice.
 
 <img src="img/deathstar.jpg">
+
+~hd-survey
+## Vulnerabilities
+
+TODO
+
+~hd-compare
+## Quite different
+
+TODO
+
+~hd-lately
+## Lately
+
+See Akamai’s 2012 [The State of the Internet](https://www.akamai.com/us/en/about/news/press/2012-press/akamai-first-quarter-2012-state-of-the-internet-report.jsp) report, Section 1.4 "Observed Denial-of-Service (DoS) Attack Activity."
+
+~abstract-simple
+## Simple approach
+
+Zen Beer Garden protects each worker with a *Doorman* and a *Bouncer*.
+
+The Doorman charges admission fees, which limits the amount of requests the worker receives.
+
+The Bouncer kicks out requests that overload the worker.
+
+The [entire approach](##spec) can be summed up as: "If you're busy and someone hands you a lemon, hand it back and ask for lemonade."
+
+~spec
+## Entire Approach
+
+This section provides the algorithmic specification for Zen Beer Garden, it's security guarantee, and a simple mathematical proof.
+
+- [Workers and Requests](##spec-wr)
+- [Busy, Bored, and Free](##spec-bbf)
+- [Overloads](##spec-overloads)
+- [Introduction to Zen Beer Garden](##spec-intro)
+- [Theoretical Security Guarantee](##spec-sec)
+- [The Zen Beer Garden Defense](##spec-zbg)
+- [The Bouncer](##spec-bouncer)
+- [The Doorman](##spec-doorman)
+- [Proof Sketch for Security Guarantee](##spec-proof)
+
+~spec-wr
+## Workers and Requests
+
+A worker is a thing that attempts to complete requests.
+
+Every worker can complete a certain percentage of legitimate requests (*Y*%) within a certain amount of time (*Z* seconds).
+
+For example: *Nancy can complete 95% of professional requests within 3 hours.*
+
+~spec-bbf
+## Busy, Bored, and Free
+
+- A worker is busy if she has been working on a request for less than *Z* seconds.
+- A worker is bored if she has been working on a request for *Z* seconds or more.
+- A worker is free if she isn't doing any work at all.
+
+~spec-overloads
+## Overloads
+
+A worker can become overloaded under a variety of circumstances.
+
+Requests might be coming in too quickly.
+
+Or, there might be a deluge of work-intensive requests.
+
+Or, in the worst-case scenario, a worker might be subjected to an incessant stream of impossible-to-fulfill requests.
+
+Workers should protect themselves from overloads by employing the Zen Beer Garden defense.
+
+~spec-intro
+## Introduction to Zen Beer Garden
+
+You should protect workers from overloads by placing Doormen and Bouncers between workers and requesters.
+
+Theoretically, the Zen Beer Garden defense is 100% effective, even against the most threatening deluges.
+
+In practice, the Zen Beer Garden defense tends to be effective, although there are many reasons the defense might fail.
+
+~spec-sec
+## Theoretical Security Guarantee
+
+Zen Beer Garden is 100% effective.&#42;
+
+If you use the Zen Beer Garden defense, you will never&#42; become overloaded. No matter what,&#42; *Y%* of legitimate requests are guaranteed to eventually complete.
+
+&#42; *As long Doormen and Bouncers don’t get overloaded, legitimate requesters are patient, legitimate requesters are willing to work, your boss is competent, etc.*
+
+~spec-zbg
+## The Zen Beer Garden Defense
+
+Guard every worker with a Bouncer and a Doorman.
+
+Every request for work must go through the Doorman, then the Bouncer, before finally reaching the worker.
+
+For example: *If a pharmaceutical rep wants Nancy to read an advertisement, the rep must give the ad to the Doorman, who then passes it to the Bouncer, who then might pass it to Nancy.*
+
+~spec-bouncer
+## The Bouncer
+
+If the worker is free, the Bouncer passes the request to the worker.
+
+If the worker is bored, the Bouncer asks the worker to stop working on her current task and accept the new request. The Bouncer then informs the old requester that her request was bounced.
+
+If the worker is busy, the Bouncer hands the request back to the Doorman.
+
+~spec-doorman
+## The Doorman
+
+When the Doorman receives a request from a requester, the Doorman passes it to the Bouncer.
+
+If the Bouncer hands it back, then the Doorman turns the tables on the requester. Specifically, the Doorman invents some work for the requester to do. The Doorman passes the request back to the requester, and asks the requester to do the work the Doorman just invented.
+
+For example: *If a rep wants to show Nancy an ad, but Nancy is busy, the Doorman might ask the rep to write a one-page essay explaining why the ad is relevant to Nancy in particular.*
+
+These requests are designed to delay the requester while at the same time having the requester do useful work for the worker.
+
+The Doorman will refuse to pass the original request until the requester completes the work request.
+
+If the worker continues to be busy, the Doorman increases the amounts of work he asks of requesters.
+
+*If Nancy is bombarded by reps, she might ask reps for 10-page essays. Of course, every essay must come with a one-page summary.*
+
+As the worker becomes less busy, the Doorman decreases the amounts of work he asks of requesters.
+
+~spec-proof
+## Proof Sketch for Security Guarantee
+
+At least *Y*% of legitimate requests that reach the worker complete. We know this because the Bouncer only bounces a request after the worker has been working on it for at least *Z* seconds.
+
+Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman's hands. Of course, the requester might have performed quite a bit of work in order to convince the Doorman to accept the request.
+
+~abstract-exp
+## Experimentally verified
+
+To test Zen Beer Garden, we built a software system called *ZBG*.
+
+ZBG defends web applications against high-density cyber attacks.
+
+For our experiments, we installed ZBG over top of [four different web applications](##abstract-apps).
+
+We subjected the applications to a suite of 10 different attacks of varying sophistication.
+
+ZBG succeeded for [two of the web applications](##abstract-success).
+
+Our experiments show that Zen Beer Garden works.
+
+~abstract-apps
+## Four different web applications
+
+TODO
+
+PHP, Python, Java, and Ruby.
+
+~abstract-success
+## ZBG succeeded for two of the web applications
+TODO
+
+ZBG successfully protected the PHP and Python applications because they have low memory footprints and fast restart times.
+
+A different software approach would be necessary for Zen Beer Garden to successfully defend web applications with high memory footprints or slow restart times.
