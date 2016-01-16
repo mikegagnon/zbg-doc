@@ -17,7 +17,7 @@
       <button class="btn"><a href="javascript:Sidenote.less()">fewer columns</a></button>
     </div>
     <div class="headerbox">
-<h1>Header goes here</h1>
+<h1>Zen Beer Garden</h1>
     </div>
     <ul id="breadcrumbs" class="breadcrumb"></ul>
     <div id='column-container'>
@@ -26,8 +26,47 @@
       <div class='column' id="column0"></div>
     </div>
     <div class="content-storage">
+<div id='abstract'>
+<h2>Abstract</h2>
+<p>This technical report presents <em>Zen Beer Garden</em>, an approach for defending systems against work-based <a href="javascript:Sidenote.openColumnLoud('#abstract','#hd','high-density attacks')">high-density attacks</a>. </p>
+<p>Today’s applications, frameworks, languages, and servers crumble when subjected to high- density attacks. Beer Garden defends against these attacks using a simple approach: it treats the server like a crowded beer garden and defends it using a “doorman” and a “bouncer.” The Doorman limits the attack rate by charging each request an admission fee, while the Bouncer evicts old requests to make room for new requests. Beer Garden also uses a Signature Service to develop signatures for high-density requests, which helps the Doorman charge greater admission fees for suspicious requests.</p>
+<p>We tested Beer Garden’s ability to defend four web applications, each implemented in a different language (PHP, Python, Java, and Ruby). We subjected the applications to a suite of 10 different attacks of varying sophistication.</p>
+<p>Our experimental results show that Beer Garden effectively defends web applications that have low memory footprints and fast restart times, such as those implemented in PHP and Python.</p>
+<p>In addition to describing the Beer Garden defense and its experimental results, this technical report also presents a survey of high-density vulnerabilities and a comparative analysis of high- density attacks, as compared to conventional DoS attacks.</p>
+</div>
+
+<div id='hd-asym'>
+<h2>Small forces defeat larger forces</h2>
+<p>For example, the Rebels used high-density attacks to destroy the Death Star twice.</p>
+<p><img src="img/deathstar.jpg"></p>
+</div>
+
+<div id='hd-terms'>
+<h2>A note on terminology</h2>
+<p>For the sake of brevity, throughout the rest of this document the term <em>high-density attack</em> refers to <em>work-based high-density attack</em>, since Zen Beer Garden only defends against work-based high-density attacks.</p>
+</div>
+
+<div id='hd-ex'>
+<h2>Example work-based high-density attack</h2>
+<p>Bob transmits a single HTTP request to Wikipedia, which causes Wikipedia to spin so much CPU there&#8217;s a blackout for everyone.</p>
+</div>
+
 <div id='main'>
-<p>Main column goes here</p>
+<p>&#8220;If someone hands you a piece of lead, hand it back and ask for a piece of gold; the magic is inspiring the person to give you gold.&#8221;</p>
+<ul>
+<li><a href="javascript:Sidenote.openColumnLoud('#main','#abstract','Abstract')">Abstract</a></li>
+</ul>
+</div>
+
+<div id='hd'>
+<h2>High-density attacks</h2>
+<p>A high-density attack is when a tiny bomb causes a huge explosion.</p>
+<p>A <em>work-based</em> high-density attack is one where the tiny bomb causes the victim to perform an explosive amount of work. <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-ex','Example')">Example</a>.</p>
+<p><a href="javascript:Sidenote.openColumnLoud('#hd','#hd-terms','A note on terminology')">A note on terminology</a>.</p>
+<p>High density attacks are particularly dangerous because they are particularly powerful, and economical, and stealthy.</p>
+<p>With high-density attacks, you don’t need an entire army to attack your enemies. You just need tiny bombs.</p>
+<p>High-density attacks allow <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-asym','small forces to defeat larger forces')">small forces to defeat larger forces</a>.</p>
+<p>Lately, attackers have been increasingly utilizing high-density attacks since the defenses against conventional DoS attacks are becoming increasingly effective.</p>
 </div>
     </div>
   </body>
