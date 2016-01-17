@@ -24,10 +24,12 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [For our experiments, we installed ZBG over top of four different web applications](##abstract-apps).
 - [High-density attacks](##hd)
 - [High-density attacks allow small forces to defeat larger forces](##hd-asym)
-- [High-density attacks are more *powerful*](##hd-compare-power)
-- [High-density attacks are more *economical*](##hd-compare-econ)
-- [High-density attacks are more *stealthy*](##hd-compare-stealth)
-- [High-density attacks are specialized](##specialized)
+- [High-density attacks are *economical*](##hd-compare-econ)
+- [High-density attacks are *less recyclable*](##recycle)
+- [High-density attacks are *often sophisticated*](##sophisticated)
+- [High-density attacks are *powerful*](##hd-compare-power)
+- [High-density attacks are *specialized*](##specialized)
+- [High-density attacks are *stealthy*](##hd-compare-stealth)
 - [High-density attacks compared to conventional low-density attacks](##hd-compare)
 - [High-density vulnerabilities are everywhere](##hd-survey)
 - [How columns work](##columns)
@@ -55,8 +57,8 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [The algorithm: The Bouncer](##spec-bouncer)
 - [The algorithm: The Doorman](##spec-doorman)
 - [The algorithm: Proof for Security Guarantee](##spec-proof)
-- [The most conventional type of denial-of-service (DoS) attack is a flood resource-consumption attack](##low-density)
-- [Thinking in terms of mass and volume leads to a useful metaphor: density](##density)
+- [Low-density attacks are conventional floods](##low-density)
+- [Mass, volume, and density metaphor](##density)
 - [We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks](##zbg)
 - [ZBG succeeded for two of the web applications](##abstract-success).
 - [Zen Beer Garden defends against these attacks using a simple approach](##abstract-simple)
@@ -180,23 +182,45 @@ TODO
 ~hd-compare
 ## Compared to conventional low-density attacks
 
-The most conventional type of denial-of-service (DoS) attack is a [flood](##low-density) resource-consumption attack. 
+[Mass, volume, and density metaphor](##density)
 
-Thinking in terms of mass and volume leads to a useful metaphor: [density](##density).
-
-Conventional flood attacks are low-density attacks, since each malicious request only consumes a small amount of victim resources.
-
-For a low-density attack to be effective, the attacker must generate a large volume of requests, which can be accomplished using an army of attack computers (such as a botnet).
-
-Compared to low-density attacks, high-density attacks are:
-
-- [More powerful](##hd-compare-power)
-- [More economical](##hd-compare-econ)
-- [More stealthy](##hd-compare-stealth)
+Low-density attacks are [conventional floods](##low-density).
 
 Low-density vulnerabilities are [more prevalent](##prevalent) than high-density vulnerabilities.
 
-High-density attacks are [specialized](##specialized).
+High-density attacks are:
+
+- [Powerful](##hd-compare-power)
+- [Economical](##hd-compare-econ)
+- [Stealthy](##hd-compare-stealth)
+- [Specialized](##specialized)
+- [Often sophisticated](##sophisticated)
+- [Less recyclable](##recycle)
+
+~recycle
+## Less recyclable
+
+Low-density attacks are generally recyclable, in the sense that the same attack can be recycled and used again. They are recyclable since low-density vulnerabilities are inherent to the design of the Internet; defenders have a limited ability to defend themselves from high- volume, low-density attacks.
+
+In contrast, high-density attacks are not generally recyclable since they target specific implementation level vulnerabilities. In most cases, once the defender is subjected to an attack it is straightforward to fix the implementation -- making it invulnerable to that specific attack.
+
+~sophisticated
+## Sophisticated
+
+High-density attacks vary in the sophistication required to conduct the attack. [Unsophisticated example](##simple-hd). 
+
+Many high-density vulnerabilities require sophisticated attacks. [Sophisticated example](##complex-hd).
+
+~complex-hd
+## Example of a sophisticated high-density attack
+
+Consider the [HashDoS](##hashdos) vulnerabilities discovered in 2011. The attacks exploit weaknesses in hash algorithms to trigger hash collisions, which leads to N<sup>2</sup> algorithmic performance and a subsequent denial of service.
+
+~simple-hd
+## Example of an unsophisticated high-density attack
+
+Consider a web application that uses an inefficient Ω(N<sup>2</sup>) algorithm to process web requests, where N represents the number of HTTP headers. An unsophisticated high-density attack could simply send a request with 10<sup>4</sup> headers, leading to 10<sup>8</sup> computations.
+
 
 ~specialized
 ## Specialization
@@ -287,6 +311,8 @@ To successfully execute a low-density attack against a well-resourced victim, at
 
 In a flood attack, the attacker consumes a *massive* amount of victim resources by flooding the victim with a large *volume* of resource requests.
 
+For a low-density attack to be effective, the attacker must generate a large volume of requests, which can be accomplished using an army of attack computers (such as a botnet).
+
 ~density
 ## Density
 
@@ -341,7 +367,7 @@ For example: *Nancy can complete 95% of professional requests within 3 hours.*
 
 A request is legitimate if it is *not* intended to overload the worker.
 
-A request is illegitimate if it is intended to overload the worker.
+A request is malicious if it is intended to overload the worker.
 
 ~spec-bbf
 ## Busy, Bored, and Free

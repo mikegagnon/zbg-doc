@@ -55,7 +55,7 @@
 <div id='spec-legit'>
 <h2>Legitimate requests</h2>
 <p>A request is legitimate if it is <em>not</em> intended to overload the worker.</p>
-<p>A request is illegitimate if it is intended to overload the worker.</p>
+<p>A request is malicious if it is intended to overload the worker.</p>
 </div>
 
 <div id='hd-asym'>
@@ -69,14 +69,19 @@
 <p>TODO</p>
 </div>
 
-<div id='low-density'>
-<h2>Flood</h2>
-<p>In a flood attack, the attacker consumes a <em>massive</em> amount of victim resources by flooding the victim with a large <em>volume</em> of resource requests.</p>
+<div id='simple-hd'>
+<h2>Example of an unsophisticated high-density attack</h2>
+<p>Consider a web application that uses an inefficient Ω(N<sup>2</sup>) algorithm to process web requests, where N represents the number of HTTP headers. An unsophisticated high-density attack could simply send a request with 10<sup>4</sup> headers, leading to 10<sup>8</sup> computations.</p>
 </div>
 
 <div id='hd-survey'>
 <h2>Vulnerabilities</h2>
 <p>TODO</p>
+</div>
+
+<div id='complex-hd'>
+<h2>Example of a sophisticated high-density attack</h2>
+<p>Consider the <a href="javascript:Sidenote.openColumnLoud('#complex-hd','#hashdos','HashDoS')">HashDoS</a> vulnerabilities discovered in 2011. The attacks exploit weaknesses in hash algorithms to trigger hash collisions, which leads to N<sup>2</sup> algorithmic performance and a subsequent denial of service.</p>
 </div>
 
 <div id='spec-zbg'>
@@ -157,13 +162,10 @@
 <p>I would love a Github pull request on <a href="https://github.com/mikegagnon/sidenote">Sidenote</a>  so that we can enlarge images with an overlay, on click. :-)</p>
 </div>
 
-<div id='spec-bbf'>
-<h2>Busy, Bored, and Free</h2>
-<ul>
-<li>A worker is busy if she has been working on her current request for less than <em>Z</em> seconds.</li>
-<li>A worker is bored if she has been working on her current request for <em>Z</em> seconds or more.</li>
-<li>A worker is free if she isn&#8217;t doing any work at all.</li>
-</ul>
+<div id='recycle'>
+<h2>Less recyclable</h2>
+<p>Low-density attacks are generally recyclable, in the sense that the same attack can be recycled and used again. They are recyclable since low-density vulnerabilities are inherent to the design of the Internet; defenders have a limited ability to defend themselves from high- volume, low-density attacks.</p>
+<p>In contrast, high-density attacks are not generally recyclable since they target specific implementation level vulnerabilities. In most cases, once the defender is subjected to an attack it is straightforward to fix the implementation &#8212; making it invulnerable to that specific attack.</p>
 </div>
 
 <div id='spec-sec'>
@@ -222,18 +224,18 @@
 
 <div id='hd-compare'>
 <h2>Compared to conventional low-density attacks</h2>
-<p>The most conventional type of denial-of-service (DoS) attack is a <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#low-density','flood')">flood</a> resource-consumption attack. </p>
-<p>Thinking in terms of mass and volume leads to a useful metaphor: <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#density','density')">density</a>.</p>
-<p>Conventional flood attacks are low-density attacks, since each malicious request only consumes a small amount of victim resources.</p>
-<p>For a low-density attack to be effective, the attacker must generate a large volume of requests, which can be accomplished using an army of attack computers (such as a botnet).</p>
-<p>Compared to low-density attacks, high-density attacks are:</p>
-<ul>
-<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-power','More powerful')">More powerful</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-econ','More economical')">More economical</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-stealth','More stealthy')">More stealthy</a></li>
-</ul>
+<p><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#density','Mass, volume, and density metaphor')">Mass, volume, and density metaphor</a></p>
+<p>Low-density attacks are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#low-density','conventional floods')">conventional floods</a>.</p>
 <p>Low-density vulnerabilities are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#prevalent','more prevalent')">more prevalent</a> than high-density vulnerabilities.</p>
-<p>High-density attacks are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#specialized','specialized')">specialized</a>.</p>
+<p>High-density attacks are:</p>
+<ul>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-power','Powerful')">Powerful</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-econ','Economical')">Economical</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-stealth','Stealthy')">Stealthy</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#specialized','Specialized')">Specialized</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#sophisticated','Often sophisticated')">Often sophisticated</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#recycle','Less recyclable')">Less recyclable</a></li>
+</ul>
 </div>
 
 <div id='index'>
@@ -246,10 +248,12 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#abstract-apps','For our experiments, we installed ZBG over top of four different web applications')">For our experiments, we installed ZBG over top of four different web applications</a>.</li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd','High-density attacks')">High-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-asym','High-density attacks allow small forces to defeat larger forces')">High-density attacks allow small forces to defeat larger forces</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-power','High-density attacks are more *powerful*')">High-density attacks are more <em>powerful</em></a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-econ','High-density attacks are more *economical*')">High-density attacks are more <em>economical</em></a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-stealth','High-density attacks are more *stealthy*')">High-density attacks are more <em>stealthy</em></a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#specialized','High-density attacks are specialized')">High-density attacks are specialized</a>.</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-econ','High-density attacks are *economical*')">High-density attacks are <em>economical</em></a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#recycle','High-density attacks are *less recyclable*')">High-density attacks are <em>less recyclable</em></a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#sophisticated','High-density attacks are *often sophisticated*')">High-density attacks are <em>often sophisticated</em></a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-power','High-density attacks are *powerful*')">High-density attacks are <em>powerful</em></a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#specialized','High-density attacks are *specialized*')">High-density attacks are <em>specialized</em></a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-stealth','High-density attacks are *stealthy*')">High-density attacks are <em>stealthy</em></a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare','High-density attacks compared to conventional low-density attacks')">High-density attacks compared to conventional low-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-survey','High-density vulnerabilities are everywhere')">High-density vulnerabilities are everywhere</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#columns','How columns work')">How columns work</a></li>
@@ -277,8 +281,8 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-bouncer','The algorithm: The Bouncer')">The algorithm: The Bouncer</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-doorman','The algorithm: The Doorman')">The algorithm: The Doorman</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-proof','The algorithm: Proof for Security Guarantee')">The algorithm: Proof for Security Guarantee</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#low-density','The most conventional type of denial-of-service (DoS) attack is a flood resource-consumption attack')">The most conventional type of denial-of-service (DoS) attack is a flood resource-consumption attack</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#density','Thinking in terms of mass and volume leads to a useful metaphor: density')">Thinking in terms of mass and volume leads to a useful metaphor: density</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#low-density','Low-density attacks are conventional floods')">Low-density attacks are conventional floods</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#density','Mass, volume, and density metaphor')">Mass, volume, and density metaphor</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#zbg','We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks')">We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#abstract-success','ZBG succeeded for two of the web applications')">ZBG succeeded for two of the web applications</a>.</li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#abstract-simple','Zen Beer Garden defends against these attacks using a simple approach')">Zen Beer Garden defends against these attacks using a simple approach</a></li>
@@ -307,6 +311,21 @@
 <p>All that is needed is the ability to generate a large volume of traffic towards the victim. There exist a variety of generic, off-the-shelf tools that can be used to launch effective low-density attacks. For example, the <a href="https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon">Low Orbit Ion Cannon</a> can target any web service on the Internet.</p>
 </div>
 
+<div id='sophisticated'>
+<h2>Sophisticated</h2>
+<p>High-density attacks vary in the sophistication required to conduct the attack. <a href="javascript:Sidenote.openColumnLoud('#sophisticated','#simple-hd','Unsophisticated example')">Unsophisticated example</a>. </p>
+<p>Many high-density vulnerabilities require sophisticated attacks. <a href="javascript:Sidenote.openColumnLoud('#sophisticated','#complex-hd','Sophisticated example')">Sophisticated example</a>.</p>
+</div>
+
+<div id='spec-bbf'>
+<h2>Busy, Bored, and Free</h2>
+<ul>
+<li>A worker is busy if she has been working on her current request for less than <em>Z</em> seconds.</li>
+<li>A worker is bored if she has been working on her current request for <em>Z</em> seconds or more.</li>
+<li>A worker is free if she isn&#8217;t doing any work at all.</li>
+</ul>
+</div>
+
 <div id='hd-terms'>
 <h2>A note on terminology</h2>
 <p>For the sake of brevity, throughout the rest of this document, unless specified otherwise, the term <em>high-density attack</em> refers to <em>work-based high-density cyber attack</em>.</p>
@@ -320,6 +339,12 @@
 <p>Second, typical server software does not limit resource usage per user.</p>
 <p>Lastly, most Internet servers are under provisioned because straightforward over-provisioning is not cost effective. <a href="javascript:Sidenote.openColumnLoud('#gen-vuln','#cdn','Note')">Note</a>.</p>
 <p>These deficiencies make it possible for attackers to consume large amounts of resources simply by submitting large volumes of requests.</p>
+</div>
+
+<div id='low-density'>
+<h2>Flood</h2>
+<p>In a flood attack, the attacker consumes a <em>massive</em> amount of victim resources by flooding the victim with a large <em>volume</em> of resource requests.</p>
+<p>For a low-density attack to be effective, the attacker must generate a large volume of requests, which can be accomplished using an army of attack computers (such as a botnet).</p>
 </div>
 
 <div id='hd-ex'>
