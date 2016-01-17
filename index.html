@@ -207,6 +207,11 @@
 <p>Our experiments show that Zen Beer Garden works.</p>
 </div>
 
+<div id='solr-3652'>
+<h2>Issue SOLR-3652</h2>
+<p>TODO. See section 3.12</p>
+</div>
+
 <div id='hd-compare-econ'>
 <h2>Economics</h2>
 <p>High-density attacks are more economical since they are more <a href="javascript:Sidenote.openColumnLoud('#hd-compare-econ','#hd-compare-power','more powerful')">more powerful</a>.</p>
@@ -228,6 +233,7 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-stealth','More stealthy')">More stealthy</a></li>
 </ul>
 <p>Low-density vulnerabilities are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#prevalent','more prevalent')">more prevalent</a> than high-density vulnerabilities.</p>
+<p>High-density attacks are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#specialized','specialized')">specialized</a>.</p>
 </div>
 
 <div id='index'>
@@ -243,16 +249,19 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-power','High-density attacks are more *powerful*')">High-density attacks are more <em>powerful</em></a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-econ','High-density attacks are more *economical*')">High-density attacks are more <em>economical</em></a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-stealth','High-density attacks are more *stealthy*')">High-density attacks are more <em>stealthy</em></a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#specialized','High-density attacks are specialized')">High-density attacks are specialized</a>.</li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare','High-density attacks compared to conventional low-density attacks')">High-density attacks compared to conventional low-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-survey','High-density vulnerabilities are everywhere')">High-density vulnerabilities are everywhere</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#columns','How columns work')">How columns work</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#enlarge','How to enlarge an image')">How to enlarge an image</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#howto','How to read this document')">How to read this document</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-handback','If the Bouncer hands it back, then the Doorman turns the tables on the requester')">If the Bouncer hands it back, then the Doorman turns the tables on the requester</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#solr-3652','Issue SOLR-3652')">Issue SOLR-3652</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#gen-vuln','Internet services are generally vulnerable to low-density attacks')">Internet services are generally vulnerable to low-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#CVE-2010-4476','Java infinite-loop high-density vulnerability')">Java infinite-loop high-density vulnerability</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-lately','Lately attackers have been increasingly utilizing high-density attacks')">Lately attackers have been increasingly utilizing high-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-legit','Legitimate requests')">Legitimate requests</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#ld-specialize','Low-density attacks require little-to-no specialization')">Low-density attacks require little-to-no specialization</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#prevalent','Low-density vulnerabilities are more prevalent than high-density vulnerabilities')">Low-density vulnerabilities are more prevalent than high-density vulnerabilities</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#enlarge-req','Note to hackers')">Note to hackers</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#cdn','Note: content-delivery networks offer a form of economical over-provisioning')">Note: content-delivery networks offer a form of economical over-provisioning</a></li>
@@ -293,11 +302,24 @@
 </ul>
 </div>
 
+<div id='ld-specialize'>
+<h2>Little-to-no specialization</h2>
+<p>All that is needed is the ability to generate a large volume of traffic towards the victim. There exist a variety of generic, off-the-shelf tools that can be used to launch effective low-density attacks. For example, the <a href="https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon">Low Orbit Ion Cannon</a> can target any web service on the Internet.</p>
+</div>
+
 <div id='hd-terms'>
 <h2>A note on terminology</h2>
 <p>For the sake of brevity, throughout the rest of this document, unless specified otherwise, the term <em>high-density attack</em> refers to <em>work-based high-density cyber attack</em>.</p>
 <p>Zen Beer Garden only defends against <em>work-based</em> attacks.</p>
 <p>Our experimental implementation, <a href="javascript:Sidenote.openColumnLoud('#hd-terms','#zbg','ZBG')">ZBG</a>, only defends against work-based <em>cyber</em> attacks.</p>
+</div>
+
+<div id='gen-vuln'>
+<h2>General vulnerability</h2>
+<p>First the design of the TCP/IP protocol suite is inherently vulnerable to low-density attacks since it does not enforce any quality of service (QoS); i.e. the network itself makes no attempt to ensure that misbehaving users can&#8217;t infringe on the quality of service for other users. <a href="javascript:Sidenote.openColumnLoud('#gen-vuln','#atm','Note')">Note</a>.</p>
+<p>Second, typical server software does not limit resource usage per user.</p>
+<p>Lastly, most Internet servers are under provisioned because straightforward over-provisioning is not cost effective. <a href="javascript:Sidenote.openColumnLoud('#gen-vuln','#cdn','Note')">Note</a>.</p>
+<p>These deficiencies make it possible for attackers to consume large amounts of resources simply by submitting large volumes of requests.</p>
 </div>
 
 <div id='hd-ex'>
@@ -385,9 +407,10 @@
 <p>PHP, Python, Java, and Ruby.</p>
 </div>
 
-<div id='CVE-2010-4476'>
-<h2>CVE-2010-4476</h2>
-<p>&#8220;The Double.parseDouble method in Java Runtime Environment (JRE) in Oracle Java SE and Java for Business 6 Update 23 and earlier, 5.0 Update 27 and earlier, and 1.4.2_29 and earlier, as used in OpenJDK, Apache, JBossweb, and other products, allows remote attackers to cause a <strong>denial of service via a crafted string that triggers an infinite loop</strong> of estimations during conversion to a double-precision binary floating-point number, as demonstrated using 2.2250738585072012e-308.&#8221; &#8212; <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4476">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4476</a></p>
+<div id='specialized'>
+<h2>Specialization</h2>
+<p>Low-density attacks require <a href="javascript:Sidenote.openColumnLoud('#specialized','#ld-specialize','little-to-no specialization')">little-to-no specialization</a> in order to attack a particular target.</p>
+<p>High-density attacks on the other hand require attacks tailored to application-specific vulnerabilities. For example, an attack might need to exploit an underflow to cause excessive looping, as exemplified by <a href="javascript:Sidenote.openColumnLoud('#specialized','#solr-3652','Issue SOLR-3652')">Issue SOLR-3652</a>.</p>
 </div>
 
 <div id='spec-handback'>
@@ -401,12 +424,9 @@
 <p>TODO: Full report</p>
 </div>
 
-<div id='gen-vuln'>
-<h2>General vulnerability</h2>
-<p>First the design of the TCP/IP protocol suite is inherently vulnerable to low-density attacks since it does not enforce any quality of service (QoS); i.e. the network itself makes no attempt to ensure that misbehaving users can&#8217;t infringe on the quality of service for other users. <a href="javascript:Sidenote.openColumnLoud('#gen-vuln','#atm','Note')">Note</a>.</p>
-<p>Second, typical server software does not limit resource usage per user.</p>
-<p>Lastly, most Internet servers are under provisioned because straightforward over-provisioning is not cost effective. <a href="javascript:Sidenote.openColumnLoud('#gen-vuln','#cdn','Note')">Note</a>.</p>
-<p>These deficiencies make it possible for attackers to consume large amounts of resources simply by submitting large volumes of requests.</p>
+<div id='CVE-2010-4476'>
+<h2>CVE-2010-4476</h2>
+<p>&#8220;The Double.parseDouble method in Java Runtime Environment (JRE) in Oracle Java SE and Java for Business 6 Update 23 and earlier, 5.0 Update 27 and earlier, and 1.4.2_29 and earlier, as used in OpenJDK, Apache, JBossweb, and other products, allows remote attackers to cause a <strong>denial of service via a crafted string that triggers an infinite loop</strong> of estimations during conversion to a double-precision binary floating-point number, as demonstrated using 2.2250738585072012e-308.&#8221; &#8212; <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4476">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4476</a></p>
 </div>
     </div>
   </body>

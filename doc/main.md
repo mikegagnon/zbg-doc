@@ -27,16 +27,19 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [High-density attacks are more *powerful*](##hd-compare-power)
 - [High-density attacks are more *economical*](##hd-compare-econ)
 - [High-density attacks are more *stealthy*](##hd-compare-stealth)
+- [High-density attacks are specialized](##specialized)
 - [High-density attacks compared to conventional low-density attacks](##hd-compare)
 - [High-density vulnerabilities are everywhere](##hd-survey)
 - [How columns work](##columns)
 - [How to enlarge an image](##enlarge)
 - [How to read this document](##howto)
 - [If the Bouncer hands it back, then the Doorman turns the tables on the requester](##spec-handback)
+- [Issue SOLR-3652](##solr-3652)
 - [Internet services are generally vulnerable to low-density attacks](##gen-vuln)
 - [Java infinite-loop high-density vulnerability](##CVE-2010-4476)
 - [Lately attackers have been increasingly utilizing high-density attacks](##hd-lately)
 - [Legitimate requests](##spec-legit)
+- [Low-density attacks require little-to-no specialization](##ld-specialize)
 - [Low-density vulnerabilities are more prevalent than high-density vulnerabilities](##prevalent)
 - [Note to hackers](##enlarge-req)
 - [Note: content-delivery networks offer a form of economical over-provisioning](##cdn)
@@ -192,6 +195,26 @@ Compared to low-density attacks, high-density attacks are:
 - [More stealthy](##hd-compare-stealth)
 
 Low-density vulnerabilities are [more prevalent](##prevalent) than high-density vulnerabilities.
+
+High-density attacks are [specialized](##specialized).
+
+~specialized
+## Specialization
+
+Low-density attacks require [little-to-no specialization](##ld-specialize) in order to attack a particular target.
+
+High-density attacks on the other hand require attacks tailored to application-specific vulnerabilities. For example, an attack might need to exploit an underflow to cause excessive looping, as exemplified by [Issue SOLR-3652](##solr-3652).
+
+~solr-3652
+## Issue SOLR-3652
+
+TODO. See section 3.12
+
+~ld-specialize
+## Little-to-no specialization
+
+All that is needed is the ability to generate a large volume of traffic towards the victim. There exist a variety of generic, off-the-shelf tools that can be used to launch effective low-density attacks. For example, the [Low Orbit Ion Cannon](https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon) can target any web service on the Internet.
+
 
 ~prevalent
 ## Prevalence
