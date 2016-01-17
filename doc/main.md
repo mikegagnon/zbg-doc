@@ -12,11 +12,12 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 
 [How to read this document](##howto).
 
-[Index](##index).
+[Index](##index)
 
 ~index
 ## Index
 
+- [2012 Beer Garden Technical Report](##bg-tech)
 - [A note on terminology](##hd-terms)
 - [Example work-based high-density attack](##hd-ex)
 - [Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman's hands](##spec-eventually)
@@ -32,10 +33,14 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [How to enlarge an image](##enlarge)
 - [How to read this document](##howto)
 - [If the Bouncer hands it back, then the Doorman turns the tables on the requester](##spec-handback)
+- [Internet services are generally vulnerable to low-density attacks](##gen-vuln)
 - [Java infinite-loop high-density vulnerability](##CVE-2010-4476)
 - [Lately attackers have been increasingly utilizing high-density attacks](##hd-lately)
 - [Legitimate requests](##spec-legit)
+- [Low-density vulnerabilities are more prevalent than high-density vulnerabilities](##prevalent)
 - [Note to hackers](##enlarge-req)
+- [Note: content-delivery networks offer a form of economical over-provisioning](##cdn)
+- [Note: not all network protocols are inherently vulnerable to low-density attacks](##atm)
 - [PHP infinite-loop high-density vulnerability](##CVE-2010-4645)
 - [The algorithm can be summed up as: "If you're busy and someone hands you a lemon, hand it back and ask for lemonade."](##spec)
 - [The algorithm: Workers and Requests](##spec-wr)
@@ -185,6 +190,41 @@ Compared to low-density attacks, high-density attacks are:
 - [More powerful](##hd-compare-power)
 - [More economical](##hd-compare-econ)
 - [More stealthy](##hd-compare-stealth)
+
+Low-density vulnerabilities are [more prevalent](##prevalent) than high-density vulnerabilities.
+
+~prevalent
+## Prevalence
+
+Internet services are [generally vulnerable](##gen-vuln) to low-density attacks.
+
+While not ubiquitous like low-density vulnerabilities, high-density vulnerabilities are prevalent. In our [2012 survey](##bg-tech) of 16 web systems we found 71 publicly known high-density vulnerabilities.
+
+~bg-tech
+## 2012 Beer Garden Technical Report
+
+TODO
+
+~gen-vuln
+## General vulnerability
+
+First the design of the TCP/IP protocol suite is inherently vulnerable to low-density attacks since it does not enforce any quality of service (QoS); i.e. the network itself makes no attempt to ensure that misbehaving users can't infringe on the quality of service for other users. [Note](##atm).
+
+Second, typical server software does not limit resource usage per user.
+
+Lastly, most Internet servers are under provisioned because straightforward over-provisioning is not cost effective. [Note](##cdn).
+
+These deficiencies make it possible for attackers to consume large amounts of resources simply by submitting large volumes of requests.
+
+~atm
+## Note
+
+Not all network protocols are inherently vulnerable to low-density attacks. For example, the ATM protocol has quality-of-service (QoS) policing built into the network.
+
+~cdn
+## Note
+
+Content-delivery networks offer a form of economical over-provisioning.
 
 ~hd-compare-power
 ## Power
