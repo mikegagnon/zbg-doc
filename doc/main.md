@@ -8,6 +8,42 @@ Zen Beer Garden defends against these attacks using a [simple approach](##abstra
 
 We have [experimentally verified](##abstract-exp) that Zen Beer Garden can successfully defend web applications against high-density attacks.
 
+[Index](##index).
+
+~index
+## Index
+
+- [A note on terminology](##hd-terms)
+- [Compared to high-density attacks, low-density attacks are less *powerful*](##hd-compare-power)
+- [Compared to high-density attacks, low-density attacks are less *economical*](##hd-compare-econ)
+- [Compared to high-density attacks, low-density attacks are less *stealthy*](##hd-compare-stealth)
+- [Example work-based high-density attack](##hd-ex)
+- [Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman's hands](##spec-eventually)
+- [For our experiments, we installed ZBG over top of four different web applications](##abstract-apps).
+- [High-density attacks](##hd)
+- [High-density attacks allow small forces to defeat larger forces](##hd-asym)
+- [High-density attacks compared to conventional low-density attacks](##hd-compare)
+- [High-density vulnerabilities are everywhere](##hd-survey)
+- [If the Bouncer hands it back, then the Doorman turns the tables on the requester](##spec-handback)
+- [Lately attackers have been increasingly utilizing high-density attacks](##hd-lately)
+- [Legitimate requests](##spec-legit)
+- [The algorithm can be summed up as: "If you're busy and someone hands you a lemon, hand it back and ask for lemonade."](##spec)
+- [The algorithm: Workers and Requests](##spec-wr)
+- [The algorithm: Busy, Bored, and Free](##spec-bbf)
+- [The algorithm: Overloads](##spec-overloads)
+- [The algorithm: Introduction to Zen Beer Garden](##spec-intro)
+- [The algorithm: Theoretical Security Guarantee](##spec-sec)
+- [The algorithm: The Zen Beer Garden Defense](##spec-zbg)
+- [The algorithm: The Bouncer](##spec-bouncer)
+- [The algorithm: The Doorman](##spec-doorman)
+- [The algorithm: Proof for Security Guarantee](##spec-proof)
+- [The most conventional type of denial-of-service (DoS) attack is a flood resource-consumption attack](##low-density)
+- [Thinking in terms of mass and volume leads to a useful metaphor: density](##density)
+- [We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks](##abstract-exp)
+- [ZBG succeeded for two of the web applications](##abstract-success).
+- [Zen Beer Garden defends against these attacks using a simple approach](##abstract-simple)
+
+
 
 ~hd
 ## High-density attacks
