@@ -6,7 +6,7 @@ Today’s applications, frameworks, languages, and servers crumble when subjecte
 
 Zen Beer Garden defends against these attacks using a [simple approach](##abstract-simple).
 
-We have [experimentally verified](##abstract-exp) that Zen Beer Garden succeeds.
+We have [experimentally verified](##abstract-exp) that Zen Beer Garden can successfully defend web applications against high-density attacks.
 
 
 ~hd
@@ -18,13 +18,11 @@ A *work-based* high-density attack is one where the tiny bomb causes the victim 
 
 [A note on terminology](##hd-terms).
 
-High density attacks are particularly dangerous because they are particularly powerful, and economical, and stealthy.
+[Compared to conventional low-density attacks](##hd-compare), high density attacks are particularly dangerous because they are particularly powerful, economical, and stealthy.
 
 With high-density attacks, you don’t need an entire army to attack your enemies. You just need tiny bombs.
 
 High-density attacks allow [small forces to defeat larger forces](##hd-asym).
-
-High-density attacks are [quite different](##hd-compare) from conventional attacks.
 
 High-density [vulnerabilities](##hd-survey) are everywhere.
 
@@ -36,7 +34,11 @@ Bob transmits a single HTTP request to Wikipedia, which causes Wikipedia to spin
 
 ~hd-terms
 ## A note on terminology
-For the sake of brevity, throughout the rest of this document the term *high-density attack* refers to *work-based high-density attack*, since Zen Beer Garden only defends against work-based high-density attacks.
+For the sake of brevity, throughout the rest of this document, unless specified otherwise, the term *high-density attack* refers to *work-based high-density cyber attack*.
+
+Zen Beer Garden only defends against work-based attacks.
+
+Our experimental implementation, ZBG, only defends against work-based cyber attacks.
 
 ~hd-asym
 ## Small forces defeat larger forces
@@ -51,9 +53,49 @@ For example, the Rebels used high-density attacks to destroy the Death Star, twi
 TODO
 
 ~hd-compare
-## Quite different
+## Compared to conventional low-density attacks
 
-TODO
+The most conventional type of denial-of-service (DoS) attack is a [flood](##low-density) resource-consumption attack. 
+
+Thinking in terms of mass and volume leads to a useful metaphor: [density](##density).
+
+Conventional flood attacks are low-density attacks, since each malicious request only consumes a small amount of victim resources.
+
+For a low-density attack to be effective, the attacker must generate a large volume of requests, which can be accomplished using an army of attack computers (such as a botnet).
+
+Compared to high-density attacks, low-density attacks are:
+
+- [Less powerful](##hd-compare-power)
+- [Less economical](##hd-compare-econ)
+- [Less stealthy](##hd-compare-stealth)
+
+~hd-compare-power
+## Power
+Low-density attacks are less *powerful* than high-density attacks, because low-density attacks consume fewer resources, per request.
+
+~hd-compare-stealth
+## Stealth
+Low-density attack are less *stealthy* than high-density attacks, because low-density attacks must submit more requests to have an equivalent effect (since they are [less powerful](##hd-compare-power)). Thus, low-density attacks produce more observables.
+
+~hd-compare-econ
+## Economics
+Low-density attacks are less *economical* than high-density attacks, because they are [less powerful](##hd-compare-power). For a low-density attack to have the same effect as a high-density attack, the low-density attack must submit far more requests. To submit more requests, the attacker will need greater computational resources, such as an army of requesters, viz. a botnet.
+
+High-density attacks require less computing power.
+
+~low-density
+## Flood
+
+In a flood attack, the attacker consumes a *massive* amount of victim resources by flooding the victim with a large *volume* of resource requests.
+
+~density
+## Density
+
+In the density metaphor, mass measures the victim's resource consumption.
+
+Volume measures the number of malicious resource requests.
+
+Density measures the amount of victim resources consumed per malicious request (which, equivalently, is the ratio of mass to volume).
 
 ~hd-lately
 ## Lately
@@ -69,12 +111,12 @@ The Doorman charges admission fees, which limits the amount of requests the work
 
 The Bouncer kicks out requests that overload the worker.
 
-The [entire approach](##spec) can be summed up as: "If you're busy and someone hands you a lemon, hand it back and ask for lemonade."
+The [algorithm](##spec) can be summed up as: "If you're busy and someone hands you a lemon, hand it back and ask for lemonade."
 
 ~spec
-## Entire Approach
+## Algorithm
 
-This section provides the algorithmic specification for Zen Beer Garden, it's security guarantee, and a simple mathematical proof.
+This section provides the algorithmic specification for Zen Beer Garden, it's security guarantee, and a simple proof.
 
 - [Workers and Requests](##spec-wr)
 - [Busy, Bored, and Free](##spec-bbf)
@@ -84,22 +126,29 @@ This section provides the algorithmic specification for Zen Beer Garden, it's se
 - [The Zen Beer Garden Defense](##spec-zbg)
 - [The Bouncer](##spec-bouncer)
 - [The Doorman](##spec-doorman)
-- [Proof Sketch for Security Guarantee](##spec-proof)
+- [Proof for Security Guarantee](##spec-proof)
 
 ~spec-wr
 ## Workers and Requests
 
 A worker is a thing that attempts to complete requests.
 
-Every worker can complete a certain percentage of legitimate requests (*Y*%) within a certain amount of time (*Z* seconds).
+Every worker can complete a certain percentage of [legitimate requests](##spec-legit) (*Y*%) within a certain amount of time (*Z* seconds).
 
 For example: *Nancy can complete 95% of professional requests within 3 hours.*
+
+~spec-legit
+## Legitimate requests
+
+A request is legitimate if it is *not* intended to overload the worker.
+
+A request is illegitimate if it is intended to overload the worker.
 
 ~spec-bbf
 ## Busy, Bored, and Free
 
-- A worker is busy if she has been working on a request for less than *Z* seconds.
-- A worker is bored if she has been working on a request for *Z* seconds or more.
+- A worker is busy if she has been working on her current request for less than *Z* seconds.
+- A worker is bored if she has been working on her current request for *Z* seconds or more.
 - A worker is free if she isn't doing any work at all.
 
 ~spec-overloads
@@ -156,11 +205,11 @@ If the worker is busy, the Bouncer hands the request back to the Doorman.
 
 When the Doorman receives a request from a requester, the Doorman passes it to the Bouncer.
 
-If the Bouncer hands it back, then the Doorman turns the tables on the requester. Specifically, the Doorman invents some work for the requester to do. The Doorman passes the request back to the requester, and asks the requester to do the work the Doorman just invented.
+If the Bouncer [hands it back](##spec-handback), then the Doorman turns the tables on the requester. Specifically, the Doorman invents some work for the requester to do. The Doorman passes the request back to the requester, and asks the requester to do the work the Doorman just invented.
 
 For example: *If a rep wants to show Nancy an ad, but Nancy is busy, the Doorman might ask the rep to write a one-page essay explaining why the ad is relevant to Nancy in particular.*
 
-These requests are designed to delay the requester while at the same time having the requester do useful work for the worker.
+These requests are designed to delay the requester while at the same time possibly having the requester do useful work for the worker.
 
 The Doorman will refuse to pass the original request until the requester completes the work request.
 
@@ -170,12 +219,31 @@ If the worker continues to be busy, the Doorman increases the amounts of work he
 
 As the worker becomes less busy, the Doorman decreases the amounts of work he asks of requesters.
 
+~spec-handback
+## Hands it back
+
+Recall, if the worker is busy, the [Bouncer](##spec-bouncer) hands the request back to the Doorman.
+
+
 ~spec-proof
-## Proof Sketch for Security Guarantee
+## Proof for Security Guarantee
 
 At least *Y*% of legitimate requests that reach the worker complete. We know this because the Bouncer only bounces a request after the worker has been working on it for at least *Z* seconds.
 
-Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman's hands. Of course, the requester might have performed quite a bit of work in order to convince the Doorman to accept the request.
+Every legitimate request eventually reaches the worker because the worker will [eventually](##spec-eventually) be free or bored at the same time that the legitimate request arrives in the Doorman's hands. Of course, the requester might have performed quite a bit of work in order to convince the Doorman to accept the request.
+
+~spec-eventually
+## Eventually
+
+Assume the worst case scenario. I.e., assume *N* requests arrive every moment for *M* moments, where *N* and *M* are arbitrarily large.
+
+Assume there is a mix of legitimate requests and illegitimate requests, where the illegitimate requests cause an infinite amount of work.
+
+Assume the Doorman uses an exponential back off and back on strategy on a per request basis.
+
+**Theorem**: Every request eventually reaches the worker.
+
+**Proof**: The exponential back off will cause the requests to fan out over time.
 
 ~abstract-exp
 ## Experimentally verified

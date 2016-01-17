@@ -31,10 +31,20 @@
 <p>See Akamai’s 2012 <a href="https://www.akamai.com/us/en/about/news/press/2012-press/akamai-first-quarter-2012-state-of-the-internet-report.jsp">The State of the Internet</a> report, Section 1.4 &#8220;Observed Denial-of-Service (DoS) Attack Activity.&#8221;</p>
 </div>
 
+<div id='hd-compare-stealth'>
+<h2>Stealth</h2>
+<p>Low-density attack are less <em>stealthy</em> than high-density attacks, because low-density attacks must submit more requests to have an equivalent effect (since they are <a href="javascript:Sidenote.openColumnLoud('#hd-compare-stealth','#hd-compare-power','less powerful')">less powerful</a>). Thus, low-density attacks produce more observables.</p>
+</div>
+
 <div id='hd-asym'>
 <h2>Small forces defeat larger forces</h2>
 <p>For example, the Rebels used high-density attacks to destroy the Death Star, twice.</p>
 <p><img src="img/deathstar.jpg"></p>
+</div>
+
+<div id='low-density'>
+<h2>Flood</h2>
+<p>In a flood attack, the attacker consumes a <em>massive</em> amount of victim resources by flooding the victim with a large <em>volume</em> of resource requests.</p>
 </div>
 
 <div id='hd-survey'>
@@ -49,12 +59,24 @@
 <p>For example: <em>If a pharmaceutical rep wants Nancy to read an advertisement, the rep must give the ad to the Doorman, who then passes it to the Bouncer, who then might pass it to Nancy.</em></p>
 </div>
 
+<div id='hd-compare-power'>
+<h2>Power</h2>
+<p>Low-density attacks are less <em>powerful</em> than high-density attacks, because low-density attacks consume fewer resources, per request.</p>
+</div>
+
+<div id='density'>
+<h2>Density</h2>
+<p>In the density metaphor, mass measures the victim&#8217;s resource consumption.</p>
+<p>Volume measures the number of malicious resource requests.</p>
+<p>Density measures the amount of victim resources consumed per malicious request (which, equivalently, is the ratio of mass to volume).</p>
+</div>
+
 <div id='spec-doorman'>
 <h2>The Doorman</h2>
 <p>When the Doorman receives a request from a requester, the Doorman passes it to the Bouncer.</p>
-<p>If the Bouncer hands it back, then the Doorman turns the tables on the requester. Specifically, the Doorman invents some work for the requester to do. The Doorman passes the request back to the requester, and asks the requester to do the work the Doorman just invented.</p>
+<p>If the Bouncer <a href="javascript:Sidenote.openColumnLoud('#spec-doorman','#spec-handback','hands it back')">hands it back</a>, then the Doorman turns the tables on the requester. Specifically, the Doorman invents some work for the requester to do. The Doorman passes the request back to the requester, and asks the requester to do the work the Doorman just invented.</p>
 <p>For example: <em>If a rep wants to show Nancy an ad, but Nancy is busy, the Doorman might ask the rep to write a one-page essay explaining why the ad is relevant to Nancy in particular.</em></p>
-<p>These requests are designed to delay the requester while at the same time having the requester do useful work for the worker.</p>
+<p>These requests are designed to delay the requester while at the same time possibly having the requester do useful work for the worker.</p>
 <p>The Doorman will refuse to pass the original request until the requester completes the work request.</p>
 <p>If the worker continues to be busy, the Doorman increases the amounts of work he asks of requesters.</p>
 <p><em>If Nancy is bombarded by reps, she might ask reps for 10-page essays. Of course, every essay must come with a one-page summary.</em></p>
@@ -73,14 +95,23 @@
 <p>Zen Beer Garden protects each worker with a <em>Doorman</em> and a <em>Bouncer</em>.</p>
 <p>The Doorman charges admission fees, which limits the amount of requests the worker receives.</p>
 <p>The Bouncer kicks out requests that overload the worker.</p>
-<p>The <a href="javascript:Sidenote.openColumnLoud('#abstract-simple','#spec','entire approach')">entire approach</a> can be summed up as: &#8220;If you&#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&#8221;</p>
+<p>The <a href="javascript:Sidenote.openColumnLoud('#abstract-simple','#spec','algorithm')">algorithm</a> can be summed up as: &#8220;If you&#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&#8221;</p>
+</div>
+
+<div id='spec-eventually'>
+<h2>Eventually</h2>
+<p>Assume the worst case scenario. I.e., assume <em>N</em> requests arrive every moment for <em>M</em> moments, where <em>N</em> and <em>M</em> are arbitrarily large.</p>
+<p>Assume there is a mix of legitimate requests and illegitimate requests, where the illegitimate requests cause an infinite amount of work.</p>
+<p>Assume the Doorman uses an exponential back off and back on strategy on a per request basis.</p>
+<p><strong>Theorem</strong>: Every request eventually reaches the worker.</p>
+<p><strong>Proof</strong>: The exponential back off will cause the requests to fan out over time.</p>
 </div>
 
 <div id='spec-bbf'>
 <h2>Busy, Bored, and Free</h2>
 <ul>
-<li>A worker is busy if she has been working on a request for less than <em>Z</em> seconds.</li>
-<li>A worker is bored if she has been working on a request for <em>Z</em> seconds or more.</li>
+<li>A worker is busy if she has been working on her current request for less than <em>Z</em> seconds.</li>
+<li>A worker is bored if she has been working on her current request for <em>Z</em> seconds or more.</li>
 <li>A worker is free if she isn&#8217;t doing any work at all.</li>
 </ul>
 </div>
@@ -97,12 +128,12 @@
 <p>This document presents <em>Zen Beer Garden</em>, a proven approach for defending systems against work-based <a href="javascript:Sidenote.openColumnLoud('#main','#hd','high-density attacks')">high-density attacks</a>. </p>
 <p>Today’s applications, frameworks, languages, and servers crumble when subjected to high- density attacks.</p>
 <p>Zen Beer Garden defends against these attacks using a <a href="javascript:Sidenote.openColumnLoud('#main','#abstract-simple','simple approach')">simple approach</a>.</p>
-<p>We have <a href="javascript:Sidenote.openColumnLoud('#main','#abstract-exp','experimentally verified')">experimentally verified</a> that Zen Beer Garden succeeds.</p>
+<p>We have <a href="javascript:Sidenote.openColumnLoud('#main','#abstract-exp','experimentally verified')">experimentally verified</a> that Zen Beer Garden can successfully defend web applications against high-density attacks.</p>
 </div>
 
 <div id='spec'>
-<h2>Entire Approach</h2>
-<p>This section provides the algorithmic specification for Zen Beer Garden, it&#8217;s security guarantee, and a simple mathematical proof.</p>
+<h2>Algorithm</h2>
+<p>This section provides the algorithmic specification for Zen Beer Garden, it&#8217;s security guarantee, and a simple proof.</p>
 <ul>
 <li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-wr','Workers and Requests')">Workers and Requests</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-bbf','Busy, Bored, and Free')">Busy, Bored, and Free</a></li>
@@ -112,7 +143,7 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-zbg','The Zen Beer Garden Defense')">The Zen Beer Garden Defense</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-bouncer','The Bouncer')">The Bouncer</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-doorman','The Doorman')">The Doorman</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-proof','Proof Sketch for Security Guarantee')">Proof Sketch for Security Guarantee</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-proof','Proof for Security Guarantee')">Proof for Security Guarantee</a></li>
 </ul>
 </div>
 
@@ -133,9 +164,24 @@
 <p>Our experiments show that Zen Beer Garden works.</p>
 </div>
 
+<div id='hd-compare-econ'>
+<h2>Economics</h2>
+<p>Low-density attacks are less <em>economical</em> than high-density attacks, because they are <a href="javascript:Sidenote.openColumnLoud('#hd-compare-econ','#hd-compare-power','less powerful')">less powerful</a>. For a low-density attack to have the same effect as a high-density attack, the low-density attack must submit far more requests. To submit more requests, the attacker will need greater computational resources, such as an army of requesters, viz. a botnet.</p>
+<p>High-density attacks require less computing power.</p>
+</div>
+
 <div id='hd-compare'>
-<h2>Quite different</h2>
-<p>TODO</p>
+<h2>Compared to conventional low-density attacks</h2>
+<p>The most conventional type of denial-of-service (DoS) attack is a <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#low-density','flood')">flood</a> resource-consumption attack. </p>
+<p>Thinking in terms of mass and volume leads to a useful metaphor: <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#density','density')">density</a>.</p>
+<p>Conventional flood attacks are low-density attacks, since each malicious request only consumes a small amount of victim resources.</p>
+<p>For a low-density attack to be effective, the attacker must generate a large volume of requests, which can be accomplished using an army of attack computers (such as a botnet).</p>
+<p>Compared to high-density attacks, low-density attacks are:</p>
+<ul>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-power','Less powerful')">Less powerful</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-econ','Less economical')">Less economical</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-stealth','Less stealthy')">Less stealthy</a></li>
+</ul>
 </div>
 
 <div id='spec-bouncer'>
@@ -147,7 +193,9 @@
 
 <div id='hd-terms'>
 <h2>A note on terminology</h2>
-<p>For the sake of brevity, throughout the rest of this document the term <em>high-density attack</em> refers to <em>work-based high-density attack</em>, since Zen Beer Garden only defends against work-based high-density attacks.</p>
+<p>For the sake of brevity, throughout the rest of this document, unless specified otherwise, the term <em>high-density attack</em> refers to <em>work-based high-density cyber attack</em>.</p>
+<p>Zen Beer Garden only defends against work-based attacks.</p>
+<p>Our experimental implementation, ZBG, only defends against work-based cyber attacks.</p>
 </div>
 
 <div id='hd-ex'>
@@ -158,7 +206,7 @@
 <div id='spec-wr'>
 <h2>Workers and Requests</h2>
 <p>A worker is a thing that attempts to complete requests.</p>
-<p>Every worker can complete a certain percentage of legitimate requests (<em>Y</em>%) within a certain amount of time (<em>Z</em> seconds).</p>
+<p>Every worker can complete a certain percentage of <a href="javascript:Sidenote.openColumnLoud('#spec-wr','#spec-legit','legitimate requests')">legitimate requests</a> (<em>Y</em>%) within a certain amount of time (<em>Z</em> seconds).</p>
 <p>For example: <em>Nancy can complete 95% of professional requests within 3 hours.</em></p>
 </div>
 
@@ -167,18 +215,23 @@
 <p>A high-density attack is when a tiny bomb causes a huge explosion.</p>
 <p>A <em>work-based</em> high-density attack is one where the tiny bomb causes the victim to perform an explosive amount of work. <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-ex','Example')">Example</a>.</p>
 <p><a href="javascript:Sidenote.openColumnLoud('#hd','#hd-terms','A note on terminology')">A note on terminology</a>.</p>
-<p>High density attacks are particularly dangerous because they are particularly powerful, and economical, and stealthy.</p>
+<p><a href="javascript:Sidenote.openColumnLoud('#hd','#hd-compare','Compared to conventional low-density attacks')">Compared to conventional low-density attacks</a>, high density attacks are particularly dangerous because they are particularly powerful, economical, and stealthy.</p>
 <p>With high-density attacks, you don’t need an entire army to attack your enemies. You just need tiny bombs.</p>
 <p>High-density attacks allow <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-asym','small forces to defeat larger forces')">small forces to defeat larger forces</a>.</p>
-<p>High-density attacks are <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-compare','quite different')">quite different</a> from conventional attacks.</p>
 <p>High-density <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-survey','vulnerabilities')">vulnerabilities</a> are everywhere.</p>
 <p><a href="javascript:Sidenote.openColumnLoud('#hd','#hd-lately','Lately')">Lately</a>, attackers have been increasingly utilizing high-density attacks since the defenses against conventional DoS attacks are becoming increasingly effective.</p>
 </div>
 
+<div id='spec-legit'>
+<h2>Legitimate requests</h2>
+<p>A request is legitimate if it is <em>not</em> intended to overload the worker.</p>
+<p>A request is illegitimate if it is intended to overload the worker.</p>
+</div>
+
 <div id='spec-proof'>
-<h2>Proof Sketch for Security Guarantee</h2>
+<h2>Proof for Security Guarantee</h2>
 <p>At least <em>Y</em>% of legitimate requests that reach the worker complete. We know this because the Bouncer only bounces a request after the worker has been working on it for at least <em>Z</em> seconds.</p>
-<p>Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman&#8217;s hands. Of course, the requester might have performed quite a bit of work in order to convince the Doorman to accept the request.</p>
+<p>Every legitimate request eventually reaches the worker because the worker will <a href="javascript:Sidenote.openColumnLoud('#spec-proof','#spec-eventually','eventually')">eventually</a> be free or bored at the same time that the legitimate request arrives in the Doorman&#8217;s hands. Of course, the requester might have performed quite a bit of work in order to convince the Doorman to accept the request.</p>
 </div>
 
 <div id='spec-overloads'>
@@ -194,6 +247,11 @@
 <h2>Four different web applications</h2>
 <p>TODO</p>
 <p>PHP, Python, Java, and Ruby.</p>
+</div>
+
+<div id='spec-handback'>
+<h2>Hands it back</h2>
+<p>Recall, if the worker is busy, the <a href="javascript:Sidenote.openColumnLoud('#spec-handback','#spec-bouncer','Bouncer')">Bouncer</a> hands the request back to the Doorman.</p>
 </div>
     </div>
   </body>
