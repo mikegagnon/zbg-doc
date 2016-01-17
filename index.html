@@ -39,7 +39,8 @@
 
 <div id='hd-compare-stealth'>
 <h2>Stealth</h2>
-<p>Low-density attack are less <em>stealthy</em> than high-density attacks, because low-density attacks must submit more requests to have an equivalent effect (since they are <a href="javascript:Sidenote.openColumnLoud('#hd-compare-stealth','#hd-compare-power','less powerful')">less powerful</a>). Thus, low-density attacks produce more observables.</p>
+<p>Low-density attacks are easily detectable since the flood of requests produces many loud observables throughout the network. Monitoring the network &#8212; at any point in the path &#8212; clearly reveals the telltale signs of a DoS flood.</p>
+<p>On the other hand, high-density attacks produce fewer observables. In practice, when a system experiences a high-density attack the operator observes the service outage then must troubleshoot to identify the cause. The effects of high-density attacks are often similar to the effects caused by accidental faults in the system.</p>
 </div>
 
 <div id='hd-asym'>
@@ -68,7 +69,9 @@
 
 <div id='hd-compare-power'>
 <h2>Power</h2>
-<p>Low-density attacks are less <em>powerful</em> than high-density attacks, because low-density attacks consume fewer resources, per request.</p>
+<p>High-density attacks are more <em>powerful</em> than low-density attacks, because high-density attacks create more work, per request.</p>
+<p>For example, the <a href="javascript:Sidenote.openColumnLoud('#hd-compare-power','#hashdos','HashDoS')">HashDoS</a> high-density attack can consume 100% CPU using an attack with an attack rate less than 1 kilobit-per-second.</p>
+<p>In contrast, low-density attacks are less potent and necessitate a large volume of malicious requests in order to succeed.</p>
 </div>
 
 <div id='density'>
@@ -174,8 +177,10 @@
 
 <div id='hd-compare-econ'>
 <h2>Economics</h2>
-<p>Low-density attacks are less <em>economical</em> than high-density attacks, because they are <a href="javascript:Sidenote.openColumnLoud('#hd-compare-econ','#hd-compare-power','less powerful')">less powerful</a>. For a low-density attack to have the same effect as a high-density attack, the low-density attack must submit far more requests. To submit more requests, the attacker will need greater computational resources, such as an army of requesters, viz. a botnet.</p>
-<p>High-density attacks require less computing power.</p>
+<p>High-density attacks are more economical since they are more <a href="javascript:Sidenote.openColumnLoud('#hd-compare-econ','#hd-compare-power','more powerful')">more powerful</a>.</p>
+<p>It is often possible to launch a successful high-density attack using the resources of a single attacker machine.</p>
+<p>In contrast, low-density attacks require more attacker resources since they are less potent.</p>
+<p>To successfully execute a low-density attack against a well-resourced victim, attackers most often require an entire army of attacking machines (i.e. a botnet).</p>
 </div>
 
 <div id='hd-compare'>
@@ -184,11 +189,11 @@
 <p>Thinking in terms of mass and volume leads to a useful metaphor: <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#density','density')">density</a>.</p>
 <p>Conventional flood attacks are low-density attacks, since each malicious request only consumes a small amount of victim resources.</p>
 <p>For a low-density attack to be effective, the attacker must generate a large volume of requests, which can be accomplished using an army of attack computers (such as a botnet).</p>
-<p>Compared to high-density attacks, low-density attacks are:</p>
+<p>Compared to low-density attacks, high-density attacks are:</p>
 <ul>
-<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-power','Less powerful')">Less powerful</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-econ','Less economical')">Less economical</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-stealth','Less stealthy')">Less stealthy</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-power','More powerful')">More powerful</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-econ','More economical')">More economical</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-stealth','More stealthy')">More stealthy</a></li>
 </ul>
 </div>
 
@@ -196,14 +201,14 @@
 <h2>Index</h2>
 <ul>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-terms','A note on terminology')">A note on terminology</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-power','Compared to high-density attacks, low-density attacks are less *powerful*')">Compared to high-density attacks, low-density attacks are less <em>powerful</em></a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-econ','Compared to high-density attacks, low-density attacks are less *economical*')">Compared to high-density attacks, low-density attacks are less <em>economical</em></a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-stealth','Compared to high-density attacks, low-density attacks are less *stealthy*')">Compared to high-density attacks, low-density attacks are less <em>stealthy</em></a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-ex','Example work-based high-density attack')">Example work-based high-density attack</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-eventually','Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman&amp;#8217;s hands')">Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman&#8217;s hands</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#abstract-apps','For our experiments, we installed ZBG over top of four different web applications')">For our experiments, we installed ZBG over top of four different web applications</a>.</li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd','High-density attacks')">High-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-asym','High-density attacks allow small forces to defeat larger forces')">High-density attacks allow small forces to defeat larger forces</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-power','High-density attacks are more *powerful*')">High-density attacks are more <em>powerful</em></a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-econ','High-density attacks are more *economical*')">High-density attacks are more <em>economical</em></a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-stealth','High-density attacks are more *stealthy*')">High-density attacks are more <em>stealthy</em></a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare','High-density attacks compared to conventional low-density attacks')">High-density attacks compared to conventional low-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-survey','High-density vulnerabilities are everywhere')">High-density vulnerabilities are everywhere</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-handback','If the Bouncer hands it back, then the Doorman turns the tables on the requester')">If the Bouncer hands it back, then the Doorman turns the tables on the requester</a></li>
@@ -287,6 +292,12 @@
 <h2>Proof for Security Guarantee</h2>
 <p>At least <em>Y</em>% of legitimate requests that reach the worker complete. We know this because the Bouncer only bounces a request after the worker has been working on it for at least <em>Z</em> seconds.</p>
 <p>Every legitimate request eventually reaches the worker because the worker will <a href="javascript:Sidenote.openColumnLoud('#spec-proof','#spec-eventually','eventually')">eventually</a> be free or bored at the same time that the legitimate request arrives in the Doorman&#8217;s hands. Of course, the requester might have performed quite a bit of work in order to convince the Doorman to accept the request.</p>
+</div>
+
+<div id='hashdos'>
+<h2>HashDoS</h2>
+<p>The HashDoS attack against CRuby 1.8 can keep one i7 core 100% busy with an attack rate of 720 bits/s.</p>
+<p>See Alexander Klink and Julian Walde, &#8220;<a href="https://events.ccc.de/congress/2011/Fahrplan/attachments/2007_28C3_Effective_DoS_on_web_application_platforms.pdf">Efficient Denial of Service Attacks on Web Application Platforms</a>,&#8221; in The 28th Chaos Communication Congress, 2011.</p>
 </div>
 
 <div id='spec-overloads'>

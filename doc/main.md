@@ -14,14 +14,14 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 ## Index
 
 - [A note on terminology](##hd-terms)
-- [Compared to high-density attacks, low-density attacks are less *powerful*](##hd-compare-power)
-- [Compared to high-density attacks, low-density attacks are less *economical*](##hd-compare-econ)
-- [Compared to high-density attacks, low-density attacks are less *stealthy*](##hd-compare-stealth)
 - [Example work-based high-density attack](##hd-ex)
 - [Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman's hands](##spec-eventually)
 - [For our experiments, we installed ZBG over top of four different web applications](##abstract-apps).
 - [High-density attacks](##hd)
 - [High-density attacks allow small forces to defeat larger forces](##hd-asym)
+- [High-density attacks are more *powerful*](##hd-compare-power)
+- [High-density attacks are more *economical*](##hd-compare-econ)
+- [High-density attacks are more *stealthy*](##hd-compare-stealth)
 - [High-density attacks compared to conventional low-density attacks](##hd-compare)
 - [High-density vulnerabilities are everywhere](##hd-survey)
 - [If the Bouncer hands it back, then the Doorman turns the tables on the requester](##spec-handback)
@@ -128,25 +128,44 @@ Conventional flood attacks are low-density attacks, since each malicious request
 
 For a low-density attack to be effective, the attacker must generate a large volume of requests, which can be accomplished using an army of attack computers (such as a botnet).
 
-Compared to high-density attacks, low-density attacks are:
+Compared to low-density attacks, high-density attacks are:
 
-- [Less powerful](##hd-compare-power)
-- [Less economical](##hd-compare-econ)
-- [Less stealthy](##hd-compare-stealth)
+- [More powerful](##hd-compare-power)
+- [More economical](##hd-compare-econ)
+- [More stealthy](##hd-compare-stealth)
 
 ~hd-compare-power
 ## Power
-Low-density attacks are less *powerful* than high-density attacks, because low-density attacks consume fewer resources, per request.
+High-density attacks are more *powerful* than low-density attacks, because high-density attacks create more work, per request.
+
+For example, the [HashDoS](##hashdos) high-density attack can consume 100% CPU using an attack with an attack rate less than 1 kilobit-per-second.
+
+In contrast, low-density attacks are less potent and necessitate a large volume of malicious requests in order to succeed.
+
+~hashdos
+## HashDoS
+
+The HashDoS attack against CRuby 1.8 can keep one i7 core 100% busy with an attack rate of 720 bits/s.
+
+See Alexander Klink and Julian Walde, "[Efficient Denial of Service Attacks on Web Application Platforms](https://events.ccc.de/congress/2011/Fahrplan/attachments/2007_28C3_Effective_DoS_on_web_application_platforms.pdf)," in The 28th Chaos Communication Congress, 2011.
 
 ~hd-compare-stealth
 ## Stealth
-Low-density attack are less *stealthy* than high-density attacks, because low-density attacks must submit more requests to have an equivalent effect (since they are [less powerful](##hd-compare-power)). Thus, low-density attacks produce more observables.
+
+Low-density attacks are easily detectable since the flood of requests produces many loud observables throughout the network. Monitoring the network -- at any point in the path -- clearly reveals the telltale signs of a DoS flood.
+
+On the other hand, high-density attacks produce fewer observables. In practice, when a system experiences a high-density attack the operator observes the service outage then must troubleshoot to identify the cause. The effects of high-density attacks are often similar to the effects caused by accidental faults in the system.
 
 ~hd-compare-econ
 ## Economics
-Low-density attacks are less *economical* than high-density attacks, because they are [less powerful](##hd-compare-power). For a low-density attack to have the same effect as a high-density attack, the low-density attack must submit far more requests. To submit more requests, the attacker will need greater computational resources, such as an army of requesters, viz. a botnet.
 
-High-density attacks require less computing power.
+High-density attacks are more economical since they are more [more powerful](##hd-compare-power).
+
+It is often possible to launch a successful high-density attack using the resources of a single attacker machine.
+
+In contrast, low-density attacks require more attacker resources since they are less potent.
+
+To successfully execute a low-density attack against a well-resourced victim, attackers most often require an entire army of attacking machines (i.e. a botnet).
 
 ~low-density
 ## Flood
