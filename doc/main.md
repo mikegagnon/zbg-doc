@@ -8,6 +8,10 @@ Zen Beer Garden defends against these attacks using a [simple approach](##abstra
 
 We have [experimentally verified](##zbg) that Zen Beer Garden can successfully defend web applications against high-density attacks.
 
+***
+
+[How to read this document](##howto).
+
 [Index](##index).
 
 ~index
@@ -24,9 +28,15 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [High-density attacks are more *stealthy*](##hd-compare-stealth)
 - [High-density attacks compared to conventional low-density attacks](##hd-compare)
 - [High-density vulnerabilities are everywhere](##hd-survey)
+- [How columns work](##columns)
+- [How to enlarge an image](##enlarge)
+- [How to read this document](##howto)
 - [If the Bouncer hands it back, then the Doorman turns the tables on the requester](##spec-handback)
+- [Java infinite-loop high-density vulnerability](##CVE-2010-4476)
 - [Lately attackers have been increasingly utilizing high-density attacks](##hd-lately)
 - [Legitimate requests](##spec-legit)
+- [Note to hackers](##enlarge-req)
+- [PHP infinite-loop high-density vulnerability](##CVE-2010-4645)
 - [The algorithm can be summed up as: "If you're busy and someone hands you a lemon, hand it back and ask for lemonade."](##spec)
 - [The algorithm: Workers and Requests](##spec-wr)
 - [The algorithm: Busy, Bored, and Free](##spec-bbf)
@@ -43,7 +53,41 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [ZBG succeeded for two of the web applications](##abstract-success).
 - [Zen Beer Garden defends against these attacks using a simple approach](##abstract-simple)
 
+~howto
+## How to read this document
 
+This document is presented in [Sidenote](https://github.com/mikegagnon/sidenote) format.
+
+- Click the links you're interested ins
+- [How to enlarge an image](##enlarge)
+- [How columns work](##columns)
+
+~columns
+## How columns work
+
+To increase or decrease the number of columns, click "**more columns**" or "**fewer columns**" in the upper right corner of the page
+
+If a column is moved off screen, and you want to see that column again, just click the "**back**" or "**forward**" blue arrows.
+
+<img src="img/arrows.png">
+
+~enlarge
+## How to enlarge an image
+
+Decrease the number of columns by clicking "**fewer columns**" in the upper right-hand corner. The fewer the columns, the larger the image.
+
+When you're done, click "**more columns**" until you're happy with the number of columns.
+
+Try it out.
+
+<img src="img/deathstar.jpg">
+
+[Note to hackers](##enlarge-req).
+
+~enlarge-req
+## Note to hackers
+
+I would love a Github pull request on [Sidenote](https://github.com/mikegagnon/sidenote)  so that we can enlarge images with an overlay, on click. :-)
 
 ~hd
 ## High-density attacks
@@ -79,9 +123,17 @@ TODO: Link to vulns and attacks used in experiments
 ~ex-infinite
 ## Infinite loops
 
-See for example the PHP and Java floating-point vulnerabilities in our survey (CVE-2010-4645 and CVE-2010- 4476)
+See for example the [PHP](##CVE-2010-4645) and [Java](##CVE-2010-4476) floating-point vulnerabilities.
 
-TODO
+~CVE-2010-4645
+## CVE-2010-4645
+
+"strtod.c, as used in the zend_strtod function in PHP 5.2 before 5.2.17 and 5.3 before 5.3.5, and other products, allows context-dependent attackers to cause a **denial of service (infinite loop)** via a certain floating-point value in scientific notation, which is not properly handled in x87 FPU registers, as demonstrated using 2.2250738585072011e-308." -- [https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645)
+
+~CVE-2010-4476
+## CVE-2010-4476
+
+"The Double.parseDouble method in Java Runtime Environment (JRE) in Oracle Java SE and Java for Business 6 Update 23 and earlier, 5.0 Update 27 and earlier, and 1.4.2_29 and earlier, as used in OpenJDK, Apache, JBossweb, and other products, allows remote attackers to cause a **denial of service via a crafted string that triggers an infinite loop** of estimations during conversion to a double-precision binary floating-point number, as demonstrated using 2.2250738585072012e-308." -- [https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4476](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4476)
 
 ~ex-sql
 ## Exorbitantly expensive database operations
