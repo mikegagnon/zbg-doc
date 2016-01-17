@@ -6,7 +6,7 @@ Today’s applications, frameworks, languages, and servers crumble when subjecte
 
 Zen Beer Garden defends against these attacks using a [simple approach](##abstract-simple).
 
-We have [experimentally verified](##abstract-exp) that Zen Beer Garden can successfully defend web applications against high-density attacks.
+We have [experimentally verified](##zbg) that Zen Beer Garden can successfully defend web applications against high-density attacks.
 
 [Index](##index).
 
@@ -39,7 +39,7 @@ We have [experimentally verified](##abstract-exp) that Zen Beer Garden can succe
 - [The algorithm: Proof for Security Guarantee](##spec-proof)
 - [The most conventional type of denial-of-service (DoS) attack is a flood resource-consumption attack](##low-density)
 - [Thinking in terms of mass and volume leads to a useful metaphor: density](##density)
-- [We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks](##abstract-exp)
+- [We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks](##zbg)
 - [ZBG succeeded for two of the web applications](##abstract-success).
 - [Zen Beer Garden defends against these attacks using a simple approach](##abstract-simple)
 
@@ -285,7 +285,7 @@ Assume the Doorman uses an exponential back off and back on strategy on a per re
 
 **Proof**: The exponential back off will cause the requests to fan out over time.
 
-~abstract-exp
+~zbg
 ## Experimentally verified
 
 To test Zen Beer Garden, we built a software system called *ZBG*.
