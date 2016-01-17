@@ -68,6 +68,10 @@ High-density [vulnerabilities](##hd-survey) are everywhere.
 ## Example work-based high-density attack
 Bob transmits a single HTTP request to Wikipedia, which causes Wikipedia to spin so much CPU there's a blackout for everyone.
 
+The above Wikipedia attack is a hypothetical example.
+
+TODO
+
 ~hd-terms
 ## A note on terminology
 For the sake of brevity, throughout the rest of this document, unless specified otherwise, the term *high-density attack* refers to *work-based high-density cyber attack*.
