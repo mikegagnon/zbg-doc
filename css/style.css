@@ -104,7 +104,7 @@ a[href^="javascript:Sidenote.openColumnQuiet"]{
 }
 a[href^="javascript:Sidenote.openColumnLoud"]{
   color: #44d;
-  text-decoration: underline;
+  text-decoration: none;
 }
 A:hover {text-decoration: underline}
 .headerbox {
