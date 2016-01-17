@@ -76,9 +76,9 @@ TODO
 ## A note on terminology
 For the sake of brevity, throughout the rest of this document, unless specified otherwise, the term *high-density attack* refers to *work-based high-density cyber attack*.
 
-Zen Beer Garden only defends against work-based attacks.
+Zen Beer Garden only defends against *work-based* attacks.
 
-Our experimental implementation, ZBG, only defends against work-based cyber attacks.
+Our experimental implementation, [ZBG](##zbg), only defends against work-based *cyber* attacks.
 
 ~hd-asym
 ## Small forces defeat larger forces
