@@ -31,6 +31,12 @@
 <p>See Akamai’s 2012 <a href="https://www.akamai.com/us/en/about/news/press/2012-press/akamai-first-quarter-2012-state-of-the-internet-report.jsp">The State of the Internet</a> report, Section 1.4 &#8220;Observed Denial-of-Service (DoS) Attack Activity.&#8221;</p>
 </div>
 
+<div id='ex-infinite'>
+<h2>Infinite loops</h2>
+<p>See for example the PHP and Java floating-point vulnerabilities in our survey (CVE-2010-4645 and CVE-2010- 4476)</p>
+<p>TODO</p>
+</div>
+
 <div id='hd-compare-stealth'>
 <h2>Stealth</h2>
 <p>Low-density attack are less <em>stealthy</em> than high-density attacks, because low-density attacks must submit more requests to have an equivalent effect (since they are <a href="javascript:Sidenote.openColumnLoud('#hd-compare-stealth','#hd-compare-power','less powerful')">less powerful</a>). Thus, low-density attacks produce more observables.</p>
@@ -47,9 +53,10 @@
 <p>In a flood attack, the attacker consumes a <em>massive</em> amount of victim resources by flooding the victim with a large <em>volume</em> of resource requests.</p>
 </div>
 
-<div id='hd-survey'>
-<h2>Vulnerabilities</h2>
-<p>TODO</p>
+<div id='ex-sql'>
+<h2>Exorbitantly expensive database operations</h2>
+<p>See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8</p>
+<p>TODO: Full report</p>
 </div>
 
 <div id='spec-zbg'>
@@ -235,10 +242,15 @@
 </div>
 
 <div id='hd-ex'>
-<h2>Example work-based high-density attack</h2>
-<p>Bob transmits a single HTTP request to Wikipedia, which causes Wikipedia to spin so much CPU there&#8217;s a blackout for everyone.</p>
-<p>The above Wikipedia attack is a hypothetical example.</p>
-<p>TODO</p>
+<h2>Example work-based high-density attacks</h2>
+<p><em>Hypothetical example</em>: Bob transmits a single HTTP request to Wikipedia, which causes Wikipedia to spin so much CPU there&#8217;s a blackout for everyone.</p>
+<p><em>Real examples</em>:</p>
+<ul>
+<li>Bob triggers logic errors that lead to <a href="javascript:Sidenote.openColumnLoud('#hd-ex','#ex-infinite','infinite loops')">infinite loops</a> on the server.</li>
+<li>Bob causes an SQL database to execute <a href="javascript:Sidenote.openColumnLoud('#hd-ex','#ex-sql','exorbitantly expensive database operations')">exorbitantly expensive database operations</a>.</li>
+<li>Bob triggers <a href="javascript:Sidenote.openColumnLoud('#hd-ex','#ex-re','excessive regular-expression backtracking')">excessive regular-expression backtracking</a>.</li>
+</ul>
+<p>TODO: Link to vulns and attacks used in experiments</p>
 </div>
 
 <div id='spec-wr'>
@@ -248,10 +260,15 @@
 <p>For example: <em>Nancy can complete 95% of professional requests within 3 hours.</em></p>
 </div>
 
+<div id='hd-survey'>
+<h2>Vulnerabilities</h2>
+<p>TODO</p>
+</div>
+
 <div id='hd'>
 <h2>High-density attacks</h2>
 <p>A high-density attack is when a tiny bomb causes a huge explosion.</p>
-<p>A <em>work-based</em> high-density attack is one where the tiny bomb causes the victim to perform an explosive amount of work. <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-ex','Example')">Example</a>.</p>
+<p>A <em>work-based</em> high-density attack is one where the tiny bomb causes the victim to perform an explosive amount of work. <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-ex','Examples')">Examples</a>.</p>
 <p><a href="javascript:Sidenote.openColumnLoud('#hd','#hd-terms','A note on terminology')">A note on terminology</a>.</p>
 <p><a href="javascript:Sidenote.openColumnLoud('#hd','#hd-compare','Compared to conventional low-density attacks')">Compared to conventional low-density attacks</a>, high density attacks are particularly dangerous because they are particularly powerful, economical, and stealthy.</p>
 <p>With high-density attacks, you don’t need an entire army to attack your enemies. You just need tiny bombs.</p>
@@ -290,6 +307,12 @@
 <div id='spec-handback'>
 <h2>Hands it back</h2>
 <p>Recall, if the worker is busy, the <a href="javascript:Sidenote.openColumnLoud('#spec-handback','#spec-bouncer','Bouncer')">Bouncer</a> hands the request back to the Doorman.</p>
+</div>
+
+<div id='ex-re'>
+<h2>Excessive regular-expression backtracking</h2>
+<p>See for example the Django vulnerability CVE-2009-3695 as well as our regex-overload experiment in Section 6.3.5</p>
+<p>TODO: Full report</p>
 </div>
     </div>
   </body>

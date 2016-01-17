@@ -50,7 +50,7 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 
 A high-density attack is when a tiny bomb causes a huge explosion.
 
-A *work-based* high-density attack is one where the tiny bomb causes the victim to perform an explosive amount of work. [Example](##hd-ex).
+A *work-based* high-density attack is one where the tiny bomb causes the victim to perform an explosive amount of work. [Examples](##hd-ex).
 
 [A note on terminology](##hd-terms).
 
@@ -65,12 +65,37 @@ High-density [vulnerabilities](##hd-survey) are everywhere.
 [Lately](##hd-lately), attackers have been increasingly utilizing high-density attacks since the defenses against conventional DoS attacks are becoming increasingly effective.
 
 ~hd-ex
-## Example work-based high-density attack
-Bob transmits a single HTTP request to Wikipedia, which causes Wikipedia to spin so much CPU there's a blackout for everyone.
+## Example work-based high-density attacks
+*Hypothetical example*: Bob transmits a single HTTP request to Wikipedia, which causes Wikipedia to spin so much CPU there's a blackout for everyone.
 
-The above Wikipedia attack is a hypothetical example.
+*Real examples*:
+
+- Bob triggers logic errors that lead to [infinite loops](##ex-infinite) on the server.
+- Bob causes an SQL database to execute [exorbitantly expensive database operations](##ex-sql).
+- Bob triggers [excessive regular-expression backtracking](##ex-re).
+
+TODO: Link to vulns and attacks used in experiments
+
+~ex-infinite
+## Infinite loops
+
+See for example the PHP and Java floating-point vulnerabilities in our survey (CVE-2010-4645 and CVE-2010- 4476)
 
 TODO
+
+~ex-sql
+## Exorbitantly expensive database operations
+
+See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8
+
+TODO: Full report
+
+~ex-re
+## Excessive regular-expression backtracking
+
+See for example the Django vulnerability CVE-2009-3695 as well as our regex-overload experiment in Section 6.3.5
+
+TODO: Full report
 
 ~hd-terms
 ## A note on terminology
