@@ -2,11 +2,14 @@
 
 This document presents *Zen Beer Garden*, a proven approach for defending systems against work-based [high-density attacks](##hd). 
 
-Today’s applications, frameworks, languages, and servers crumble when subjected to high- density attacks.
+Today’s applications, frameworks, languages, and servers crumble when subjected to high-density attacks.
+
+High-density vulnerabilities are [prevalent](##hd-survey).
 
 Zen Beer Garden defends against these attacks using a [simple approach](##abstract-simple).
 
 We have [experimentally verified](##zbg) that Zen Beer Garden can successfully defend web applications against high-density attacks.
+
 
 ***
 
@@ -319,9 +322,7 @@ For example, the Rebels used high-density attacks to destroy the Death Star, twi
 ~hd-survey
 ## Vulnerabilities
 
-To understand the prevalence and characteristics of high-density vulnerabilities, we [surveyed 16 software software projects](##surv-soft).
-
-[Methodology](##surv-method)
+To understand the prevalence and characteristics of high-density vulnerabilities, we [surveyed 16 software software projects](##surv-soft) by [searching](##surv-method) public databases.
 
 ~surv-soft
 ## Surveyed 16 software software projects
