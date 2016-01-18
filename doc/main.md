@@ -430,13 +430,12 @@ We were able to classify 57% of the vulnerabilities as either implementation err
 ~imp-design-imp
 ## Example implementation errors
 
-- [CVE-2011-1471](##CVE-2011-1471)
+- PHP [CVE-2011-1471](##CVE-2011-1471)
 
 ~imp-design-design
 ## Example design errors
 
- - Poorly designed hash table: PHP [CVE-2011-4885](##CVE-2011-4885)
- - Poorly designed regular expressions: Ruby [CVE-2008-3656](##CVE-2008-3656)
+- PHP [CVE-2011-4885](##CVE-2011-4885)
 
 ~imp-design-note
 ## Note
@@ -445,9 +444,9 @@ For the remaining 43% of vulnerabilities we had insufficient information to dete
 ~surv-manip
 ## Triggered by manipulating the input in common ways
 
-37% of vulnerabilities are triggered with "large" inputs. [Examples](##surv-manip-large)
+37% of vulnerabilities are triggered with "large" inputs. [Examples](##surv-manip-large).
 
-21% of vulnerabilities are triggered with "corner-case" input (not counting large input as a corner case). [Example](##surv-manip-corner).
+21% of vulnerabilities are triggered with "corner-case" input (not counting large input as a corner case). [Examples](##surv-manip-corner).
 
 11% of vulnerabilities are triggered with malformed input -- input that is either syntactically or
 semantically invalid. [Examples](##surv-manip-mal).
@@ -457,17 +456,15 @@ semantically invalid. [Examples](##surv-manip-mal).
 ~surv-manip-mal
 ## Examples of malformed-input vulnerabilities
 
-- [CVE-2011-1471](##CVE-2011-1471)
+- PHP [CVE-2011-1471](##CVE-2011-1471)
 
 ~surv-manip-corner
-## Example of "corner-case" vulnerability
+## Examples of "corner-case" vulnerability
 
-[Issue SOLR-3652](##Issue-SOLR-3652) is triggered by an underflow resulting from a range with a small gap.
+- PHP [CVE-2011-4885](##CVE-2011-4885)
 
 ~surv-manip-large
-## Example of "large" input vulnerabilities
-
-Most of Redmine's vulnerabilities resulted from it's inability to handle large input, such as large repositories ([Defect #633](##Defect-633)) and large files ([Patch #9484](##Patch-9484)).
+## Examples of "large" input vulnerabilities
 
 ~surv-string
 ## The result of errors in string parsing
@@ -480,10 +477,6 @@ We posit that parsing errors are common primarily because parsers are complex an
 
 ~surv-string-ex
 ## Examples of string-parsing vulnerabilities
-
-- Parsing XML: Java [CVE-2009-2625](##CVE-2009-2625)
-- Parsing HTTP requests: Java [CVE-2009-3877](##CVE-2009-3877)
-- Parsing Base36 integers: Django [CVE-2010-4535](##CVE-2010-4535)
 
 ~surv-soft
 ## Survey of 16 software software projects
@@ -744,7 +737,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Summary**: PHP "computes hash values for form parameters without restricting the ability to trigger hash collisions predictably, which allows remote attackers to cause a denial of service (CPU consumption) by sending many crafted parameters."
 
-**Characteristics**: Algorithmic-complexity vulnerability, HashDoS, design error, large input, corner-case input
+**Characteristics**: Algorithmic-complexity vulnerability, HashDoS, design error, corner-case input
 
 [Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4885)
 
