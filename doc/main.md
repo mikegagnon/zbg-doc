@@ -26,11 +26,11 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [High-density attacks allow small forces to defeat larger forces](##hd-asym)
 - [High-density attacks are *economical*](##hd-compare-econ)
 - [High-density attacks are *less recyclable*](##recycle)
-- [High-density attacks are *often sophisticated*](##sophisticated)
 - [High-density attacks are *powerful*](##hd-compare-power)
 - [High-density attacks are *specialized*](##specialized)
 - [High-density attacks are *stealthy*](##hd-compare-stealth)
 - [High-density attacks compared to conventional low-density attacks](##hd-compare)
+- [High-density attacks vary in *sophisticated*](##sophisticated)
 - [High-density vulnerabilities are everywhere](##hd-survey)
 - [How columns work](##columns)
 - [How to enlarge an image](##enlarge)
@@ -188,14 +188,7 @@ Low-density attacks are [conventional floods](##low-density).
 
 Low-density vulnerabilities are [more prevalent](##prevalent) than high-density vulnerabilities.
 
-High-density attacks are:
-
-- [Powerful](##hd-compare-power)
-- [Economical](##hd-compare-econ)
-- [Stealthy](##hd-compare-stealth)
-- [Specialized](##specialized)
-- [Often sophisticated](##sophisticated)
-- [Less recyclable](##recycle)
+High-density attacks are [powerful](##hd-compare-power), [economical](##hd-compare-econ), [stealthy](##hd-compare-stealth), [specialized](##specialized), [less recyclable](##recycle), and they vary in [sophistication](##sophisticated).
 
 ~recycle
 ## Less recyclable
