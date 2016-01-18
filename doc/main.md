@@ -24,11 +24,10 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 
 - [2012 Beer Garden Technical Report](##bg-tech)
 - [A note on terminology](##hd-terms)
-- [Example work-based high-density attack](##hd-ex)
 - [Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman's hands](##spec-eventually)
+- [Example work-based high-density attack](##hd-ex)
 - [For our experiments, we installed ZBG over top of four different web applications](##abstract-apps).
 - [HashDoS](##hashdos)
-- [High-density attacks](##hd)
 - [High-density attacks allow small forces to defeat larger forces](##hd-asym)
 - [High-density attacks are *economical*](##hd-compare-econ)
 - [High-density attacks are *less recyclable*](##recycle)
@@ -37,13 +36,12 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [High-density attacks are *stealthy*](##hd-compare-stealth)
 - [High-density attacks compared to conventional low-density attacks](##hd-compare)
 - [High-density attacks vary in *sophisticated*](##sophisticated)
+- [High-density attacks](##hd)
 - [High-density vulnerabilities are everywhere](##hd-survey)
 - [How columns work](##columns)
-- [How do web applications handle high-density attacks?](##handle)
 - [How do web applications handle high-density attacks? Caching / memoization](##handle-cache)
-- [How do web applications handle high-density attacks? Overloaded server behavior](##handle-overloaded)
 - [How do web applications handle high-density attacks? Over-provisioning resources](##handle-over)
-
+- [How do web applications handle high-density attacks? Overloaded server behavior](##handle-overloaded)
 - [How do web applications handle high-density attacks? Rate limiting](##handle-rate)
 - [How do web applications handle high-density attacks? Switch to lightweight software](##handle-switch)
 - [How do web applications handle high-density attacks? The "bouncer" defense](##handle-bouncer)
@@ -51,16 +49,20 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [How do web applications handle high-density attacks? The "signature" defense](##handle-sig)
 - [How do web applications handle high-density attacks? Timeouts and resource limits](##handle-timeouts)
 - [How do web applications handle high-density attacks? Vulnerability patching](##handle-patch)
+- [How do web applications handle high-density attacks?](##handle)
 - [How to enlarge an image](##enlarge)
 - [How to read this document](##howto)
 - [If the Bouncer hands it back, then the Doorman turns the tables on the requester](##spec-handback)
-- [Issue SOLR-3652](##solr-3652)
+- [Implementation and design errors](##surv-imp-design)
 - [Internet services are generally vulnerable to low-density attacks](##gen-vuln)
+- [Issue SOLR-3652](##solr-3652)
 - [Java infinite-loop high-density vulnerability](##CVE-2010-4476)
 - [Lately attackers have been increasingly utilizing high-density attacks](##hd-lately)
 - [Legitimate requests](##spec-legit)
+- [Low-density attacks are conventional floods](##low-density)
 - [Low-density attacks require little-to-no specialization](##ld-specialize)
 - [Low-density vulnerabilities are more prevalent than high-density vulnerabilities](##prevalent)
+- [Mass, volume, and density metaphor](##density)
 - [Note to hackers](##enlarge-req)
 - [Note: content-delivery networks offer a form of economical over-provisioning](##cdn)
 - [Note: not all network protocols are inherently vulnerable to low-density attacks](##atm)
@@ -79,26 +81,25 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [Survey Tomcat](##tomcat)
 - [Survey WordPress](##wordpress)
 - [The algorithm can be summed up as: "If you're busy and someone hands you a lemon, hand it back and ask for lemonade."](##spec)
-- [The algorithm: Workers and Requests](##spec-wr)
 - [The algorithm: Busy, Bored, and Free](##spec-bbf)
-- [The algorithm: Overloads](##spec-overloads)
 - [The algorithm: Introduction to Zen Beer Garden](##spec-intro)
-- [The algorithm: Theoretical Security Guarantee](##spec-sec)
-- [The algorithm: The Zen Beer Garden Defense](##spec-zbg)
+- [The algorithm: Overloads](##spec-overloads)
+- [The algorithm: Proof for Security Guarantee](##spec-proof)
 - [The algorithm: The Bouncer](##spec-bouncer)
 - [The algorithm: The Doorman](##spec-doorman)
-- [The algorithm: Proof for Security Guarantee](##spec-proof)
-- [This survey is not intended to be exhaustive](##surv-exhaustive) 
+- [The algorithm: The Zen Beer Garden Defense](##spec-zbg)
+- [The algorithm: Theoretical Security Guarantee](##spec-sec)
+- [The algorithm: Workers and Requests](##spec-wr)
+- [The result of errors in string parsing](##surv-string)
+- [This survey is not intended to be exhaustive](##surv-exhaustive)
 - [This survey only includes publicly documented vulnerabilities](##surv-pub)
-- [Low-density attacks are conventional floods](##low-density)
-- [Mass, volume, and density metaphor](##density)
+- [Triggered by manipulating the input in common ways](##surv-manip)
 - [Vulnerability survey methodology](##surv-method)
 - [We also rate our confidence that the issue is an exploitable high-density vulnerability](##surv-confidence)
 - [We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks](##zbg)
 - [We surveyed 16 software software projects](##surv-soft)
 - [ZBG succeeded for two of the web applications](##abstract-success).
 - [Zen Beer Garden defends against these attacks using a simple approach](##abstract-simple)
-
 
 
 ~bib
@@ -409,6 +410,22 @@ For example, the Rebels used high-density attacks to destroy the Death Star, twi
 We [surveyed 16 software software projects](##surv-soft), and found 71 high-density vulnerabilities.
 
 We performed our survey by [searching public databases](##surv-method).
+
+Our survey reveals that high-density vulnerabilities are often:
+
+- [Implementation and design errors](##surv-imp-design)
+- [Triggered by manipulating the input in common ways](##surv-manip)
+- [The result of errors in string parsing](##surv-string)
+
+~surv-imp-design
+## Implementation and design errors
+
+~surv-manip
+## Triggered by manipulating the input in common ways
+
+~surv-string
+## The result of errors in string parsing
+
 
 ~surv-soft
 ## Survey of 16 software software projects

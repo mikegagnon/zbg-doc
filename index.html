@@ -38,9 +38,8 @@
 <h2>CVE-2012-0022</h2>
 </div>
 
-<div id='handle-patch'>
-<h2>Vulnerability patching</h2>
-<p>Perhaps the most common way developers defend against high-density attacks is identifying and patching specific high-density vulnerabilities. This approach only provides a limited defense since prevention and identification is laborious and error prone. Further, patching cannot defend against 0-day attacks (unlike Zen Beer Garden).</p>
+<div id='SA-CONTRIB-2012-126'>
+<h2>SA-CONTRIB-2012-126</h2>
 </div>
 
 <div id='CVE-2010-4645'>
@@ -100,11 +99,10 @@
 </ol>
 </div>
 
-<div id='spec-wr'>
-<h2>Workers and Requests</h2>
-<p>A worker is a thing that attempts to complete requests.</p>
-<p>Every worker can complete a certain percentage of <a href="javascript:Sidenote.openColumnLoud('#spec-wr','#spec-legit','legitimate requests')">legitimate requests</a> (<em>Y</em>%) within a certain amount of time (<em>Z</em> seconds).</p>
-<p>For example: <em>Nancy can complete 95% of professional requests within 3 hours.</em></p>
+<div id='ex-sql'>
+<h2>Exorbitantly expensive database operations</h2>
+<p>See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8</p>
+<p>TODO: Full report</p>
 </div>
 
 <div id='Bug-18489'>
@@ -116,6 +114,10 @@
 <p>Guard every worker with a Bouncer and a Doorman.</p>
 <p>Every request for work must go through the Doorman, then the Bouncer, before finally reaching the worker.</p>
 <p>For example: <em>If a pharmaceutical rep wants Nancy to read an advertisement, the rep must give the ad to the Doorman, who then passes it to the Bouncer, who then might pass it to Nancy.</em></p>
+</div>
+
+<div id='surv-imp-design'>
+<h2>Implementation and design errors</h2>
 </div>
 
 <div id='density'>
@@ -295,6 +297,10 @@
 <p>Caching the results of requests can turn duplicate high-density requests into low-density requests. However clever adversaries can often evade caching by making each high-density request distinct, or by causing the cache to flush. Also, the semantics of applications do not always permit caching.</p>
 </div>
 
+<div id='surv-string'>
+<h2>The result of errors in string parsing</h2>
+</div>
+
 <div id='ex-re'>
 <h2>Excessive regular-expression backtracking</h2>
 <p>See for example the Django vulnerability CVE-2009-3695 as well as our regex-overload experiment in Section 6.3.5</p>
@@ -363,11 +369,10 @@
 <ul>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#bg-tech','2012 Beer Garden Technical Report')">2012 Beer Garden Technical Report</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-terms','A note on terminology')">A note on terminology</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-ex','Example work-based high-density attack')">Example work-based high-density attack</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-eventually','Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman&amp;#8217;s hands')">Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman&#8217;s hands</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-ex','Example work-based high-density attack')">Example work-based high-density attack</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#abstract-apps','For our experiments, we installed ZBG over top of four different web applications')">For our experiments, we installed ZBG over top of four different web applications</a>.</li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hashdos','HashDoS')">HashDoS</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd','High-density attacks')">High-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-asym','High-density attacks allow small forces to defeat larger forces')">High-density attacks allow small forces to defeat larger forces</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-econ','High-density attacks are *economical*')">High-density attacks are <em>economical</em></a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#recycle','High-density attacks are *less recyclable*')">High-density attacks are <em>less recyclable</em></a></li>
@@ -376,33 +381,33 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-stealth','High-density attacks are *stealthy*')">High-density attacks are <em>stealthy</em></a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare','High-density attacks compared to conventional low-density attacks')">High-density attacks compared to conventional low-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#sophisticated','High-density attacks vary in *sophisticated*')">High-density attacks vary in <em>sophisticated</em></a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#hd','High-density attacks')">High-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-survey','High-density vulnerabilities are everywhere')">High-density vulnerabilities are everywhere</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#columns','How columns work')">How columns work</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle','How do web applications handle high-density attacks?')">How do web applications handle high-density attacks?</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-cache','How do web applications handle high-density attacks? Caching / memoization')">How do web applications handle high-density attacks? Caching / memoization</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-over','How do web applications handle high-density attacks? Over-provisioning resources')">How do web applications handle high-density attacks? Over-provisioning resources</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-overloaded','How do web applications handle high-density attacks? Overloaded server behavior')">How do web applications handle high-density attacks? Overloaded server behavior</a></li>
-<li>
-<p><a href="javascript:Sidenote.openColumnLoud('#index','#handle-over','How do web applications handle high-density attacks? Over-provisioning resources')">How do web applications handle high-density attacks? Over-provisioning resources</a></p>
-</li>
-<li>
-<p><a href="javascript:Sidenote.openColumnLoud('#index','#handle-rate','How do web applications handle high-density attacks? Rate limiting')">How do web applications handle high-density attacks? Rate limiting</a></p>
-</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-rate','How do web applications handle high-density attacks? Rate limiting')">How do web applications handle high-density attacks? Rate limiting</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-switch','How do web applications handle high-density attacks? Switch to lightweight software')">How do web applications handle high-density attacks? Switch to lightweight software</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-bouncer','How do web applications handle high-density attacks? The &amp;#8220;bouncer&amp;#8221; defense')">How do web applications handle high-density attacks? The &#8220;bouncer&#8221; defense</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-doorman','How do web applications handle high-density attacks? The &amp;#8220;doorman&amp;#8221; defense')">How do web applications handle high-density attacks? The &#8220;doorman&#8221; defense</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-sig','How do web applications handle high-density attacks? The &amp;#8220;signature&amp;#8221; defense')">How do web applications handle high-density attacks? The &#8220;signature&#8221; defense</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-timeouts','How do web applications handle high-density attacks? Timeouts and resource limits')">How do web applications handle high-density attacks? Timeouts and resource limits</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-patch','How do web applications handle high-density attacks? Vulnerability patching')">How do web applications handle high-density attacks? Vulnerability patching</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle','How do web applications handle high-density attacks?')">How do web applications handle high-density attacks?</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#enlarge','How to enlarge an image')">How to enlarge an image</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#howto','How to read this document')">How to read this document</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-handback','If the Bouncer hands it back, then the Doorman turns the tables on the requester')">If the Bouncer hands it back, then the Doorman turns the tables on the requester</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#solr-3652','Issue SOLR-3652')">Issue SOLR-3652</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-imp-design','Implementation and design errors')">Implementation and design errors</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#gen-vuln','Internet services are generally vulnerable to low-density attacks')">Internet services are generally vulnerable to low-density attacks</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#solr-3652','Issue SOLR-3652')">Issue SOLR-3652</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#CVE-2010-4476','Java infinite-loop high-density vulnerability')">Java infinite-loop high-density vulnerability</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-lately','Lately attackers have been increasingly utilizing high-density attacks')">Lately attackers have been increasingly utilizing high-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-legit','Legitimate requests')">Legitimate requests</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#low-density','Low-density attacks are conventional floods')">Low-density attacks are conventional floods</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#ld-specialize','Low-density attacks require little-to-no specialization')">Low-density attacks require little-to-no specialization</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#prevalent','Low-density vulnerabilities are more prevalent than high-density vulnerabilities')">Low-density vulnerabilities are more prevalent than high-density vulnerabilities</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#density','Mass, volume, and density metaphor')">Mass, volume, and density metaphor</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#enlarge-req','Note to hackers')">Note to hackers</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#cdn','Note: content-delivery networks offer a form of economical over-provisioning')">Note: content-delivery networks offer a form of economical over-provisioning</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#atm','Note: not all network protocols are inherently vulnerable to low-density attacks')">Note: not all network protocols are inherently vulnerable to low-density attacks</a></li>
@@ -421,19 +426,19 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#tomcat','Survey Tomcat')">Survey Tomcat</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#wordpress','Survey WordPress')">Survey WordPress</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec','The algorithm can be summed up as: &amp;#8220;If you&amp;#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&amp;#8221;')">The algorithm can be summed up as: &#8220;If you&#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&#8221;</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-wr','The algorithm: Workers and Requests')">The algorithm: Workers and Requests</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-bbf','The algorithm: Busy, Bored, and Free')">The algorithm: Busy, Bored, and Free</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-overloads','The algorithm: Overloads')">The algorithm: Overloads</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-intro','The algorithm: Introduction to Zen Beer Garden')">The algorithm: Introduction to Zen Beer Garden</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-sec','The algorithm: Theoretical Security Guarantee')">The algorithm: Theoretical Security Guarantee</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-zbg','The algorithm: The Zen Beer Garden Defense')">The algorithm: The Zen Beer Garden Defense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-overloads','The algorithm: Overloads')">The algorithm: Overloads</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-proof','The algorithm: Proof for Security Guarantee')">The algorithm: Proof for Security Guarantee</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-bouncer','The algorithm: The Bouncer')">The algorithm: The Bouncer</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-doorman','The algorithm: The Doorman')">The algorithm: The Doorman</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-proof','The algorithm: Proof for Security Guarantee')">The algorithm: Proof for Security Guarantee</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-exhaustive','This survey is not intended to be exhaustive')">This survey is not intended to be exhaustive</a> </li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-zbg','The algorithm: The Zen Beer Garden Defense')">The algorithm: The Zen Beer Garden Defense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-sec','The algorithm: Theoretical Security Guarantee')">The algorithm: Theoretical Security Guarantee</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-wr','The algorithm: Workers and Requests')">The algorithm: Workers and Requests</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-string','The result of errors in string parsing')">The result of errors in string parsing</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-exhaustive','This survey is not intended to be exhaustive')">This survey is not intended to be exhaustive</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-pub','This survey only includes publicly documented vulnerabilities')">This survey only includes publicly documented vulnerabilities</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#low-density','Low-density attacks are conventional floods')">Low-density attacks are conventional floods</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#index','#density','Mass, volume, and density metaphor')">Mass, volume, and density metaphor</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-manip','Triggered by manipulating the input in common ways')">Triggered by manipulating the input in common ways</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-method','Vulnerability survey methodology')">Vulnerability survey methodology</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-confidence','We also rate our confidence that the issue is an exploitable high-density vulnerability')">We also rate our confidence that the issue is an exploitable high-density vulnerability</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#zbg','We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks')">We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks</a></li>
@@ -659,18 +664,11 @@
 <p>In contrast, low-density attacks are less potent and necessitate a large volume of malicious requests in order to succeed.</p>
 </div>
 
-<div id='java'>
-<h2>Java</h2>
-<ol>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2007-3698','CVE-2007-3698')">CVE-2007-3698</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2008-5349','CVE-2008-5349')">CVE-2008-5349</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-1100','CVE-2009-1100')">CVE-2009-1100</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-1190','CVE-2009-1190')">CVE-2009-1190</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-2625','CVE-2009-2625')">CVE-2009-2625</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-3876','CVE-2009-3876')">CVE-2009-3876</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-3877','CVE-2009-3877')">CVE-2009-3877</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
-</ol>
+<div id='spec-wr'>
+<h2>Workers and Requests</h2>
+<p>A worker is a thing that attempts to complete requests.</p>
+<p>Every worker can complete a certain percentage of <a href="javascript:Sidenote.openColumnLoud('#spec-wr','#spec-legit','legitimate requests')">legitimate requests</a> (<em>Y</em>%) within a certain amount of time (<em>Z</em> seconds).</p>
+<p>For example: <em>Nancy can complete 95% of professional requests within 3 hours.</em></p>
 </div>
 
 <div id='handle-bouncer'>
@@ -803,6 +801,12 @@
 <h2>Vulnerabilities</h2>
 <p>We <a href="javascript:Sidenote.openColumnLoud('#hd-survey','#surv-soft','surveyed 16 software software projects')">surveyed 16 software software projects</a>, and found 71 high-density vulnerabilities.</p>
 <p>We performed our survey by <a href="javascript:Sidenote.openColumnLoud('#hd-survey','#surv-method','searching public databases')">searching public databases</a>.</p>
+<p>Our survey reveals that high-density vulnerabilities are often:</p>
+<ul>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-survey','#surv-imp-design','Implementation and design errors')">Implementation and design errors</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-survey','#surv-manip','Triggered by manipulating the input in common ways')">Triggered by manipulating the input in common ways</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#hd-survey','#surv-string','The result of errors in string parsing')">The result of errors in string parsing</a></li>
+</ul>
 </div>
 
 <div id='ruby'>
@@ -835,10 +839,8 @@
 <h2>Ticket 1265946</h2>
 </div>
 
-<div id='prevalent'>
-<h2>Prevalence</h2>
-<p>Internet services are <a href="javascript:Sidenote.openColumnLoud('#prevalent','#gen-vuln','generally vulnerable')">generally vulnerable</a> to low-density attacks.</p>
-<p>While not ubiquitous like low-density vulnerabilities, high-density vulnerabilities are prevalent. In our <a href="javascript:Sidenote.openColumnLoud('#prevalent','#bg-tech','2012 survey')">2012 survey</a> of 16 web systems we found 71 publicly known high-density vulnerabilities.</p>
+<div id='surv-manip'>
+<h2>Triggered by manipulating the input in common ways</h2>
 </div>
 
 <div id='spec-proof'>
@@ -934,8 +936,9 @@
 <h2>CVE-2012-2336</h2>
 </div>
 
-<div id='SA-CONTRIB-2012-126'>
-<h2>SA-CONTRIB-2012-126</h2>
+<div id='handle-patch'>
+<h2>Vulnerability patching</h2>
+<p>Perhaps the most common way developers defend against high-density attacks is identifying and patching specific high-density vulnerabilities. This approach only provides a limited defense since prevention and identification is laborious and error prone. Further, patching cannot defend against 0-day attacks (unlike Zen Beer Garden).</p>
 </div>
 
 <div id='enlarge'>
@@ -973,12 +976,6 @@
 <div id='surv-exhaustive'>
 <h2>Not intended to be exhaustive</h2>
 <p>We primarily focused our search on the vulnerability history in the years leading up to, and including, 2012. We also specifically searched for work-based high-density vulnerabilities, though we also report other types of high-density vulnerabilities we came across.</p>
-</div>
-
-<div id='ex-sql'>
-<h2>Exorbitantly expensive database operations</h2>
-<p>See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8</p>
-<p>TODO: Full report</p>
 </div>
 
 <div id='zhou'>
@@ -1082,6 +1079,10 @@
 <h2>CVE-2007-5712</h2>
 </div>
 
+<div id='CVE-2010-4535'>
+<h2>CVE-2010-4535</h2>
+</div>
+
 <div id='php'>
 <h2>PHP</h2>
 <ol>
@@ -1121,6 +1122,20 @@
 </ol>
 </div>
 
+<div id='java'>
+<h2>Java</h2>
+<ol>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2007-3698','CVE-2007-3698')">CVE-2007-3698</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2008-5349','CVE-2008-5349')">CVE-2008-5349</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-1100','CVE-2009-1100')">CVE-2009-1100</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-1190','CVE-2009-1190')">CVE-2009-1190</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-2625','CVE-2009-2625')">CVE-2009-2625</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-3876','CVE-2009-3876')">CVE-2009-3876</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-3877','CVE-2009-3877')">CVE-2009-3877</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
+</ol>
+</div>
+
 <div id='CVE-2004-0983'>
 <h2>CVE-2004-0983</h2>
 </div>
@@ -1157,8 +1172,10 @@
 <h2>CVE-2011-1471</h2>
 </div>
 
-<div id='CVE-2010-4535'>
-<h2>CVE-2010-4535</h2>
+<div id='prevalent'>
+<h2>Prevalence</h2>
+<p>Internet services are <a href="javascript:Sidenote.openColumnLoud('#prevalent','#gen-vuln','generally vulnerable')">generally vulnerable</a> to low-density attacks.</p>
+<p>While not ubiquitous like low-density vulnerabilities, high-density vulnerabilities are prevalent. In our <a href="javascript:Sidenote.openColumnLoud('#prevalent','#bg-tech','2012 survey')">2012 survey</a> of 16 web systems we found 71 publicly known high-density vulnerabilities.</p>
 </div>
 
 <div id='CVE-2010-4476'>
