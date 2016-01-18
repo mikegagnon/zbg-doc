@@ -451,7 +451,7 @@ For the remaining 43% of vulnerabilities we had insufficient information to dete
 21% of vulnerabilities are triggered with "corner-case" input (not counting large input as a corner case). [Example](##surv-manip-corner).
 
 11% of vulnerabilities are triggered with malformed input -- input that is either syntactically or
-semantically invalid. [Examples](##surv-manip-mal)
+semantically invalid. [Examples](##surv-manip-mal).
 
 <img src="img/invalid.png">
 
