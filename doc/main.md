@@ -713,29 +713,29 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2011-1471
 ## CVE-2011-1471
 
-**Year**: 
+**Year**: 2011
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "Integer signedness error in zip_stream.c in the Zip extension in PHP before 5.3.6 allows context-dependent attackers to cause a denial of service (CPU consumption) via a malformed archive file that triggers errors in zip_fread function calls." 
 
-**Characteristics**: 
+**Characteristics**: Implementation error, malformed input
 
-[Link]()
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1471)
 
 
 ~CVE-2011-4885
 ## CVE-2011-4885
 
-**Year**: 
+**Year**: 2011
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: PHP "computes hash values for form parameters without restricting the ability to trigger hash collisions predictably, which allows remote attackers to cause a denial of service (CPU consumption) by sending many crafted parameters."
 
-**Characteristics**: 
+**Characteristics**: Algorithmic-complexity vulnerability, HashDoS, design error, large input, corner-case input
 
-[Link]()
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4885)
 
 
 ~CVE-2012-2336
