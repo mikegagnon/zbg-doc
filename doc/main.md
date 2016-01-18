@@ -4,7 +4,7 @@ This document presents *Zen Beer Garden*, a proven approach for defending system
 
 Today’s applications, frameworks, languages, and servers crumble when subjected to high-density attacks.
 
-High-density vulnerabilities are [prevalent](##hd-survey).
+High-density vulnerabilities are prevalent. We found 71 high-density vulnerabilities in [our survey](##hd-survey) of high-density vulnerabilities..
 
 Zen Beer Garden defends against these attacks using a [simple approach](##abstract-simple).
 
@@ -284,7 +284,7 @@ In contrast, Zen Beer Garden evicts over-budget tasks in favor of new requests. 
 - Bob causes an SQL database to execute [exorbitantly expensive database operations](##ex-sql).
 - Bob triggers [excessive regular-expression backtracking](##ex-re).
 
-TODO: Link to vulns and attacks used in experiments
+See also our [survey of 71 high-density vulnerabilities](##hd-survey).
 
 ~ex-infinite
 ## Infinite loops
@@ -340,7 +340,7 @@ We [surveyed 16 software software projects](##surv-soft), and found 71 high-dens
 We performed our survey by [searching public databases](##surv-method).
 
 ~surv-soft
-## Surveyed 16 software software projects
+## Survey of 16 software software projects
 
 - Languages
     - [PHP](##php)
@@ -371,121 +371,380 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~php
 ## PHP
 
-1. Bug #60082
-1. Bug #61240
-1. CVE-2009-4017
-1. CVE-2009-4418
-1. CVE-2010-4645
-1. CVE-2011-1471
-1. CVE-2011-4885
-1. CVE-2012-2336
+1. [Bug #60082](##Bug-60082)
+1. [Bug #61240](##Bug-61240)
+1. [CVE-2009-4017](##CVE-2009-4017)
+1. [CVE-2009-4418](##CVE-2009-4418)
+1. [CVE-2010-4645](##CVE-2010-4645)
+1. [CVE-2011-1471](##CVE-2011-1471)
+1. [CVE-2011-4885](##CVE-2011-4885)
+1. [CVE-2012-2336](##CVE-2012-2336)
 
 ~python
 ## Python
 
-1. CVE-2012-0845
-1. CVE-2012-0876
-1. CVE-2012-1150
-1. CVE-2012-2921
-1. Issue 13891
+1. [CVE-2012-0845](##CVE-2012-0845)
+1. [CVE-2012-0876](##CVE-2012-0876)
+1. [CVE-2012-1150](##CVE-2012-1150)
+1. [CVE-2012-2921](##CVE-2012-2921)
+1. [Issue 13891](##Issue-13891)
 
 ~ruby
 ## Ruby
 
-1. CVE-2004-0983
-1. CVE-2006-5467
-1. CVE-2008-3656
-1. CVE-2008-3790
-1. CVE-2008-4310
-1. CVE-2011-4815
-1. CVE-2011-4838
+1. [CVE-2004-0983](##CVE-2004-0983)
+1. [CVE-2006-5467](##CVE-2006-5467)
+1. [CVE-2008-3656](##CVE-2008-3656)
+1. [CVE-2008-3790](##CVE-2008-3790)
+1. [CVE-2008-4310](##CVE-2008-4310)
+1. [CVE-2011-4815](##CVE-2011-4815)
+1. [CVE-2011-4838](##CVE-2011-4838)
 
 ~java
 ## Java
 
-1. CVE-2007-3698
-1. CVE-2008-5349
-1. CVE-2009-1100
-1. CVE-2009-1190
-1. CVE-2009-2625
-1. CVE-2009-3876
-1. CVE-2009-3877
-1. CVE-2010-4476
+1. [CVE-2007-3698](##CVE-2007-3698)
+1. [CVE-2008-5349](##CVE-2008-5349)
+1. [CVE-2009-1100](##CVE-2009-1100)
+1. [CVE-2009-1190](##CVE-2009-1190)
+1. [CVE-2009-2625](##CVE-2009-2625)
+1. [CVE-2009-3876](##CVE-2009-3876)
+1. [CVE-2009-3877](##CVE-2009-3877)
+1. [CVE-2010-4476](##CVE-2010-4476)
 
 ~django
 ## Django
 
-1. CVE-2007-5712
-1. CVE-2009-3695
-1. CVE-2010-4535
-1. CVE-2011-4137
-1. CVE-2012-3443
-1. CVE-2012-3444
-1. Ticket 7336
-1. Ticket 9479
-1. Ticket 13275
+1. [CVE-2007-5712](##CVE-2007-5712)
+1. [CVE-2009-3695](##CVE-2009-3695)
+1. [CVE-2010-4535](##CVE-2010-4535)
+1. [CVE-2011-4137](##CVE-2011-4137)
+1. [CVE-2012-3443](##CVE-2012-3443)
+1. [CVE-2012-3444](##CVE-2012-3444)
+1. [Ticket 7336](##Ticket-7336)
+1. [Ticket 9479](##Ticket-9479)
+1. [Ticket 13275](##Ticket-13275)
 
 ~drupal
 ## Drupal
 
-1. CVE-2012-1588
-1. Drupd0s.sh exploit
-1. SA-CONTRIB-2012-126
-1. Ticket 1265946
+1. [CVE-2012-1588](##CVE-2012-1588)
+1. [Drupd0s.sh exploit](##Drupd0ssh-exploit)
+1. [SA-CONTRIB-2012-126](##SA-CONTRIB-2012-126)
+1. [Ticket 1265946](##Ticket-1265946)
 
 ~wordpress
 ## Wordpress
 
-1. Ticket #11685
-1. Ticket #19973
+1. [Ticket #11685](##Ticket-11685)
+1. [Ticket #19973](##Ticket-19973)
 
 ~ror
 ## Ruby on Rails
 
-1. Issue #1525
-1. Issue #2619
-1. Issue #3672
+1. [Issue #1525](##Issue-1525)
+1. [Issue #2619](##Issue-2619)
+1. [Issue #3672](##Issue-3672)
 
 ~mediawiki
 ## Mediawiki
 
-1. Bug 7601
-1. Bug 18489
-1. CVE-2006-0322
-1. CVE-2012-4885
+1. [Bug 7601](##Bug-7601)
+1. [Bug 18489](##Bug-18489)
+1. [CVE-2006-0322](##CVE-2006-0322)
+1. [CVE-2012-4885](##CVE-2012-4885)
 
 ~redmine
 ## Redmine
 
-1. Defect #633
-1. Defect #3449
-1. Defect #5942
-1. Defect #6796
-1. Defect #7699
-1. Defect #9796
-1. Defect #11106
-1. Defect #11275
-1. Patch #9484
+1. [Defect #633](##Defect-633)
+1. [Defect #3449](##Defect-3449)
+1. [Defect #5942](##Defect-5942)
+1. [Defect #6796](##Defect-6796)
+1. [Defect #7699](##Defect-7699)
+1. [Defect #9796](##Defect-9796)
+1. [Defect #11106](##Defect-11106)
+1. [Defect #11275](##Defect-11275)
+1. [Patch #9484](##Patch-9484)
 
 ~solr
 ## Solr
 
-1. Issue SOLR-138
-1. Issue SOLR-2631
-1. Issue SOLR-2855
-1. Issue SOLR-3243
-1. Issue SOLR-3606
-1. Issue SOLR-3652
+1. [Issue SOLR-138](##Issue-SOLR-138)
+1. [Issue SOLR-2631](##Issue-SOLR-2631)
+1. [Issue SOLR-2855](##Issue-SOLR-2855)
+1. [Issue SOLR-3243](##Issue-SOLR-3243)
+1. [Issue SOLR-3606](##Issue-SOLR-3606)
+1. [Issue SOLR-3652](##Issue-SOLR-3652)
 
 ~tomcat
 ## Tomcat
 
-1. Bug 44818
-1. CVE-2005-3510
-1. CVE-2011-0534
-1. CVE-2011-2526
-1. CVE-2011-4858
-1. CVE-2012-0022
+1. [Bug 44818](##Bug-44818)
+1. [CVE-2005-3510](##CVE-2005-3510)
+1. [CVE-2011-0534](##CVE-2011-0534)
+1. [CVE-2011-2526](##CVE-2011-2526)
+1. [CVE-2011-4858](##CVE-2011-4858)
+1. [CVE-2012-0022](##CVE-2012-0022)
+
+
+
+
+
+
+~Bug-60082
+## Bug #60082
+
+~Bug-61240
+## Bug #61240
+
+~CVE-2009-4017
+## CVE-2009-4017
+
+~CVE-2009-4418
+## CVE-2009-4418
+
+~CVE-2010-4645
+## CVE-2010-4645
+
+~CVE-2011-1471
+## CVE-2011-1471
+
+~CVE-2011-4885
+## CVE-2011-4885
+
+~CVE-2012-2336
+## CVE-2012-2336
+
+
+
+
+~CVE-2012-0845
+## CVE-2012-0845
+
+~CVE-2012-0876
+## CVE-2012-0876
+
+~CVE-2012-1150
+## CVE-2012-1150
+
+~CVE-2012-2921
+## CVE-2012-2921
+
+~Issue-13891
+## Issue-13891
+
+
+
+
+
+~CVE-2004-0983
+## CVE-2004-0983
+
+~CVE-2006-5467
+## CVE-2006-5467
+
+~CVE-2008-3656
+## CVE-2008-3656
+
+~CVE-2008-3790
+## CVE-2008-3790
+
+~CVE-2008-4310
+## CVE-2008-4310
+
+~CVE-2011-4815
+## CVE-2011-4815
+
+~CVE-2011-4838
+## CVE-2011-4838
+
+
+
+
+~CVE-2007-3698
+## CVE-2007-3698
+
+~CVE-2008-5349
+## CVE-2008-5349
+
+~CVE-2009-1100
+## CVE-2009-1100
+
+~CVE-2009-1190
+## CVE-2009-1190
+
+~CVE-2009-2625
+## CVE-2009-2625
+
+~CVE-2009-3876
+## CVE-2009-3876
+
+~CVE-2009-3877
+## CVE-2009-3877
+
+~CVE-2010-4476
+## CVE-2010-4476
+
+
+
+
+~CVE-2007-5712
+## CVE-2007-5712
+
+~CVE-2009-3695
+## CVE-2009-3695
+
+~CVE-2010-4535
+## CVE-2010-4535
+
+~CVE-2011-4137
+## CVE-2011-4137
+
+~CVE-2012-3443
+## CVE-2012-3443
+
+~CVE-2012-3444
+## CVE-2012-3444
+
+~Ticket-7336
+## Ticket 7336
+
+~Ticket-9479
+## Ticket 9479
+
+~Ticket-13275
+## Ticket 13275
+
+
+
+
+~CVE-2012-1588
+##CVE-2012-1588
+
+~Drupd0ssh-exploit
+## Drupd0s.sh exploit
+
+~SA-CONTRIB-2012-126
+## SA-CONTRIB-2012-126
+
+~Ticket-1265946
+## Ticket 1265946
+
+
+
+
+~Ticket-11685
+## Ticket #11685
+
+~Ticket-19973
+## Ticket #19973
+
+
+
+
+~Issue-1525
+## Issue #1525
+
+~Issue-2619
+## Issue #2619
+
+~Issue-3672
+## Issue #3672
+
+
+
+
+
+~Bug-7601
+## Bug 7601
+
+~Bug-18489
+## Bug 18489
+
+~CVE-2006-0322
+## CVE-2006-0322
+
+~CVE-2012-4885
+## CVE-2012-4885
+
+
+
+
+~Defect-633
+## Defect #633
+
+~Defect-3449
+## Defect #3449
+
+~Defect-5942
+## Defect #5942
+
+~Defect-6796
+## Defect #6796
+
+~Defect-7699
+## Defect #7699
+
+~Defect-9796
+## Defect #9796
+
+~Defect-11106
+## Defect #11106
+
+~Defect-11275
+## Defect #11275
+
+~Patch-9484
+## Patch #9484
+
+
+
+
+~Issue-SOLR-138
+## Issue SOLR-138
+
+~Issue-SOLR-2631
+## Issue SOLR-2631
+
+~Issue-SOLR-2855
+## Issue SOLR-2855
+
+~Issue-SOLR-3243
+## Issue SOLR-3243
+
+~Issue-SOLR-3606
+## Issue SOLR-3606
+
+~Issue-SOLR-3652
+## Issue SOLR-3652
+
+
+
+
+~Bug-44818
+## Bug 44818
+
+~CVE-2005-3510
+## CVE-2005-3510
+
+~CVE-2011-0534
+## CVE-2011-0534
+
+~CVE-2011-2526
+## CVE-2011-2526
+
+~CVE-2011-4858
+## CVE-2011-4858
+
+~CVE-2012-0022
+## CVE-2012-0022
+
+
+
+
+
+
 
 ~surv-method
 ## Methodology

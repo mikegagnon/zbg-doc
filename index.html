@@ -26,9 +26,32 @@
       <div class='column' id="column0"></div>
     </div>
     <div class="content-storage">
+<div id='Issue-3672'>
+<h2>Issue #3672</h2>
+</div>
+
+<div id='Issue-SOLR-3606'>
+<h2>Issue SOLR-3606</h2>
+</div>
+
+<div id='CVE-2012-0022'>
+<h2>CVE-2012-0022</h2>
+</div>
+
+<div id='handle-patch'>
+<h2>Vulnerability patching</h2>
+<p>Perhaps the most common way developers defend against high-density attacks is identifying and patching specific high-density vulnerabilities. This approach only provides a limited defense since prevention and identification is laborious and error prone. Further, patching cannot defend against 0-day attacks (unlike Zen Beer Garden).</p>
+</div>
+
 <div id='CVE-2010-4645'>
 <h2>CVE-2010-4645</h2>
-<p>&#8220;strtod.c, as used in the zend_strtod function in PHP 5.2 before 5.2.17 and 5.3 before 5.3.5, and other products, allows context-dependent attackers to cause a <strong>denial of service (infinite loop)</strong> via a certain floating-point value in scientific notation, which is not properly handled in x87 FPU registers, as demonstrated using 2.2250738585072011e-308.&#8221; &#8212; <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645</a></p>
+</div>
+
+<div id='abstract-success'>
+<h2>ZBG succeeded for two of the web applications</h2>
+<p>TODO</p>
+<p>ZBG successfully protected the PHP and Python applications because they have low memory footprints and fast restart times.</p>
+<p>A different software approach would be necessary for Zen Beer Garden to successfully defend web applications with high memory footprints or slow restart times.</p>
 </div>
 
 <div id='cdn'>
@@ -50,22 +73,30 @@
 <p>We also rate our <a href="javascript:Sidenote.openColumnLoud('#surv-method','#surv-confidence','confidence')">confidence</a> that the issue is an exploitable high-density vulnerability. </p>
 </div>
 
+<div id='Ticket-7336'>
+<h2>Ticket 7336</h2>
+</div>
+
 <div id='mediawiki'>
 <h2>Mediawiki</h2>
 <ol>
-<li>Bug 7601</li>
-<li>Bug 18489</li>
-<li>CVE-2006-0322</li>
-<li>CVE-2012-4885</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#mediawiki','#Bug-7601','Bug 7601')">Bug 7601</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#mediawiki','#Bug-18489','Bug 18489')">Bug 18489</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#mediawiki','#CVE-2006-0322','CVE-2006-0322')">CVE-2006-0322</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#mediawiki','#CVE-2012-4885','CVE-2012-4885')">CVE-2012-4885</a></li>
 </ol>
+</div>
+
+<div id='Ticket-11685'>
+<h2>Ticket #11685</h2>
 </div>
 
 <div id='ror'>
 <h2>Ruby on Rails</h2>
 <ol>
-<li>Issue #1525</li>
-<li>Issue #2619</li>
-<li>Issue #3672</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#ror','#Issue-1525','Issue #1525')">Issue #1525</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#ror','#Issue-2619','Issue #2619')">Issue #2619</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#ror','#Issue-3672','Issue #3672')">Issue #3672</a></li>
 </ol>
 </div>
 
@@ -74,6 +105,10 @@
 <p>A worker is a thing that attempts to complete requests.</p>
 <p>Every worker can complete a certain percentage of <a href="javascript:Sidenote.openColumnLoud('#spec-wr','#spec-legit','legitimate requests')">legitimate requests</a> (<em>Y</em>%) within a certain amount of time (<em>Z</em> seconds).</p>
 <p>For example: <em>Nancy can complete 95% of professional requests within 3 hours.</em></p>
+</div>
+
+<div id='Bug-18489'>
+<h2>Bug 18489</h2>
 </div>
 
 <div id='spec-zbg'>
@@ -88,6 +123,10 @@
 <p>In the density metaphor, mass measures the victim&#8217;s resource consumption.</p>
 <p>Volume measures the number of malicious resource requests.</p>
 <p>Density measures the amount of victim resources consumed per malicious request (which, equivalently, is the ratio of mass to volume).</p>
+</div>
+
+<div id='Bug-60082'>
+<h2>Bug #60082</h2>
 </div>
 
 <div id='akamai'>
@@ -105,7 +144,7 @@
 <p>&#8220;If you&#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&#8221;</p>
 <p>This document presents <em>Zen Beer Garden</em>, a proven approach for defending systems against work-based <a href="javascript:Sidenote.openColumnLoud('#main','#hd','high-density attacks')">high-density attacks</a>. </p>
 <p>Today’s applications, frameworks, languages, and servers crumble when subjected to high-density attacks.</p>
-<p>High-density vulnerabilities are <a href="javascript:Sidenote.openColumnLoud('#main','#hd-survey','prevalent')">prevalent</a>.</p>
+<p>High-density vulnerabilities are prevalent. We found 71 high-density vulnerabilities in <a href="javascript:Sidenote.openColumnLoud('#main','#hd-survey','our survey')">our survey</a> of high-density vulnerabilities..</p>
 <p>Zen Beer Garden defends against these attacks using a <a href="javascript:Sidenote.openColumnLoud('#main','#abstract-simple','simple approach')">simple approach</a>.</p>
 <p>We have <a href="javascript:Sidenote.openColumnLoud('#main','#zbg','experimentally verified')">experimentally verified</a> that Zen Beer Garden can successfully defend web applications against high-density attacks.</p>
 <hr>
@@ -156,11 +195,11 @@
 <div id='python'>
 <h2>Python</h2>
 <ol>
-<li>CVE-2012-0845</li>
-<li>CVE-2012-0876</li>
-<li>CVE-2012-1150</li>
-<li>CVE-2012-2921</li>
-<li>Issue 13891</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#python','#CVE-2012-0845','CVE-2012-0845')">CVE-2012-0845</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#python','#CVE-2012-0876','CVE-2012-0876')">CVE-2012-0876</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#python','#CVE-2012-1150','CVE-2012-1150')">CVE-2012-1150</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#python','#CVE-2012-2921','CVE-2012-2921')">CVE-2012-2921</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#python','#Issue-13891','Issue 13891')">Issue 13891</a></li>
 </ol>
 </div>
 
@@ -169,21 +208,18 @@
 <p><a href="https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon">Low Orbit Ion Cannon</a>, Wikipedia.</p>
 </div>
 
-<div id='bib'>
-<h2>Bibligraphy</h2>
-<ol>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-cycles','Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks')">Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4645','CVE-2010-4645')">CVE-2010-4645</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-net','DDoS Defense by Offense')">DDoS Defense by Offense</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#klink','Efficient Denial of Service Attacks on Web Application Platforms')">Efficient Denial of Service Attacks on Web Application Platforms</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#cannon','Low Orbit Ion Cannon')">Low Orbit Ion Cannon</a> </li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#nist','National Vulnerability Database')">National Vulnerability Database</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#zhou','Selective early request termination for busy internet services')">Selective early request termination for busy internet services</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#akamai','The State of the Internet')">The State of the Internet</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-human','WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks')">WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#bib-handle-switch','Web content adaptation to improve server overload behavior')">Web content adaptation to improve server overload behavior</a></li>
-</ol>
+<div id='CVE-2008-3656'>
+<h2>CVE-2008-3656</h2>
+</div>
+
+<div id='howto'>
+<h2>How to read this document</h2>
+<p>This document is presented in <a href="https://github.com/mikegagnon/sidenote">Sidenote</a> format.</p>
+<ul>
+<li>Click the links you&#8217;re interested ins</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#howto','#enlarge','How to enlarge an image')">How to enlarge an image</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#howto','#columns','How columns work')">How columns work</a></li>
+</ul>
 </div>
 
 <div id='hd-ex'>
@@ -195,13 +231,23 @@
 <li>Bob causes an SQL database to execute <a href="javascript:Sidenote.openColumnLoud('#hd-ex','#ex-sql','exorbitantly expensive database operations')">exorbitantly expensive database operations</a>.</li>
 <li>Bob triggers <a href="javascript:Sidenote.openColumnLoud('#hd-ex','#ex-re','excessive regular-expression backtracking')">excessive regular-expression backtracking</a>.</li>
 </ul>
-<p>TODO: Link to vulns and attacks used in experiments</p>
+<p>See also our <a href="javascript:Sidenote.openColumnLoud('#hd-ex','#hd-survey','survey of 71 high-density vulnerabilities')">survey of 71 high-density vulnerabilities</a>.</p>
 </div>
 
-<div id='ex-sql'>
-<h2>Exorbitantly expensive database operations</h2>
-<p>See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8</p>
-<p>TODO: Full report</p>
+<div id='Drupd0ssh-exploit'>
+<h2>Drupd0s.sh exploit</h2>
+</div>
+
+<div id='Issue-SOLR-3652'>
+<h2>Issue SOLR-3652</h2>
+</div>
+
+<div id='Issue-SOLR-2855'>
+<h2>Issue SOLR-2855</h2>
+</div>
+
+<div id='CVE-2009-2625'>
+<h2>CVE-2009-2625</h2>
 </div>
 
 <div id='surv-confidence'>
@@ -209,11 +255,26 @@
 <p>Sometimes, it is not possible to be sure that the issue is exploitable from the published problem description alone.</p>
 </div>
 
-<div id='handle-timeouts'>
-<h2>Timeouts and resource limits</h2>
-<p>Web servers typically enforce timeouts and resource limits on requests. These limits are liberal so that occasional, legitimate high-density requests can be serviced.</p>
-<p>Zen Beer Garden differs by only using liberal limits during normal operation, and switching to tight limits during overloads. Some servers, such as Jetty, also tighten up their timeouts in response to overloads.</p>
-<p>TODO: Link Jetty</p>
+<div id='CVE-2011-0534'>
+<h2>CVE-2011-0534</h2>
+</div>
+
+<div id='CVE-2011-4838'>
+<h2>CVE-2011-4838</h2>
+</div>
+
+<div id='CVE-2011-2526'>
+<h2>CVE-2011-2526</h2>
+</div>
+
+<div id='hashdos'>
+<h2>HashDoS</h2>
+<p>The HashDoS attack against CRuby 1.8 can keep one i7 core 100% busy with an attack rate of 720 bits/s.</p>
+<p>See <a href="javascript:Sidenote.openColumnLoud('#hashdos','#klink','Efficient Denial of Service Attacks on Web Application Platforms')">Efficient Denial of Service Attacks on Web Application Platforms</a>.</p>
+</div>
+
+<div id='CVE-2011-4137'>
+<h2>CVE-2011-4137</h2>
 </div>
 
 <div id='handle-switch'>
@@ -234,9 +295,10 @@
 <p>Caching the results of requests can turn duplicate high-density requests into low-density requests. However clever adversaries can often evade caching by making each high-density request distinct, or by causing the cache to flush. Also, the semantics of applications do not always permit caching.</p>
 </div>
 
-<div id='nist'>
-<h2>NIST</h2>
-<p>National Institute of Standards and Technology. <a href="http://nvd.nist.gov/">National Vulnerability Database</a>.</p>
+<div id='ex-re'>
+<h2>Excessive regular-expression backtracking</h2>
+<p>See for example the Django vulnerability CVE-2009-3695 as well as our regex-overload experiment in Section 6.3.5</p>
+<p>TODO: Full report</p>
 </div>
 
 <div id='hd-lately'>
@@ -255,6 +317,10 @@
 <p>On the other hand, high-density attacks produce fewer observables. In practice, when a system experiences a high-density attack the operator observes the service outage then must troubleshoot to identify the cause. The effects of high-density attacks are often similar to the effects caused by accidental faults in the system.</p>
 </div>
 
+<div id='Issue-13891'>
+<h2>Issue-13891</h2>
+</div>
+
 <div id='surv-note-na'>
 <h2>Note: we couldn&#8217;t find vulnerabilities for some systems</h2>
 <p>While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel, none of them seemed intentionally exploitable by a remote attacker. We therefore don’t include any OSQA, Nginx, Jetty, or Mongrel vulnerabilities in this survey.</p>
@@ -266,10 +332,25 @@
 <p><a href="javascript:Sidenote.openColumnLoud('#handle-doorman','#zbg','ZBG')">ZBG</a> uses the Doorman defense to rate limit attackers according to their CPU resources.</p>
 </div>
 
-<div id='low-density'>
-<h2>Flood</h2>
-<p>In a flood attack, the attacker consumes a <em>massive</em> amount of victim resources by flooding the victim with a large <em>volume</em> of resource requests.</p>
-<p>For a low-density attack to be effective, the attacker must generate a large volume of requests, which can be accomplished using an army of attack computers (such as a botnet).</p>
+<div id='Defect-9796'>
+<h2>Defect #9796</h2>
+</div>
+
+<div id='Issue-SOLR-138'>
+<h2>Issue SOLR-138</h2>
+</div>
+
+<div id='simple-hd'>
+<h2>Example of an unsophisticated high-density attack</h2>
+<p>Consider a web application that uses an inefficient Ω(N<sup>2</sup>) algorithm to process web requests, where N represents the number of HTTP headers. An unsophisticated high-density attack could simply send a request with 10<sup>4</sup> headers, leading to 10<sup>8</sup> computations.</p>
+</div>
+
+<div id='CVE-2012-3444'>
+<h2>CVE-2012-3444</h2>
+</div>
+
+<div id='CVE-2012-3443'>
+<h2>CVE-2012-3443</h2>
 </div>
 
 <div id='complex-hd'>
@@ -362,11 +443,8 @@
 </ul>
 </div>
 
-<div id='abstract-success'>
-<h2>ZBG succeeded for two of the web applications</h2>
-<p>TODO</p>
-<p>ZBG successfully protected the PHP and Python applications because they have low memory footprints and fast restart times.</p>
-<p>A different software approach would be necessary for Zen Beer Garden to successfully defend web applications with high memory footprints or slow restart times.</p>
+<div id='CVE-2008-3790'>
+<h2>CVE-2008-3790</h2>
 </div>
 
 <div id='abstract-simple'>
@@ -375,6 +453,10 @@
 <p>The Doorman charges admission fees, which limits the amount of requests the worker receives.</p>
 <p>The Bouncer kicks out requests that overload the worker.</p>
 <p>The <a href="javascript:Sidenote.openColumnLoud('#abstract-simple','#spec','algorithm')">algorithm</a> can be summed up as: &#8220;If you&#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&#8221;</p>
+</div>
+
+<div id='Defect-6796'>
+<h2>Defect #6796</h2>
 </div>
 
 <div id='enlarge-req'>
@@ -392,7 +474,7 @@
 </div>
 
 <div id='surv-soft'>
-<h2>Surveyed 16 software software projects</h2>
+<h2>Survey of 16 software software projects</h2>
 <ul>
 <li>Languages<ul>
 <li><a href="javascript:Sidenote.openColumnLoud('#surv-soft','#php','PHP')">PHP</a></li>
@@ -449,30 +531,57 @@
 <p>To successfully execute a low-density attack against a well-resourced victim, attackers most often require an entire army of attacking machines (i.e. a botnet).</p>
 </div>
 
+<div id='Bug-7601'>
+<h2>Bug 7601</h2>
+</div>
+
+<div id='CVE-2008-5349'>
+<h2>CVE-2008-5349</h2>
+</div>
+
 <div id='ld-specialize'>
 <h2>Little-to-no specialization</h2>
 <p>All that is needed is the ability to generate a large volume of traffic towards the victim. There exist a variety of generic, off-the-shelf tools that can be used to launch effective low-density attacks. For example, the <a href="javascript:Sidenote.openColumnLoud('#ld-specialize','#cannon','Low Orbit Ion Cannon')">Low Orbit Ion Cannon</a> can target any web service on the Internet.</p>
 </div>
 
+<div id='handle-timeouts'>
+<h2>Timeouts and resource limits</h2>
+<p>Web servers typically enforce timeouts and resource limits on requests. These limits are liberal so that occasional, legitimate high-density requests can be serviced.</p>
+<p>Zen Beer Garden differs by only using liberal limits during normal operation, and switching to tight limits during overloads. Some servers, such as Jetty, also tighten up their timeouts in response to overloads.</p>
+<p>TODO: Link Jetty</p>
+</div>
+
 <div id='solr'>
 <h2>Solr</h2>
 <ol>
-<li>Issue SOLR-138</li>
-<li>Issue SOLR-2631</li>
-<li>Issue SOLR-2855</li>
-<li>Issue SOLR-3243</li>
-<li>Issue SOLR-3606</li>
-<li>Issue SOLR-3652</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#solr','#Issue-SOLR-138','Issue SOLR-138')">Issue SOLR-138</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#solr','#Issue-SOLR-2631','Issue SOLR-2631')">Issue SOLR-2631</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#solr','#Issue-SOLR-2855','Issue SOLR-2855')">Issue SOLR-2855</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#solr','#Issue-SOLR-3243','Issue SOLR-3243')">Issue SOLR-3243</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#solr','#Issue-SOLR-3606','Issue SOLR-3606')">Issue SOLR-3606</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#solr','#Issue-SOLR-3652','Issue SOLR-3652')">Issue SOLR-3652</a></li>
 </ol>
+</div>
+
+<div id='CVE-2011-4815'>
+<h2>CVE-2011-4815</h2>
+</div>
+
+<div id='Defect-11275'>
+<h2>Defect #11275</h2>
+</div>
+
+<div id='Defect-3449'>
+<h2>Defect #3449</h2>
 </div>
 
 <div id='drupal'>
 <h2>Drupal</h2>
 <ol>
-<li>CVE-2012-1588</li>
-<li>Drupd0s.sh exploit</li>
-<li>SA-CONTRIB-2012-126</li>
-<li>Ticket 1265946</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#drupal','#CVE-2012-1588','CVE-2012-1588')">CVE-2012-1588</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#drupal','#Drupd0ssh-exploit','Drupd0s.sh exploit')">Drupd0s.sh exploit</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#drupal','#SA-CONTRIB-2012-126','SA-CONTRIB-2012-126')">SA-CONTRIB-2012-126</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#drupal','#Ticket-1265946','Ticket 1265946')">Ticket 1265946</a></li>
 </ol>
 </div>
 
@@ -490,15 +599,37 @@
 <p>Workers should protect themselves from overloads by employing the Zen Beer Garden defense.</p>
 </div>
 
-<div id='ex-re'>
-<h2>Excessive regular-expression backtracking</h2>
-<p>See for example the Django vulnerability CVE-2009-3695 as well as our regex-overload experiment in Section 6.3.5</p>
-<p>TODO: Full report</p>
+<div id='Bug-44818'>
+<h2>Bug 44818</h2>
 </div>
 
-<div id='CVE-2010-4476'>
-<h2>CVE-2010-4476</h2>
-<p>&#8220;The Double.parseDouble method in Java Runtime Environment (JRE) in Oracle Java SE and Java for Business 6 Update 23 and earlier, 5.0 Update 27 and earlier, and 1.4.2_29 and earlier, as used in OpenJDK, Apache, JBossweb, and other products, allows remote attackers to cause a <strong>denial of service via a crafted string that triggers an infinite loop</strong> of estimations during conversion to a double-precision binary floating-point number, as demonstrated using 2.2250738585072012e-308.&#8221; &#8212; <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4476">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4476</a></p>
+<div id='nist'>
+<h2>NIST</h2>
+<p>National Institute of Standards and Technology. <a href="http://nvd.nist.gov/">National Vulnerability Database</a>.</p>
+</div>
+
+<div id='Ticket-19973'>
+<h2>Ticket #19973</h2>
+</div>
+
+<div id='Issue-SOLR-2631'>
+<h2>Issue SOLR-2631</h2>
+</div>
+
+<div id='CVE-2009-1190'>
+<h2>CVE-2009-1190</h2>
+</div>
+
+<div id='Ticket-9479'>
+<h2>Ticket 9479</h2>
+</div>
+
+<div id='Issue-2619'>
+<h2>Issue #2619</h2>
+</div>
+
+<div id='CVE-2012-2921'>
+<h2>CVE-2012-2921</h2>
 </div>
 
 <div id='hd-asym'>
@@ -513,6 +644,14 @@
 <p>In contrast, Zen Beer Garden evicts over-budget tasks in favor of new requests. Since over-budget tasks tend to be malicious, Zen Beer Garden&#8217;s behavior favors legitimate requests.</p>
 </div>
 
+<div id='CVE-2006-0322'>
+<h2>CVE-2006-0322</h2>
+</div>
+
+<div id='CVE-2009-1100'>
+<h2>CVE-2009-1100</h2>
+</div>
+
 <div id='hd-compare-power'>
 <h2>Power</h2>
 <p>High-density attacks are more <em>powerful</em> than low-density attacks, because high-density attacks create more work, per request.</p>
@@ -523,14 +662,14 @@
 <div id='java'>
 <h2>Java</h2>
 <ol>
-<li>CVE-2007-3698</li>
-<li>CVE-2008-5349</li>
-<li>CVE-2009-1100</li>
-<li>CVE-2009-1190</li>
-<li>CVE-2009-2625</li>
-<li>CVE-2009-3876</li>
-<li>CVE-2009-3877</li>
-<li>CVE-2010-4476</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2007-3698','CVE-2007-3698')">CVE-2007-3698</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2008-5349','CVE-2008-5349')">CVE-2008-5349</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-1100','CVE-2009-1100')">CVE-2009-1100</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-1190','CVE-2009-1190')">CVE-2009-1190</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-2625','CVE-2009-2625')">CVE-2009-2625</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-3876','CVE-2009-3876')">CVE-2009-3876</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-3877','CVE-2009-3877')">CVE-2009-3877</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
 </ol>
 </div>
 
@@ -551,26 +690,42 @@
 <p>As the worker becomes less busy, the Doorman decreases the amounts of work he asks of requesters.</p>
 </div>
 
+<div id='CVE-2012-1150'>
+<h2>CVE-2012-1150</h2>
+</div>
+
+<div id='Issue-1525'>
+<h2>Issue #1525</h2>
+</div>
+
+<div id='CVE-2009-3876'>
+<h2>CVE-2009-3876</h2>
+</div>
+
+<div id='Issue-SOLR-3243'>
+<h2>Issue SOLR-3243</h2>
+</div>
+
 <div id='redmine'>
 <h2>Redmine</h2>
 <ol>
-<li>Defect #633</li>
-<li>Defect #3449</li>
-<li>Defect #5942</li>
-<li>Defect #6796</li>
-<li>Defect #7699</li>
-<li>Defect #9796</li>
-<li>Defect #11106</li>
-<li>Defect #11275</li>
-<li>Patch #9484</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#redmine','#Defect-633','Defect #633')">Defect #633</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#redmine','#Defect-3449','Defect #3449')">Defect #3449</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#redmine','#Defect-5942','Defect #5942')">Defect #5942</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#redmine','#Defect-6796','Defect #6796')">Defect #6796</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#redmine','#Defect-7699','Defect #7699')">Defect #7699</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#redmine','#Defect-9796','Defect #9796')">Defect #9796</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#redmine','#Defect-11106','Defect #11106')">Defect #11106</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#redmine','#Defect-11275','Defect #11275')">Defect #11275</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#redmine','#Patch-9484','Patch #9484')">Patch #9484</a></li>
 </ol>
 </div>
 
 <div id='wordpress'>
 <h2>Wordpress</h2>
 <ol>
-<li>Ticket #11685</li>
-<li>Ticket #19973</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#wordpress','#Ticket-11685','Ticket #11685')">Ticket #11685</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#wordpress','#Ticket-19973','Ticket #19973')">Ticket #19973</a></li>
 </ol>
 </div>
 
@@ -584,6 +739,10 @@
 <div id='handle-rate'>
 <h2>Rate limiting</h2>
 <p>A common approach to DoS defense is rate limiting. If you can sufficiently limit the attacker&#8217;s rate of admission, it is possible to defend against high-density attacks. However, most off-the-shelf admission controls have a limited ability to rate limit attackers. For example, a rate limiter based on IP addresses won&#8217;t work against an adversary with many IP addresses. Similarly, a rate limiter based on username won&#8217;t work against logged out users.</p>
+</div>
+
+<div id='CVE-2012-1588'>
+<h2>CVE-2012-1588</h2>
 </div>
 
 <div id='handle-human'>
@@ -608,6 +767,10 @@
 <div id='handle-net'>
 <h2>DDoS Defense by Offense</h2>
 <p>Michael Walfish, Mythili Vutukuru, Hari Balakrishnan, David Karger, and Scott Shenker, &#8220;<a href="http://nms.csail.mit.edu/papers/speakup-tocs10.pdf">DDoS Defense by Offense</a>,&#8221; in ACM SIGCOMM, 2006</p>
+</div>
+
+<div id='Bug-61240'>
+<h2>Bug #61240</h2>
 </div>
 
 <div id='handle-over'>
@@ -645,13 +808,13 @@
 <div id='ruby'>
 <h2>Ruby</h2>
 <ol>
-<li>CVE-2004-0983</li>
-<li>CVE-2006-5467</li>
-<li>CVE-2008-3656</li>
-<li>CVE-2008-3790</li>
-<li>CVE-2008-4310</li>
-<li>CVE-2011-4815</li>
-<li>CVE-2011-4838</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#ruby','#CVE-2004-0983','CVE-2004-0983')">CVE-2004-0983</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#ruby','#CVE-2006-5467','CVE-2006-5467')">CVE-2006-5467</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#ruby','#CVE-2008-3656','CVE-2008-3656')">CVE-2008-3656</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#ruby','#CVE-2008-3790','CVE-2008-3790')">CVE-2008-3790</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#ruby','#CVE-2008-4310','CVE-2008-4310')">CVE-2008-4310</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#ruby','#CVE-2011-4815','CVE-2011-4815')">CVE-2011-4815</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#ruby','#CVE-2011-4838','CVE-2011-4838')">CVE-2011-4838</a></li>
 </ol>
 </div>
 
@@ -668,16 +831,14 @@
 <p>How do web applications <a href="javascript:Sidenote.openColumnLoud('#hd','#handle','handle')">handle</a> high-density attacks?</p>
 </div>
 
-<div id='tomcat'>
-<h2>Tomcat</h2>
-<ol>
-<li>Bug 44818</li>
-<li>CVE-2005-3510</li>
-<li>CVE-2011-0534</li>
-<li>CVE-2011-2526</li>
-<li>CVE-2011-4858</li>
-<li>CVE-2012-0022</li>
-</ol>
+<div id='Ticket-1265946'>
+<h2>Ticket 1265946</h2>
+</div>
+
+<div id='prevalent'>
+<h2>Prevalence</h2>
+<p>Internet services are <a href="javascript:Sidenote.openColumnLoud('#prevalent','#gen-vuln','generally vulnerable')">generally vulnerable</a> to low-density attacks.</p>
+<p>While not ubiquitous like low-density vulnerabilities, high-density vulnerabilities are prevalent. In our <a href="javascript:Sidenote.openColumnLoud('#prevalent','#bg-tech','2012 survey')">2012 survey</a> of 16 web systems we found 71 publicly known high-density vulnerabilities.</p>
 </div>
 
 <div id='spec-proof'>
@@ -686,15 +847,57 @@
 <p>Every legitimate request eventually reaches the worker because the worker will <a href="javascript:Sidenote.openColumnLoud('#spec-proof','#spec-eventually','eventually')">eventually</a> be free or bored at the same time that the legitimate request arrives in the Doorman&#8217;s hands. Of course, the requester might have performed quite a bit of work in order to convince the Doorman to accept the request.</p>
 </div>
 
+<div id='Patch-9484'>
+<h2>Patch #9484</h2>
+</div>
+
+<div id='CVE-2012-4885'>
+<h2>CVE-2012-4885</h2>
+</div>
+
+<div id='Defect-11106'>
+<h2>Defect #11106</h2>
+</div>
+
+<div id='CVE-2012-0845'>
+<h2>CVE-2012-0845</h2>
+</div>
+
 <div id='specialized'>
 <h2>Specialization</h2>
 <p>Low-density attacks require <a href="javascript:Sidenote.openColumnLoud('#specialized','#ld-specialize','little-to-no specialization')">little-to-no specialization</a> in order to attack a particular target.</p>
 <p>High-density attacks on the other hand require attacks tailored to application-specific vulnerabilities. For example, an attack might need to exploit an underflow to cause excessive looping, as exemplified by <a href="javascript:Sidenote.openColumnLoud('#specialized','#solr-3652','Issue SOLR-3652')">Issue SOLR-3652</a>.</p>
 </div>
 
+<div id='CVE-2008-4310'>
+<h2>CVE-2008-4310</h2>
+</div>
+
 <div id='klink'>
 <h2>Efficient Denial of Service Attacks on Web Application Platforms</h2>
 <p>Alexander Klink and Julian Walde, &#8220;<a href="https://events.ccc.de/congress/2011/Fahrplan/attachments/2007_28C3_Effective_DoS_on_web_application_platforms.pdf">Efficient Denial of Service Attacks on Web Application Platforms</a>,&#8221; in The 28th Chaos Communication Congress, 2011.</p>
+</div>
+
+<div id='spec-legit'>
+<h2>Legitimate requests</h2>
+<p>A request is legitimate if it is <em>not</em> intended to overload the worker.</p>
+<p>A request is malicious if it is intended to overload the worker.</p>
+</div>
+
+<div id='Defect-633'>
+<h2>Defect #633</h2>
+</div>
+
+<div id='CVE-2007-3698'>
+<h2>CVE-2007-3698</h2>
+</div>
+
+<div id='CVE-2009-3877'>
+<h2>CVE-2009-3877</h2>
+</div>
+
+<div id='CVE-2011-4885'>
+<h2>CVE-2011-4885</h2>
 </div>
 
 <div id='handle-sig'>
@@ -703,14 +906,19 @@
 <p><a href="javascript:Sidenote.openColumnLoud('#handle-sig','#zbg','ZBG')">ZBG</a> uses a form of signature-based detection by dynamically learning signatures, in real time while an attack happens.</p>
 </div>
 
+<div id='CVE-2009-4418'>
+<h2>CVE-2009-4418</h2>
+</div>
+
 <div id='bg-tech'>
 <h2>2012 Beer Garden Technical Report</h2>
 <p>TODO</p>
 </div>
 
-<div id='simple-hd'>
-<h2>Example of an unsophisticated high-density attack</h2>
-<p>Consider a web application that uses an inefficient Ω(N<sup>2</sup>) algorithm to process web requests, where N represents the number of HTTP headers. An unsophisticated high-density attack could simply send a request with 10<sup>4</sup> headers, leading to 10<sup>8</sup> computations.</p>
+<div id='low-density'>
+<h2>Flood</h2>
+<p>In a flood attack, the attacker consumes a <em>massive</em> amount of victim resources by flooding the victim with a large <em>volume</em> of resource requests.</p>
+<p>For a low-density attack to be effective, the attacker must generate a large volume of requests, which can be accomplished using an army of attack computers (such as a botnet).</p>
 </div>
 
 <div id='surv-pub'>
@@ -718,9 +926,16 @@
 <p>We have found that applications often have trivial, undocumented vulnerabilities. For example, if an application request accepts N items, then a request containing an extreme number of items might consume significant resources. We discovered and exploited several such trivial attacks in our experiments. We also note that the accuracy of our survey is limited; it is not always possible to know from descriptions and discussions alone if a bug is truly an exploitable vulnerability.</p>
 </div>
 
-<div id='handle-patch'>
-<h2>Vulnerability patching</h2>
-<p>Perhaps the most common way developers defend against high-density attacks is identifying and patching specific high-density vulnerabilities. This approach only provides a limited defense since prevention and identification is laborious and error prone. Further, patching cannot defend against 0-day attacks (unlike Zen Beer Garden).</p>
+<div id='Defect-5942'>
+<h2>Defect #5942</h2>
+</div>
+
+<div id='CVE-2012-2336'>
+<h2>CVE-2012-2336</h2>
+</div>
+
+<div id='SA-CONTRIB-2012-126'>
+<h2>SA-CONTRIB-2012-126</h2>
 </div>
 
 <div id='enlarge'>
@@ -732,10 +947,20 @@
 <p><a href="javascript:Sidenote.openColumnLoud('#enlarge','#enlarge-req','Note to hackers')">Note to hackers</a>.</p>
 </div>
 
-<div id='hashdos'>
-<h2>HashDoS</h2>
-<p>The HashDoS attack against CRuby 1.8 can keep one i7 core 100% busy with an attack rate of 720 bits/s.</p>
-<p>See <a href="javascript:Sidenote.openColumnLoud('#hashdos','#klink','Efficient Denial of Service Attacks on Web Application Platforms')">Efficient Denial of Service Attacks on Web Application Platforms</a>.</p>
+<div id='Defect-7699'>
+<h2>Defect #7699</h2>
+</div>
+
+<div id='CVE-2005-3510'>
+<h2>CVE-2005-3510</h2>
+</div>
+
+<div id='CVE-2009-4017'>
+<h2>CVE-2009-4017</h2>
+</div>
+
+<div id='CVE-2012-0876'>
+<h2>CVE-2012-0876</h2>
 </div>
 
 <div id='spec-intro'>
@@ -750,32 +975,53 @@
 <p>We primarily focused our search on the vulnerability history in the years leading up to, and including, 2012. We also specifically searched for work-based high-density vulnerabilities, though we also report other types of high-density vulnerabilities we came across.</p>
 </div>
 
+<div id='ex-sql'>
+<h2>Exorbitantly expensive database operations</h2>
+<p>See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8</p>
+<p>TODO: Full report</p>
+</div>
+
 <div id='zhou'>
 <h2>Selective early request termination for busy internet services</h2>
 <p>Jingyu Zhou and Tao Yang, &#8220;<a href="http://www2006.wwwconference.org/programme/files/pdf/2011.pdf">Selective early request termination for busy internet services</a>,&#8221; in WWW &#8216;06 Proceedings of the 15th international conference on World Wide Web, vol. 2006.</p>
 </div>
 
-<div id='howto'>
-<h2>How to read this document</h2>
-<p>This document is presented in <a href="https://github.com/mikegagnon/sidenote">Sidenote</a> format.</p>
-<ul>
-<li>Click the links you&#8217;re interested ins</li>
-<li><a href="javascript:Sidenote.openColumnLoud('#howto','#enlarge','How to enlarge an image')">How to enlarge an image</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#howto','#columns','How columns work')">How columns work</a></li>
-</ul>
+<div id='bib'>
+<h2>Bibligraphy</h2>
+<ol>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-cycles','Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks')">Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4645','CVE-2010-4645')">CVE-2010-4645</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-net','DDoS Defense by Offense')">DDoS Defense by Offense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#klink','Efficient Denial of Service Attacks on Web Application Platforms')">Efficient Denial of Service Attacks on Web Application Platforms</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#cannon','Low Orbit Ion Cannon')">Low Orbit Ion Cannon</a> </li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#nist','National Vulnerability Database')">National Vulnerability Database</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#zhou','Selective early request termination for busy internet services')">Selective early request termination for busy internet services</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#akamai','The State of the Internet')">The State of the Internet</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-human','WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks')">WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#bib-handle-switch','Web content adaptation to improve server overload behavior')">Web content adaptation to improve server overload behavior</a></li>
+</ol>
+</div>
+
+<div id='CVE-2011-4858'>
+<h2>CVE-2011-4858</h2>
+</div>
+
+<div id='CVE-2007-5712'>
+<h2>CVE-2007-5712</h2>
 </div>
 
 <div id='php'>
 <h2>PHP</h2>
 <ol>
-<li>Bug #60082</li>
-<li>Bug #61240</li>
-<li>CVE-2009-4017</li>
-<li>CVE-2009-4418</li>
-<li>CVE-2010-4645</li>
-<li>CVE-2011-1471</li>
-<li>CVE-2011-4885</li>
-<li>CVE-2012-2336</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#php','#Bug-60082','Bug #60082')">Bug #60082</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#php','#Bug-61240','Bug #61240')">Bug #61240</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#php','#CVE-2009-4017','CVE-2009-4017')">CVE-2009-4017</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#php','#CVE-2009-4418','CVE-2009-4418')">CVE-2009-4418</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#php','#CVE-2010-4645','CVE-2010-4645')">CVE-2010-4645</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#php','#CVE-2011-1471','CVE-2011-1471')">CVE-2011-1471</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#php','#CVE-2011-4885','CVE-2011-4885')">CVE-2011-4885</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#php','#CVE-2012-2336','CVE-2012-2336')">CVE-2012-2336</a></li>
 </ol>
 </div>
 
@@ -788,16 +1034,28 @@
 <p><strong>Proof</strong>: The exponential back off will cause the requests to fan out over time.</p>
 </div>
 
-<div id='prevalent'>
-<h2>Prevalence</h2>
-<p>Internet services are <a href="javascript:Sidenote.openColumnLoud('#prevalent','#gen-vuln','generally vulnerable')">generally vulnerable</a> to low-density attacks.</p>
-<p>While not ubiquitous like low-density vulnerabilities, high-density vulnerabilities are prevalent. In our <a href="javascript:Sidenote.openColumnLoud('#prevalent','#bg-tech','2012 survey')">2012 survey</a> of 16 web systems we found 71 publicly known high-density vulnerabilities.</p>
+<div id='CVE-2006-5467'>
+<h2>CVE-2006-5467</h2>
 </div>
 
-<div id='spec-legit'>
-<h2>Legitimate requests</h2>
-<p>A request is legitimate if it is <em>not</em> intended to overload the worker.</p>
-<p>A request is malicious if it is intended to overload the worker.</p>
+<div id='tomcat'>
+<h2>Tomcat</h2>
+<ol>
+<li><a href="javascript:Sidenote.openColumnLoud('#tomcat','#Bug-44818','Bug 44818')">Bug 44818</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#tomcat','#CVE-2005-3510','CVE-2005-3510')">CVE-2005-3510</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#tomcat','#CVE-2011-0534','CVE-2011-0534')">CVE-2011-0534</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#tomcat','#CVE-2011-2526','CVE-2011-2526')">CVE-2011-2526</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#tomcat','#CVE-2011-4858','CVE-2011-4858')">CVE-2011-4858</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#tomcat','#CVE-2012-0022','CVE-2012-0022')">CVE-2012-0022</a></li>
+</ol>
+</div>
+
+<div id='CVE-2004-0983'>
+<h2>CVE-2004-0983</h2>
+</div>
+
+<div id='CVE-2009-3695'>
+<h2>CVE-2009-3695</h2>
 </div>
 
 <div id='bib-handle-switch'>
@@ -808,16 +1066,32 @@
 <div id='django'>
 <h2>Django</h2>
 <ol>
-<li>CVE-2007-5712</li>
-<li>CVE-2009-3695</li>
-<li>CVE-2010-4535</li>
-<li>CVE-2011-4137</li>
-<li>CVE-2012-3443</li>
-<li>CVE-2012-3444</li>
-<li>Ticket 7336</li>
-<li>Ticket 9479</li>
-<li>Ticket 13275</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#django','#CVE-2007-5712','CVE-2007-5712')">CVE-2007-5712</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#django','#CVE-2009-3695','CVE-2009-3695')">CVE-2009-3695</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#django','#CVE-2010-4535','CVE-2010-4535')">CVE-2010-4535</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#django','#CVE-2011-4137','CVE-2011-4137')">CVE-2011-4137</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#django','#CVE-2012-3443','CVE-2012-3443')">CVE-2012-3443</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#django','#CVE-2012-3444','CVE-2012-3444')">CVE-2012-3444</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#django','#Ticket-7336','Ticket 7336')">Ticket 7336</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#django','#Ticket-9479','Ticket 9479')">Ticket 9479</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#django','#Ticket-13275','Ticket 13275')">Ticket 13275</a></li>
 </ol>
+</div>
+
+<div id='Ticket-13275'>
+<h2>Ticket 13275</h2>
+</div>
+
+<div id='CVE-2011-1471'>
+<h2>CVE-2011-1471</h2>
+</div>
+
+<div id='CVE-2010-4535'>
+<h2>CVE-2010-4535</h2>
+</div>
+
+<div id='CVE-2010-4476'>
+<h2>CVE-2010-4476</h2>
 </div>
 
 <div id='spec-handback'>
