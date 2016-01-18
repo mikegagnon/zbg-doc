@@ -422,11 +422,22 @@ Our survey reveals that high-density vulnerabilities are often:
 
 We were able to classify 57% of the vulnerabilities as either implementation errors (24%) or design errors (33%). [Note](##imp-design-note). 
 
-Example implementation errors include integer errors (e.g. PHP [CVE-2011-1471](##CVE-2011-1471)) and floating-point errors (e.g. Java [CVE-2010-4476](##CVE-2010-4476)).
-
-Example design errors including poorly designed hash tables (e.g. PHP [CVE-2011-4885](##CVE-2011-4885)) and regular expressions (Ruby [CVE-2008-3656](##CVE-2008-3656)).
+- [Example implementation errors](##imp-design-imp)
+- [Example design errors](##imp-design-design)
 
 <img src="img/imp-design.png">
+
+~imp-design-imp
+## Example implementation errors
+
+- Integer error: PHP [CVE-2011-1471](##CVE-2011-1471)
+- Floating-point error: Java [CVE-2010-4476](##CVE-2010-4476)
+
+~imp-design-design
+## Example design errors
+
+ - Poorly designed hash table: PHP [CVE-2011-4885](##CVE-2011-4885)
+ - Poorly designed regular expressions: Ruby [CVE-2008-3656](##CVE-2008-3656)
 
 ~imp-design-note
 ## Note
@@ -434,6 +445,32 @@ For the remaining 43% of vulnerabilities we had insufficient information to dete
 
 ~surv-manip
 ## Triggered by manipulating the input in common ways
+
+37% of vulnerabilities are triggered with "large" inputs. [Examples](##surv-manip-large)
+
+21% of vulnerabilities are triggered with "corner-case" input (not counting large input as a corner case). [Example](##surv-manip-corner).
+
+11% of vulnerabilities are triggered with malformed input -- input that is either syntactically or
+semantically invalid. [Examples](##surv-manip-mal)
+
+<img src="img/invalid.png">
+
+~surv-manip-mal
+## Examples of malformed-input vulnerabilities
+
+- Malformed XML: Java [CVE-2009-2625](##CVE-2009-2625)
+- HTTP requests: Ruby [CVE-2006-5467](##CVE-2006-5467)
+- Markdown: Django [Ticket 7336](##Ticket-7336) can trigger excessive resource consumption
+
+~surv-manip-corner
+## Example of "corner-case" vulnerability
+
+[Issue SOLR-3652](##Issue-SOLR-3652) is triggered by an underflow resulting from a range with a small gap.
+
+~surv-manip-large
+## Example of "large" input vulnerabilities
+
+Most of Redmine's vulnerabilities resulted from it's inability to handle large input, such as large repositories ([Defect #633](##Defect-633)) and large files ([Patch #9484](##Patch-9484)).
 
 ~surv-string
 ## The result of errors in string parsing

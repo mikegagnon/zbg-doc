@@ -53,9 +53,12 @@
 <p>A different software approach would be necessary for Zen Beer Garden to successfully defend web applications with high memory footprints or slow restart times.</p>
 </div>
 
-<div id='cdn'>
-<h2>Note</h2>
-<p>Content-delivery networks offer a form of economical over-provisioning.</p>
+<div id='imp-design-imp'>
+<h2>Example implementation errors</h2>
+<ul>
+<li>Integer error: PHP <a href="javascript:Sidenote.openColumnLoud('#imp-design-imp','#CVE-2011-1471','CVE-2011-1471')">CVE-2011-1471</a></li>
+<li>Floating-point error: Java <a href="javascript:Sidenote.openColumnLoud('#imp-design-imp','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
+</ul>
 </div>
 
 <div id='handle-cycles'>
@@ -120,8 +123,10 @@
 <div id='surv-imp-design'>
 <h2>Implementation and design errors</h2>
 <p>We were able to classify 57% of the vulnerabilities as either implementation errors (24%) or design errors (33%). <a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#imp-design-note','Note')">Note</a>. </p>
-<p>Example implementation errors include integer errors (e.g. PHP <a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#CVE-2011-1471','CVE-2011-1471')">CVE-2011-1471</a>) and floating-point errors (e.g. Java <a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a>).</p>
-<p>Example design errors including poorly designed hash tables (e.g. PHP <a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#CVE-2011-4885','CVE-2011-4885')">CVE-2011-4885</a>) and regular expressions (Ruby <a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#CVE-2008-3656','CVE-2008-3656')">CVE-2008-3656</a>).</p>
+<ul>
+<li><a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#imp-design-imp','Example implementation errors')">Example implementation errors</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#imp-design-design','Example design errors')">Example design errors</a></li>
+</ul>
 <p><img src="img/imp-design.png"></p>
 </div>
 
@@ -165,20 +170,9 @@
 <p><a href="javascript:Sidenote.openColumnLoud('#main','#bib','Bibliography')">Bibliography</a></p>
 </div>
 
-<div id='spec'>
-<h2>Algorithm</h2>
-<p>This section provides the algorithmic specification for Zen Beer Garden, it&#8217;s security guarantee, and a simple proof.</p>
-<ul>
-<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-wr','Workers and Requests')">Workers and Requests</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-bbf','Busy, Bored, and Free')">Busy, Bored, and Free</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-overloads','Overloads')">Overloads</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-intro','Introduction to Zen Beer Garden')">Introduction to Zen Beer Garden</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-sec','Theoretical Security Guarantee')">Theoretical Security Guarantee</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-zbg','The Zen Beer Garden Defense')">The Zen Beer Garden Defense</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-bouncer','The Bouncer')">The Bouncer</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-doorman','The Doorman')">The Doorman</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-proof','Proof for Security Guarantee')">Proof for Security Guarantee</a></li>
-</ul>
+<div id='cdn'>
+<h2>Note</h2>
+<p>Content-delivery networks offer a form of economical over-provisioning.</p>
 </div>
 
 <div id='columns'>
@@ -220,8 +214,13 @@
 <p><a href="https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon">Low Orbit Ion Cannon</a>, Wikipedia.</p>
 </div>
 
-<div id='CVE-2008-3656'>
-<h2>CVE-2008-3656</h2>
+<div id='surv-manip-mal'>
+<h2>Examples of malformed-input vulnerabilities</h2>
+<ul>
+<li>Malformed XML: Java <a href="javascript:Sidenote.openColumnLoud('#surv-manip-mal','#CVE-2009-2625','CVE-2009-2625')">CVE-2009-2625</a></li>
+<li>HTTP requests: Ruby <a href="javascript:Sidenote.openColumnLoud('#surv-manip-mal','#CVE-2006-5467','CVE-2006-5467')">CVE-2006-5467</a></li>
+<li>Markdown: Django <a href="javascript:Sidenote.openColumnLoud('#surv-manip-mal','#Ticket-7336','Ticket 7336')">Ticket 7336</a> can trigger excessive resource consumption</li>
+</ul>
 </div>
 
 <div id='howto'>
@@ -540,6 +539,11 @@
 <p>Our experiments show that Zen Beer Garden works.</p>
 </div>
 
+<div id='surv-manip-large'>
+<h2>Example of &#8220;large&#8221; input vulnerabilities</h2>
+<p>Most of Redmine&#8217;s vulnerabilities resulted from it&#8217;s inability to handle large input, such as large repositories (<a href="javascript:Sidenote.openColumnLoud('#surv-manip-large','#Defect-633','Defect #633')">Defect #633</a>) and large files (<a href="javascript:Sidenote.openColumnLoud('#surv-manip-large','#Patch-9484','Patch #9484')">Patch #9484</a>).</p>
+</div>
+
 <div id='hd-compare-econ'>
 <h2>Economics</h2>
 <p>High-density attacks are more economical since they are more <a href="javascript:Sidenote.openColumnLoud('#hd-compare-econ','#hd-compare-power','more powerful')">more powerful</a>.</p>
@@ -766,6 +770,14 @@
 <h2>CVE-2012-1588</h2>
 </div>
 
+<div id='imp-design-design'>
+<h2>Example design errors</h2>
+<ul>
+<li>Poorly designed hash table: PHP <a href="javascript:Sidenote.openColumnLoud('#imp-design-design','#CVE-2011-4885','CVE-2011-4885')">CVE-2011-4885</a></li>
+<li>Poorly designed regular expressions: Ruby <a href="javascript:Sidenote.openColumnLoud('#imp-design-design','#CVE-2008-3656','CVE-2008-3656')">CVE-2008-3656</a></li>
+</ul>
+</div>
+
 <div id='handle-human'>
 <h2>WebSOS</h2>
 <p>Angelos Stavrou et al., &#8220;<a href="https://www.cs.columbia.edu/~angelos/Papers/2005/websos-jcn.pdf">WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks</a>,&#8221; in Computer Networks: The International Journal of Computer and Telecommunications Networking - Web security, vol. 48, 2005.</p>
@@ -864,12 +876,33 @@
 
 <div id='surv-manip'>
 <h2>Triggered by manipulating the input in common ways</h2>
+<p>37% of vulnerabilities are triggered with &#8220;large&#8221; inputs. <a href="javascript:Sidenote.openColumnLoud('#surv-manip','#surv-manip-large','Examples')">Examples</a></p>
+<p>21% of vulnerabilities are triggered with &#8220;corner-case&#8221; input (not counting large input as a corner case). <a href="javascript:Sidenote.openColumnLoud('#surv-manip','#surv-manip-corner','Example')">Example</a>.</p>
+<p>11% of vulnerabilities are triggered with malformed input &#8212; input that is either syntactically or
+semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip','#surv-manip-mal','Examples')">Examples</a></p>
+<p><img src="img/invalid.png"></p>
 </div>
 
 <div id='spec-proof'>
 <h2>Proof for Security Guarantee</h2>
 <p>At least <em>Y</em>% of legitimate requests that reach the worker complete. We know this because the Bouncer only bounces a request after the worker has been working on it for at least <em>Z</em> seconds.</p>
 <p>Every legitimate request eventually reaches the worker because the worker will <a href="javascript:Sidenote.openColumnLoud('#spec-proof','#spec-eventually','eventually')">eventually</a> be free or bored at the same time that the legitimate request arrives in the Doorman&#8217;s hands. Of course, the requester might have performed quite a bit of work in order to convince the Doorman to accept the request.</p>
+</div>
+
+<div id='spec'>
+<h2>Algorithm</h2>
+<p>This section provides the algorithmic specification for Zen Beer Garden, it&#8217;s security guarantee, and a simple proof.</p>
+<ul>
+<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-wr','Workers and Requests')">Workers and Requests</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-bbf','Busy, Bored, and Free')">Busy, Bored, and Free</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-overloads','Overloads')">Overloads</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-intro','Introduction to Zen Beer Garden')">Introduction to Zen Beer Garden</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-sec','Theoretical Security Guarantee')">Theoretical Security Guarantee</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-zbg','The Zen Beer Garden Defense')">The Zen Beer Garden Defense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-bouncer','The Bouncer')">The Bouncer</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-doorman','The Doorman')">The Doorman</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#spec','#spec-proof','Proof for Security Guarantee')">Proof for Security Guarantee</a></li>
+</ul>
 </div>
 
 <div id='Patch-9484'>
@@ -951,6 +984,11 @@
 <p>We have found that applications often have trivial, undocumented vulnerabilities. For example, if an application request accepts N items, then a request containing an extreme number of items might consume significant resources. We discovered and exploited several such trivial attacks in our experiments. We also note that the accuracy of our survey is limited; it is not always possible to know from descriptions and discussions alone if a bug is truly an exploitable vulnerability.</p>
 </div>
 
+<div id='surv-manip-corner'>
+<h2>Example of &#8220;corner-case&#8221; vulnerability</h2>
+<p><a href="javascript:Sidenote.openColumnLoud('#surv-manip-corner','#Issue-SOLR-3652','Issue SOLR-3652')">Issue SOLR-3652</a> is triggered by an underflow resulting from a range with a small gap.</p>
+</div>
+
 <div id='Defect-5942'>
 <h2>Defect #5942</h2>
 </div>
@@ -999,6 +1037,10 @@
 <div id='surv-exhaustive'>
 <h2>Not intended to be exhaustive</h2>
 <p>We primarily focused our search on the vulnerability history in the years leading up to, and including, 2012. We also specifically searched for work-based high-density vulnerabilities, though we also report other types of high-density vulnerabilities we came across.</p>
+</div>
+
+<div id='CVE-2008-3656'>
+<h2>CVE-2008-3656</h2>
 </div>
 
 <div id='zhou'>
