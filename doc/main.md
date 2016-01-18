@@ -637,51 +637,189 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 1. [CVE-2012-0022](##CVE-2012-0022)
 
 
+~conf
+## Note on confidence
 
-
-
+Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Bug-60082
 ## Bug #60082
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 ~Bug-61240
 ## Bug #61240
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
 
 ~CVE-2009-4017
 ## CVE-2009-4017
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2009-4418
 ## CVE-2009-4418
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2010-4645
 ## CVE-2010-4645
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2011-1471
 ## CVE-2011-1471
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2011-4885
 ## CVE-2011-4885
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2012-2336
 ## CVE-2012-2336
 
+**Year**: 2012
 
+**Confidence**: high[*](##conf)
 
+**Summary**: PHP-CGI "does not properly handle query strings that lack an = (equals sign) character, which allows remote attackers to cause a denial of service (resource consumption) by placing command-line options in the query string"
+
+**Characteristics**: Implementation error, malformed input, query-string parsing
+
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2336)
 
 ~CVE-2012-0845
 ## CVE-2012-0845
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2012-0876
 ## CVE-2012-0876
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2012-1150
 ## CVE-2012-1150
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2012-2921
 ## CVE-2012-2921
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Issue-13891
 ## Issue-13891
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
@@ -690,23 +828,100 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~CVE-2004-0983
 ## CVE-2004-0983
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2006-5467
 ## CVE-2006-5467
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2008-3656
 ## CVE-2008-3656
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2008-3790
 ## CVE-2008-3790
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2008-4310
 ## CVE-2008-4310
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2011-4815
 ## CVE-2011-4815
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2011-4838
 ## CVE-2011-4838
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
@@ -714,26 +929,114 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~CVE-2007-3698
 ## CVE-2007-3698
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2008-5349
 ## CVE-2008-5349
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2009-1100
 ## CVE-2009-1100
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2009-1190
 ## CVE-2009-1190
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2009-2625
 ## CVE-2009-2625
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2009-3876
 ## CVE-2009-3876
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2009-3877
 ## CVE-2009-3877
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2010-4476
 ## CVE-2010-4476
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
@@ -741,29 +1044,128 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~CVE-2007-5712
 ## CVE-2007-5712
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2009-3695
 ## CVE-2009-3695
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2010-4535
 ## CVE-2010-4535
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2011-4137
 ## CVE-2011-4137
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2012-3443
 ## CVE-2012-3443
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2012-3444
 ## CVE-2012-3444
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~Ticket-7336
 ## Ticket 7336
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Ticket-9479
 ## Ticket 9479
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Ticket-13275
 ## Ticket 13275
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
@@ -771,14 +1173,58 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~CVE-2012-1588
 ##CVE-2012-1588
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Drupd0ssh-exploit
 ## Drupd0s.sh exploit
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~SA-CONTRIB-2012-126
 ## SA-CONTRIB-2012-126
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Ticket-1265946
 ## Ticket 1265946
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
@@ -786,8 +1232,30 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~Ticket-11685
 ## Ticket #11685
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Ticket-19973
 ## Ticket #19973
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
@@ -795,11 +1263,44 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~Issue-1525
 ## Issue #1525
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Issue-2619
 ## Issue #2619
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Issue-3672
 ## Issue #3672
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
@@ -808,14 +1309,58 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~Bug-7601
 ## Bug 7601
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Bug-18489
 ## Bug 18489
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2006-0322
 ## CVE-2006-0322
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2012-4885
 ## CVE-2012-4885
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
@@ -823,29 +1368,128 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~Defect-633
 ## Defect #633
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Defect-3449
 ## Defect #3449
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~Defect-5942
 ## Defect #5942
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Defect-6796
 ## Defect #6796
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~Defect-7699
 ## Defect #7699
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Defect-9796
 ## Defect #9796
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~Defect-11106
 ## Defect #11106
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Defect-11275
 ## Defect #11275
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Patch-9484
 ## Patch #9484
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
@@ -853,20 +1497,86 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~Issue-SOLR-138
 ## Issue SOLR-138
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Issue-SOLR-2631
 ## Issue SOLR-2631
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~Issue-SOLR-2855
 ## Issue SOLR-2855
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Issue-SOLR-3243
 ## Issue SOLR-3243
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~Issue-SOLR-3606
 ## Issue SOLR-3606
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~Issue-SOLR-3652
 ## Issue SOLR-3652
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
@@ -874,20 +1584,86 @@ While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel
 ~Bug-44818
 ## Bug 44818
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2005-3510
 ## CVE-2005-3510
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2011-0534
 ## CVE-2011-0534
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2011-2526
 ## CVE-2011-2526
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 ~CVE-2011-4858
 ## CVE-2011-4858
 
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
+
 ~CVE-2012-0022
 ## CVE-2012-0022
+
+**Year**: 
+
+**Confidence**: [*](##conf)
+
+**Summary**: 
+
+**Characteristics**: 
+
+[Link]()
+
 
 
 
