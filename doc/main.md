@@ -14,6 +14,8 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 
 [Index](##index)
 
+[Bibliography](##bib)
+
 ~index
 ## Index
 
@@ -22,6 +24,7 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [Example work-based high-density attack](##hd-ex)
 - [Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman's hands](##spec-eventually)
 - [For our experiments, we installed ZBG over top of four different web applications](##abstract-apps).
+- [HashDoS](##hashdos)
 - [High-density attacks](##hd)
 - [High-density attacks allow small forces to defeat larger forces](##hd-asym)
 - [High-density attacks are *economical*](##hd-compare-econ)
@@ -74,6 +77,21 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks](##zbg)
 - [ZBG succeeded for two of the web applications](##abstract-success).
 - [Zen Beer Garden defends against these attacks using a simple approach](##abstract-simple)
+
+~bib
+## Bibligraphy
+
+1. [Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks](##handle-cycles)
+1. [CVE-2010-4645](##CVE-2010-4645)
+1. [CVE-2010-4476](##CVE-2010-4476)
+1. [DDoS Defense by Offense](##handle-net)
+1. [Efficient Denial of Service Attacks on Web Application Platforms](##klink)
+1. [Low Orbit Ion Cannon](##cannon) 
+1. [Selective early request termination for busy internet services](##zhou)
+1. [The State of the Internet](##akamai)
+1. [WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks](##handle-human)
+1. [Web content adaptation to improve server overload behavior](##bib-handle-switch)
+
 
 ~howto
 ## How to read this document
@@ -152,7 +170,7 @@ How do web applications [handle](##handle) high-density attacks?
 During overloads web applications can [switch](##bib-handle-switch) to using more efficient software components, even if it means sacrificing the user experience somewhat. For example, if an overloaded web application replaced an attacked O(N<sup>2</sup>) algorithm for a less desirable O(N) algorithm, the application would defeat the attack.
 
 ~bib-handle-switch
-## Switch
+## Web content adaptation to improve server overload behavior
 
 T. F. Abdelzaher and N. Bhatti, "[Web content adaptation to improve server overload behavior](http://www8.org/w8-papers/4c-server/web/web.pdf)," in World Wide Web Conference, 1999.
 
@@ -183,17 +201,17 @@ The "[doorman](##spec)" defense rate limits attackers by charging visitors "admi
 [ZBG](##zbg) uses the Doorman defense to rate limit attackers according to their CPU resources.
 
 ~handle-cycles
-## CPU cycles
+## Client Puzzles
 
 Ari Jules and John Brainard, "[Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks](http://www.internetsociety.org/sites/default/files/juels.pdf)," in Proceedings of NDSS '99 (Networks and Distributed Security Systems), 1999.
 
 ~handle-net
-## Network bandwidth
+## DDoS Defense by Offense
 
 Michael Walfish, Mythili Vutukuru, Hari Balakrishnan, David Karger, and Scott Shenker, "[DDoS Defense by Offense](http://nms.csail.mit.edu/papers/speakup-tocs10.pdf)," in ACM SIGCOMM, 2006
 
 ~handle-human
-## Human labor
+## WebSOS
 
 Angelos Stavrou et al., "[WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks](https://www.cs.columbia.edu/~angelos/Papers/2005/websos-jcn.pdf)," in Computer Networks: The International Journal of Computer and Telecommunications Networking - Web security, vol. 48, 2005.
 
@@ -207,11 +225,9 @@ A common approach to DoS defense is rate limiting. If you can sufficiently limit
 Similar to Beer Garden's [Bouncer](##spec) component, some overloaded web servers will [selectively terminate greedy requests](##zhou). These systems are designed to handle occasional bursts of unintentional high-density requests and cannot handle high volumes of high-density requests unless they also rate limit the attacker.
 
 ~zhou
-## Zhou and Yang
+## Selective early request termination for busy internet services
 
 Jingyu Zhou and Tao Yang, "[Selective early request termination for busy internet services](http://www2006.wwwconference.org/programme/files/pdf/2011.pdf)," in WWW '06 Proceedings of the 15th international conference on World Wide Web, vol. 2006.
-
-TODO: Link
 
 ~handle-patch
 ## Vulnerability patching
@@ -346,8 +362,11 @@ TODO. See section 3.12
 ~ld-specialize
 ## Little-to-no specialization
 
-All that is needed is the ability to generate a large volume of traffic towards the victim. There exist a variety of generic, off-the-shelf tools that can be used to launch effective low-density attacks. For example, the [Low Orbit Ion Cannon](https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon) can target any web service on the Internet.
+All that is needed is the ability to generate a large volume of traffic towards the victim. There exist a variety of generic, off-the-shelf tools that can be used to launch effective low-density attacks. For example, the [Low Orbit Ion Cannon](##cannon) can target any web service on the Internet.
 
+~cannon
+## Low Orbit Ion Cannon
+[Low Orbit Ion Cannon](https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon), Wikipedia.
 
 ~prevalent
 ## Prevalence
@@ -395,7 +414,12 @@ In contrast, low-density attacks are less potent and necessitate a large volume 
 
 The HashDoS attack against CRuby 1.8 can keep one i7 core 100% busy with an attack rate of 720 bits/s.
 
-See Alexander Klink and Julian Walde, "[Efficient Denial of Service Attacks on Web Application Platforms](https://events.ccc.de/congress/2011/Fahrplan/attachments/2007_28C3_Effective_DoS_on_web_application_platforms.pdf)," in The 28th Chaos Communication Congress, 2011.
+See [Efficient Denial of Service Attacks on Web Application Platforms](##klink).
+
+~klink
+## Efficient Denial of Service Attacks on Web Application Platforms
+
+Alexander Klink and Julian Walde, "[Efficient Denial of Service Attacks on Web Application Platforms](https://events.ccc.de/congress/2011/Fahrplan/attachments/2007_28C3_Effective_DoS_on_web_application_platforms.pdf)," in The 28th Chaos Communication Congress, 2011.
 
 ~hd-compare-stealth
 ## Stealth
@@ -432,9 +456,14 @@ Volume measures the number of malicious resource requests.
 Density measures the amount of victim resources consumed per malicious request (which, equivalently, is the ratio of mass to volume).
 
 ~hd-lately
-## Lately
+## Note: Lately
 
-See Akamai’s 2012 [The State of the Internet](https://www.akamai.com/us/en/about/news/press/2012-press/akamai-first-quarter-2012-state-of-the-internet-report.jsp) report, Section 1.4 "Observed Denial-of-Service (DoS) Attack Activity."
+See Akamai’s 2012 [The State of the Internet](##akamai) report, Section 1.4 "Observed Denial-of-Service (DoS) Attack Activity."
+
+~akamai
+## Akamai
+
+Akamai’s 2012 [The State of the Internet](https://www.akamai.com/us/en/about/news/press/2012-press/akamai-first-quarter-2012-state-of-the-internet-report.jsp) report.
 
 ~abstract-simple
 ## Simple approach

@@ -27,8 +27,13 @@
     </div>
     <div class="content-storage">
 <div id='hd-lately'>
-<h2>Lately</h2>
-<p>See Akamai’s 2012 <a href="https://www.akamai.com/us/en/about/news/press/2012-press/akamai-first-quarter-2012-state-of-the-internet-report.jsp">The State of the Internet</a> report, Section 1.4 &#8220;Observed Denial-of-Service (DoS) Attack Activity.&#8221;</p>
+<h2>Note: Lately</h2>
+<p>See Akamai’s 2012 <a href="javascript:Sidenote.openColumnLoud('#hd-lately','#akamai','The State of the Internet')">The State of the Internet</a> report, Section 1.4 &#8220;Observed Denial-of-Service (DoS) Attack Activity.&#8221;</p>
+</div>
+
+<div id='klink'>
+<h2>Efficient Denial of Service Attacks on Web Application Platforms</h2>
+<p>Alexander Klink and Julian Walde, &#8220;<a href="https://events.ccc.de/congress/2011/Fahrplan/attachments/2007_28C3_Effective_DoS_on_web_application_platforms.pdf">Efficient Denial of Service Attacks on Web Application Platforms</a>,&#8221; in The 28th Chaos Communication Congress, 2011.</p>
 </div>
 
 <div id='ex-infinite'>
@@ -53,7 +58,7 @@
 </div>
 
 <div id='handle-cycles'>
-<h2>CPU cycles</h2>
+<h2>Client Puzzles</h2>
 <p>Ari Jules and John Brainard, &#8220;<a href="http://www.internetsociety.org/sites/default/files/juels.pdf">Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks</a>,&#8221; in Proceedings of NDSS &#8216;99 (Networks and Distributed Security Systems), 1999.</p>
 </div>
 
@@ -70,7 +75,7 @@
 </div>
 
 <div id='handle-net'>
-<h2>Network bandwidth</h2>
+<h2>DDoS Defense by Offense</h2>
 <p>Michael Walfish, Mythili Vutukuru, Hari Balakrishnan, David Karger, and Scott Shenker, &#8220;<a href="http://nms.csail.mit.edu/papers/speakup-tocs10.pdf">DDoS Defense by Offense</a>,&#8221; in ACM SIGCOMM, 2006</p>
 </div>
 
@@ -189,7 +194,7 @@
 </div>
 
 <div id='handle-human'>
-<h2>Human labor</h2>
+<h2>WebSOS</h2>
 <p>Angelos Stavrou et al., &#8220;<a href="https://www.cs.columbia.edu/~angelos/Papers/2005/websos-jcn.pdf">WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks</a>,&#8221; in Computer Networks: The International Journal of Computer and Telecommunications Networking - Web security, vol. 48, 2005.</p>
 </div>
 
@@ -243,12 +248,13 @@
 <hr>
 <p><a href="javascript:Sidenote.openColumnLoud('#main','#howto','How to read this document')">How to read this document</a>.</p>
 <p><a href="javascript:Sidenote.openColumnLoud('#main','#index','Index')">Index</a></p>
+<p><a href="javascript:Sidenote.openColumnLoud('#main','#bib','Bibliography')">Bibliography</a></p>
 </div>
 
 <div id='hashdos'>
 <h2>HashDoS</h2>
 <p>The HashDoS attack against CRuby 1.8 can keep one i7 core 100% busy with an attack rate of 720 bits/s.</p>
-<p>See Alexander Klink and Julian Walde, &#8220;<a href="https://events.ccc.de/congress/2011/Fahrplan/attachments/2007_28C3_Effective_DoS_on_web_application_platforms.pdf">Efficient Denial of Service Attacks on Web Application Platforms</a>,&#8221; in The 28th Chaos Communication Congress, 2011.</p>
+<p>See <a href="javascript:Sidenote.openColumnLoud('#hashdos','#klink','Efficient Denial of Service Attacks on Web Application Platforms')">Efficient Denial of Service Attacks on Web Application Platforms</a>.</p>
 </div>
 
 <div id='columns'>
@@ -297,10 +303,14 @@
 </ul>
 </div>
 
+<div id='akamai'>
+<h2>Akamai</h2>
+<p>Akamai’s 2012 <a href="https://www.akamai.com/us/en/about/news/press/2012-press/akamai-first-quarter-2012-state-of-the-internet-report.jsp">The State of the Internet</a> report.</p>
+</div>
+
 <div id='zhou'>
-<h2>Zhou and Yang</h2>
+<h2>Selective early request termination for busy internet services</h2>
 <p>Jingyu Zhou and Tao Yang, &#8220;<a href="http://www2006.wwwconference.org/programme/files/pdf/2011.pdf">Selective early request termination for busy internet services</a>,&#8221; in WWW &#8216;06 Proceedings of the 15th international conference on World Wide Web, vol. 2006.</p>
-<p>TODO: Link</p>
 </div>
 
 <div id='index'>
@@ -311,6 +321,7 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-ex','Example work-based high-density attack')">Example work-based high-density attack</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-eventually','Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman&amp;#8217;s hands')">Every legitimate request eventually reaches the worker because the worker will eventually be free or bored at the same time that the legitimate request arrives in the Doorman&#8217;s hands</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#abstract-apps','For our experiments, we installed ZBG over top of four different web applications')">For our experiments, we installed ZBG over top of four different web applications</a>.</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#hashdos','HashDoS')">HashDoS</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd','High-density attacks')">High-density attacks</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-asym','High-density attacks allow small forces to defeat larger forces')">High-density attacks allow small forces to defeat larger forces</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-compare-econ','High-density attacks are *economical*')">High-density attacks are <em>economical</em></a></li>
@@ -369,11 +380,9 @@
 </ul>
 </div>
 
-<div id='spec-bouncer'>
-<h2>The Bouncer</h2>
-<p>If the worker is free, the Bouncer passes the request to the worker.</p>
-<p>If the worker is bored, the Bouncer asks the worker to stop working on her current task and accept the new request. The Bouncer then informs the old requester that her request was bounced.</p>
-<p>If the worker is busy, the Bouncer hands the request back to the Doorman.</p>
+<div id='cannon'>
+<h2>Low Orbit Ion Cannon</h2>
+<p><a href="https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon">Low Orbit Ion Cannon</a>, Wikipedia.</p>
 </div>
 
 <div id='handle-over'>
@@ -382,19 +391,25 @@
 <p>Such systems are still vulnerable to high-density attacks, because &#8220;infinite-density&#8221; attacks can consume even the largest resource pools.</p>
 </div>
 
-<div id='howto'>
-<h2>How to read this document</h2>
-<p>This document is presented in <a href="https://github.com/mikegagnon/sidenote">Sidenote</a> format.</p>
-<ul>
-<li>Click the links you&#8217;re interested ins</li>
-<li><a href="javascript:Sidenote.openColumnLoud('#howto','#enlarge','How to enlarge an image')">How to enlarge an image</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#howto','#columns','How columns work')">How columns work</a></li>
-</ul>
+<div id='bib'>
+<h2>Bibligraphy</h2>
+<ol>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-cycles','Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks')">Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4645','CVE-2010-4645')">CVE-2010-4645</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-net','DDoS Defense by Offense')">DDoS Defense by Offense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#klink','Efficient Denial of Service Attacks on Web Application Platforms')">Efficient Denial of Service Attacks on Web Application Platforms</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#cannon','Low Orbit Ion Cannon')">Low Orbit Ion Cannon</a> </li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#zhou','Selective early request termination for busy internet services')">Selective early request termination for busy internet services</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#akamai','The State of the Internet')">The State of the Internet</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-human','WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks')">WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#bib-handle-switch','Web content adaptation to improve server overload behavior')">Web content adaptation to improve server overload behavior</a></li>
+</ol>
 </div>
 
 <div id='ld-specialize'>
 <h2>Little-to-no specialization</h2>
-<p>All that is needed is the ability to generate a large volume of traffic towards the victim. There exist a variety of generic, off-the-shelf tools that can be used to launch effective low-density attacks. For example, the <a href="https://en.wikipedia.org/wiki/Low_Orbit_Ion_Cannon">Low Orbit Ion Cannon</a> can target any web service on the Internet.</p>
+<p>All that is needed is the ability to generate a large volume of traffic towards the victim. There exist a variety of generic, off-the-shelf tools that can be used to launch effective low-density attacks. For example, the <a href="javascript:Sidenote.openColumnLoud('#ld-specialize','#cannon','Low Orbit Ion Cannon')">Low Orbit Ion Cannon</a> can target any web service on the Internet.</p>
 </div>
 
 <div id='sophisticated'>
@@ -442,6 +457,13 @@
 <p>TODO: Link to vulns and attacks used in experiments</p>
 </div>
 
+<div id='spec-bouncer'>
+<h2>The Bouncer</h2>
+<p>If the worker is free, the Bouncer passes the request to the worker.</p>
+<p>If the worker is bored, the Bouncer asks the worker to stop working on her current task and accept the new request. The Bouncer then informs the old requester that her request was bounced.</p>
+<p>If the worker is busy, the Bouncer hands the request back to the Doorman.</p>
+</div>
+
 <div id='ex-sql'>
 <h2>Exorbitantly expensive database operations</h2>
 <p>See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8</p>
@@ -459,6 +481,16 @@
 <p>High-density <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-survey','vulnerabilities')">vulnerabilities</a> are everywhere.</p>
 <p><a href="javascript:Sidenote.openColumnLoud('#hd','#hd-lately','Lately')">Lately</a>, attackers have been increasingly utilizing high-density attacks since the defenses against conventional DoS attacks are becoming increasingly effective.</p>
 <p>How do web applications <a href="javascript:Sidenote.openColumnLoud('#hd','#handle','handle')">handle</a> high-density attacks?</p>
+</div>
+
+<div id='howto'>
+<h2>How to read this document</h2>
+<p>This document is presented in <a href="https://github.com/mikegagnon/sidenote">Sidenote</a> format.</p>
+<ul>
+<li>Click the links you&#8217;re interested ins</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#howto','#enlarge','How to enlarge an image')">How to enlarge an image</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#howto','#columns','How columns work')">How columns work</a></li>
+</ul>
 </div>
 
 <div id='hd-asym'>
@@ -534,7 +566,7 @@
 </div>
 
 <div id='bib-handle-switch'>
-<h2>Switch</h2>
+<h2>Web content adaptation to improve server overload behavior</h2>
 <p>T. F. Abdelzaher and N. Bhatti, &#8220;<a href="http://www8.org/w8-papers/4c-server/web/web.pdf">Web content adaptation to improve server overload behavior</a>,&#8221; in World Wide Web Conference, 1999.</p>
 </div>
 
