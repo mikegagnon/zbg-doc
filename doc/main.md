@@ -61,6 +61,7 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [Note to hackers](##enlarge-req)
 - [Note: content-delivery networks offer a form of economical over-provisioning](##cdn)
 - [Note: not all network protocols are inherently vulnerable to low-density attacks](##atm)
+- [Note: we couldn't find vulnerabilities for some systems](##surv-note-na)
 - [PHP infinite-loop high-density vulnerability](##CVE-2010-4645)
 - [The algorithm can be summed up as: "If you're busy and someone hands you a lemon, hand it back and ask for lemonade."](##spec)
 - [The algorithm: Workers and Requests](##spec-wr)
@@ -72,11 +73,17 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [The algorithm: The Bouncer](##spec-bouncer)
 - [The algorithm: The Doorman](##spec-doorman)
 - [The algorithm: Proof for Security Guarantee](##spec-proof)
+- [This survey is not intended to be exhaustive](##surv-exhaustive) 
+- [This survey only includes publicly documented vulnerabilities](##surv-pub)
 - [Low-density attacks are conventional floods](##low-density)
 - [Mass, volume, and density metaphor](##density)
+- [Vulnerability survey methodology](##surv-method)
+- [We also rate our confidence that the issue is an exploitable high-density vulnerability](##surv-confidence)
 - [We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks](##zbg)
+- [We surveyed 16 software software projects](##surv-soft)
 - [ZBG succeeded for two of the web applications](##abstract-success).
 - [Zen Beer Garden defends against these attacks using a simple approach](##abstract-simple)
+
 
 ~bib
 ## Bibligraphy
@@ -87,6 +94,7 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 1. [DDoS Defense by Offense](##handle-net)
 1. [Efficient Denial of Service Attacks on Web Application Platforms](##klink)
 1. [Low Orbit Ion Cannon](##cannon) 
+1. [National Vulnerability Database](##nist)
 1. [Selective early request termination for busy internet services](##zhou)
 1. [The State of the Internet](##akamai)
 1. [WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks](##handle-human)
@@ -144,7 +152,7 @@ With high-density attacks, you don’t need an entire army to attack your enemie
 
 High-density attacks allow [small forces to defeat larger forces](##hd-asym).
 
-High-density [vulnerabilities](##hd-survey) are everywhere.
+High-density [vulnerabilities](##hd-survey) are prevalent.
 
 [Lately](##hd-lately), attackers have been increasingly utilizing high-density attacks since the defenses against conventional DoS attacks are becoming increasingly effective.
 
@@ -306,10 +314,76 @@ For example, the Rebels used high-density attacks to destroy the Death Star, twi
 
 <img src="img/deathstar.jpg">
 
+
+
 ~hd-survey
 ## Vulnerabilities
 
-TODO
+To understand the prevalence and characteristics of high-density vulnerabilities, we [surveyed 16 software software projects](##surv-soft).
+
+[Methodology](##surv-method)
+
+~surv-soft
+## Surveyed 16 software software projects
+
+- Languages
+    - PHP
+    - Python
+    - Ruby
+    - Java
+- Web-application frameworks
+    - Django
+    - Drupal
+    - WordPress
+    - Ruby on Rails
+- Web applications
+    - MediaWiki
+    - OSQA[*](##surv-note-na)
+    - Redmine
+    - Solr
+- Servers:
+    - Tomcat
+    - Nginx[*](##surv-note-na)
+    - Jetty[*](##surv-note-na)
+    - Mongrel[*](##surv-note-na)
+
+~surv-note-na
+## Note: we couldn't find vulnerabilities for some systems
+
+While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel, none of them seemed intentionally exploitable by a remote attacker. We therefore don’t include any OSQA, Nginx, Jetty, or Mongrel vulnerabilities in this survey.
+
+~surv-method
+## Methodology
+
+We searched NIST’s [National Vulnerability Database](##nist) as well as the public issue trackers for the projects.
+
+This survey is [not intended to be exhaustive](##surv-exhaustive). 
+
+It is also worth mentioning that this survey [only includes publicly documented vulnerabilities](##surv-pub).
+
+For each potential vulnerability we found, we record its identifier, the year it was reported, a summary, and one or more links.
+
+We also rate our [confidence](##surv-confidence) that the issue is an exploitable high-density vulnerability. 
+
+~surv-confidence
+## Confidence
+
+Sometimes, it is not possible to be sure that the issue is exploitable from the published problem description alone.
+
+~surv-pub
+## Only includes publicly documented vulnerabilities
+
+We have found that applications often have trivial, undocumented vulnerabilities. For example, if an application request accepts N items, then a request containing an extreme number of items might consume significant resources. We discovered and exploited several such trivial attacks in our experiments. We also note that the accuracy of our survey is limited; it is not always possible to know from descriptions and discussions alone if a bug is truly an exploitable vulnerability.
+
+~surv-exhaustive
+## Not intended to be exhaustive
+
+We primarily focused our search on the vulnerability history in the years leading up to, and including, 2012. We also specifically searched for work-based high-density vulnerabilities, though we also report other types of high-density vulnerabilities we came across.
+
+~nist
+## NIST
+
+National Institute of Standards and Technology. [National Vulnerability Database](http://nvd.nist.gov/).
 
 ~hd-compare
 ## Compared to conventional low-density attacks

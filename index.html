@@ -52,6 +52,11 @@
 <p>&#8220;strtod.c, as used in the zend_strtod function in PHP 5.2 before 5.2.17 and 5.3 before 5.3.5, and other products, allows context-dependent attackers to cause a <strong>denial of service (infinite loop)</strong> via a certain floating-point value in scientific notation, which is not properly handled in x87 FPU registers, as demonstrated using 2.2250738585072011e-308.&#8221; &#8212; <a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645</a></p>
 </div>
 
+<div id='nist'>
+<h2>NIST</h2>
+<p>National Institute of Standards and Technology. <a href="http://nvd.nist.gov/">National Vulnerability Database</a>.</p>
+</div>
+
 <div id='cdn'>
 <h2>Note</h2>
 <p>Content-delivery networks offer a form of economical over-provisioning.</p>
@@ -60,6 +65,15 @@
 <div id='handle-cycles'>
 <h2>Client Puzzles</h2>
 <p>Ari Jules and John Brainard, &#8220;<a href="http://www.internetsociety.org/sites/default/files/juels.pdf">Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks</a>,&#8221; in Proceedings of NDSS &#8216;99 (Networks and Distributed Security Systems), 1999.</p>
+</div>
+
+<div id='surv-method'>
+<h2>Methodology</h2>
+<p>We searched NIST’s <a href="javascript:Sidenote.openColumnLoud('#surv-method','#nist','National Vulnerability Database')">National Vulnerability Database</a> as well as the public issue trackers for the projects.</p>
+<p>This survey is <a href="javascript:Sidenote.openColumnLoud('#surv-method','#surv-exhaustive','not intended to be exhaustive')">not intended to be exhaustive</a>. </p>
+<p>It is also worth mentioning that this survey <a href="javascript:Sidenote.openColumnLoud('#surv-method','#surv-pub','only includes publicly documented vulnerabilities')">only includes publicly documented vulnerabilities</a>.</p>
+<p>For each potential vulnerability we found, we record its identifier, the year it was reported, a summary, and one or more links.</p>
+<p>We also rate our <a href="javascript:Sidenote.openColumnLoud('#surv-method','#surv-confidence','confidence')">confidence</a> that the issue is an exploitable high-density vulnerability. </p>
 </div>
 
 <div id='spec-legit'>
@@ -74,9 +88,9 @@
 <p><a href="javascript:Sidenote.openColumnLoud('#handle-sig','#zbg','ZBG')">ZBG</a> uses a form of signature-based detection by dynamically learning signatures, in real time while an attack happens.</p>
 </div>
 
-<div id='handle-net'>
-<h2>DDoS Defense by Offense</h2>
-<p>Michael Walfish, Mythili Vutukuru, Hari Balakrishnan, David Karger, and Scott Shenker, &#8220;<a href="http://nms.csail.mit.edu/papers/speakup-tocs10.pdf">DDoS Defense by Offense</a>,&#8221; in ACM SIGCOMM, 2006</p>
+<div id='surv-note-na'>
+<h2>Note: we couldn&#8217;t find vulnerabilities for some systems</h2>
+<p>While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel, none of them seemed intentionally exploitable by a remote attacker. We therefore don’t include any OSQA, Nginx, Jetty, or Mongrel vulnerabilities in this survey.</p>
 </div>
 
 <div id='handle-doorman'>
@@ -110,9 +124,15 @@
 <p>Consider a web application that uses an inefficient Ω(N<sup>2</sup>) algorithm to process web requests, where N represents the number of HTTP headers. An unsophisticated high-density attack could simply send a request with 10<sup>4</sup> headers, leading to 10<sup>8</sup> computations.</p>
 </div>
 
-<div id='hd-survey'>
-<h2>Vulnerabilities</h2>
-<p>TODO</p>
+<div id='ex-sql'>
+<h2>Exorbitantly expensive database operations</h2>
+<p>See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8</p>
+<p>TODO: Full report</p>
+</div>
+
+<div id='surv-pub'>
+<h2>Only includes publicly documented vulnerabilities</h2>
+<p>We have found that applications often have trivial, undocumented vulnerabilities. For example, if an application request accepts N items, then a request containing an extreme number of items might consume significant resources. We discovered and exploited several such trivial attacks in our experiments. We also note that the accuracy of our survey is limited; it is not always possible to know from descriptions and discussions alone if a bug is truly an exploitable vulnerability.</p>
 </div>
 
 <div id='complex-hd'>
@@ -132,13 +152,6 @@
 <p>High-density attacks are more <em>powerful</em> than low-density attacks, because high-density attacks create more work, per request.</p>
 <p>For example, the <a href="javascript:Sidenote.openColumnLoud('#hd-compare-power','#hashdos','HashDoS')">HashDoS</a> high-density attack can consume 100% CPU using an attack with an attack rate less than 1 kilobit-per-second.</p>
 <p>In contrast, low-density attacks are less potent and necessitate a large volume of malicious requests in order to succeed.</p>
-</div>
-
-<div id='spec-wr'>
-<h2>Workers and Requests</h2>
-<p>A worker is a thing that attempts to complete requests.</p>
-<p>Every worker can complete a certain percentage of <a href="javascript:Sidenote.openColumnLoud('#spec-wr','#spec-legit','legitimate requests')">legitimate requests</a> (<em>Y</em>%) within a certain amount of time (<em>Z</em> seconds).</p>
-<p>For example: <em>Nancy can complete 95% of professional requests within 3 hours.</em></p>
 </div>
 
 <div id='handle-bouncer'>
@@ -252,6 +265,40 @@
 <p><a href="javascript:Sidenote.openColumnLoud('#main','#bib','Bibliography')">Bibliography</a></p>
 </div>
 
+<div id='surv-soft'>
+<h2>Surveyed 16 software software projects</h2>
+<ul>
+<li>Languages<ul>
+<li>PHP</li>
+<li>Python</li>
+<li>Ruby</li>
+<li>Java</li>
+</ul>
+</li>
+<li>Web-application frameworks<ul>
+<li>Django</li>
+<li>Drupal</li>
+<li>WordPress</li>
+<li>Ruby on Rails</li>
+</ul>
+</li>
+<li>Web applications<ul>
+<li>MediaWiki</li>
+<li>OSQA<a href="javascript:Sidenote.openColumnLoud('#surv-soft','#surv-note-na','*')">*</a></li>
+<li>Redmine</li>
+<li>Solr</li>
+</ul>
+</li>
+<li>Servers:<ul>
+<li>Tomcat</li>
+<li>Nginx<a href="javascript:Sidenote.openColumnLoud('#surv-soft','#surv-note-na','*')">*</a></li>
+<li>Jetty<a href="javascript:Sidenote.openColumnLoud('#surv-soft','#surv-note-na','*')">*</a></li>
+<li>Mongrel<a href="javascript:Sidenote.openColumnLoud('#surv-soft','#surv-note-na','*')">*</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
 <div id='hashdos'>
 <h2>HashDoS</h2>
 <p>The HashDoS attack against CRuby 1.8 can keep one i7 core 100% busy with an attack rate of 720 bits/s.</p>
@@ -275,9 +322,9 @@
 <p>Our experiments show that Zen Beer Garden works.</p>
 </div>
 
-<div id='solr-3652'>
-<h2>Issue SOLR-3652</h2>
-<p>TODO. See section 3.12</p>
+<div id='surv-exhaustive'>
+<h2>Not intended to be exhaustive</h2>
+<p>We primarily focused our search on the vulnerability history in the years leading up to, and including, 2012. We also specifically searched for work-based high-density vulnerabilities, though we also report other types of high-density vulnerabilities we came across.</p>
 </div>
 
 <div id='hd-compare-econ'>
@@ -362,6 +409,7 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#enlarge-req','Note to hackers')">Note to hackers</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#cdn','Note: content-delivery networks offer a form of economical over-provisioning')">Note: content-delivery networks offer a form of economical over-provisioning</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#atm','Note: not all network protocols are inherently vulnerable to low-density attacks')">Note: not all network protocols are inherently vulnerable to low-density attacks</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-note-na','Note: we couldn&amp;#8217;t find vulnerabilities for some systems')">Note: we couldn&#8217;t find vulnerabilities for some systems</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#CVE-2010-4645','PHP infinite-loop high-density vulnerability')">PHP infinite-loop high-density vulnerability</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec','The algorithm can be summed up as: &amp;#8220;If you&amp;#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&amp;#8221;')">The algorithm can be summed up as: &#8220;If you&#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&#8221;</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-wr','The algorithm: Workers and Requests')">The algorithm: Workers and Requests</a></li>
@@ -373,9 +421,14 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-bouncer','The algorithm: The Bouncer')">The algorithm: The Bouncer</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-doorman','The algorithm: The Doorman')">The algorithm: The Doorman</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-proof','The algorithm: Proof for Security Guarantee')">The algorithm: Proof for Security Guarantee</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-exhaustive','This survey is not intended to be exhaustive')">This survey is not intended to be exhaustive</a> </li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-pub','This survey only includes publicly documented vulnerabilities')">This survey only includes publicly documented vulnerabilities</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#low-density','Low-density attacks are conventional floods')">Low-density attacks are conventional floods</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#density','Mass, volume, and density metaphor')">Mass, volume, and density metaphor</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-method','Vulnerability survey methodology')">Vulnerability survey methodology</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-confidence','We also rate our confidence that the issue is an exploitable high-density vulnerability')">We also rate our confidence that the issue is an exploitable high-density vulnerability</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#zbg','We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks')">We have experimentally verified that Zen Beer Garden can successfully defend web applications against high-density attacks</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#surv-soft','We surveyed 16 software software projects')">We surveyed 16 software software projects</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#abstract-success','ZBG succeeded for two of the web applications')">ZBG succeeded for two of the web applications</a>.</li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#abstract-simple','Zen Beer Garden defends against these attacks using a simple approach')">Zen Beer Garden defends against these attacks using a simple approach</a></li>
 </ul>
@@ -401,6 +454,7 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-net','DDoS Defense by Offense')">DDoS Defense by Offense</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#klink','Efficient Denial of Service Attacks on Web Application Platforms')">Efficient Denial of Service Attacks on Web Application Platforms</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#cannon','Low Orbit Ion Cannon')">Low Orbit Ion Cannon</a> </li>
+<li><a href="javascript:Sidenote.openColumnLoud('#bib','#nist','National Vulnerability Database')">National Vulnerability Database</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#zhou','Selective early request termination for busy internet services')">Selective early request termination for busy internet services</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#akamai','The State of the Internet')">The State of the Internet</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#handle-human','WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks')">WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks</a></li>
@@ -465,10 +519,22 @@
 <p>If the worker is busy, the Bouncer hands the request back to the Doorman.</p>
 </div>
 
-<div id='ex-sql'>
-<h2>Exorbitantly expensive database operations</h2>
-<p>See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8</p>
-<p>TODO: Full report</p>
+<div id='spec-wr'>
+<h2>Workers and Requests</h2>
+<p>A worker is a thing that attempts to complete requests.</p>
+<p>Every worker can complete a certain percentage of <a href="javascript:Sidenote.openColumnLoud('#spec-wr','#spec-legit','legitimate requests')">legitimate requests</a> (<em>Y</em>%) within a certain amount of time (<em>Z</em> seconds).</p>
+<p>For example: <em>Nancy can complete 95% of professional requests within 3 hours.</em></p>
+</div>
+
+<div id='handle-net'>
+<h2>DDoS Defense by Offense</h2>
+<p>Michael Walfish, Mythili Vutukuru, Hari Balakrishnan, David Karger, and Scott Shenker, &#8220;<a href="http://nms.csail.mit.edu/papers/speakup-tocs10.pdf">DDoS Defense by Offense</a>,&#8221; in ACM SIGCOMM, 2006</p>
+</div>
+
+<div id='hd-survey'>
+<h2>Vulnerabilities</h2>
+<p>To understand the prevalence and characteristics of high-density vulnerabilities, we <a href="javascript:Sidenote.openColumnLoud('#hd-survey','#surv-soft','surveyed 16 software software projects')">surveyed 16 software software projects</a>.</p>
+<p><a href="javascript:Sidenote.openColumnLoud('#hd-survey','#surv-method','Methodology')">Methodology</a></p>
 </div>
 
 <div id='hd'>
@@ -479,7 +545,7 @@
 <p><a href="javascript:Sidenote.openColumnLoud('#hd','#hd-compare','Compared to conventional low-density attacks')">Compared to conventional low-density attacks</a>, high density attacks are particularly dangerous because they are particularly powerful, economical, and stealthy.</p>
 <p>With high-density attacks, you don’t need an entire army to attack your enemies. You just need tiny bombs.</p>
 <p>High-density attacks allow <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-asym','small forces to defeat larger forces')">small forces to defeat larger forces</a>.</p>
-<p>High-density <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-survey','vulnerabilities')">vulnerabilities</a> are everywhere.</p>
+<p>High-density <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-survey','vulnerabilities')">vulnerabilities</a> are prevalent.</p>
 <p><a href="javascript:Sidenote.openColumnLoud('#hd','#hd-lately','Lately')">Lately</a>, attackers have been increasingly utilizing high-density attacks since the defenses against conventional DoS attacks are becoming increasingly effective.</p>
 <p>How do web applications <a href="javascript:Sidenote.openColumnLoud('#hd','#handle','handle')">handle</a> high-density attacks?</p>
 </div>
@@ -500,6 +566,11 @@
 <p><img src="img/deathstar.jpg"></p>
 </div>
 
+<div id='surv-confidence'>
+<h2>Confidence</h2>
+<p>Sometimes, it is not possible to be sure that the issue is exploitable from the published problem description alone.</p>
+</div>
+
 <div id='prevalent'>
 <h2>Prevalence</h2>
 <p>Internet services are <a href="javascript:Sidenote.openColumnLoud('#prevalent','#gen-vuln','generally vulnerable')">generally vulnerable</a> to low-density attacks.</p>
@@ -509,6 +580,11 @@
 <div id='atm'>
 <h2>Note</h2>
 <p>Not all network protocols are inherently vulnerable to low-density attacks. For example, the ATM protocol has quality-of-service (QoS) policing built into the network.</p>
+</div>
+
+<div id='solr-3652'>
+<h2>Issue SOLR-3652</h2>
+<p>TODO. See section 3.12</p>
 </div>
 
 <div id='spec-proof'>
