@@ -475,6 +475,18 @@ Most of Redmine's vulnerabilities resulted from it's inability to handle large i
 ~surv-string
 ## The result of errors in string parsing
 
+When looking at the tasks the vulnerable code performs, we noticed that many vulnerabilities occurred while parsing strings. [Examples](##surv-string-ex).
+
+We posit that parsing errors are common primarily because parsers are complex and because attackers have a rich input space to operate within.
+
+<img src="img/parsing.png">
+
+~surv-string-ex
+## Examples of string-parsing vulnerabilities
+
+- Parsing XML: Java [CVE-2009-2625](##CVE-2009-2625)
+- Parsing HTTP requests: Java [CVE-2009-3877](##CVE-2009-3877)
+- Parsing Base36 integers: Django [CVE-2010-4535](##CVE-2010-4535)
 
 ~surv-soft
 ## Survey of 16 software software projects

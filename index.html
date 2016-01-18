@@ -286,8 +286,11 @@
 <p>See <a href="javascript:Sidenote.openColumnLoud('#hashdos','#klink','Efficient Denial of Service Attacks on Web Application Platforms')">Efficient Denial of Service Attacks on Web Application Platforms</a>.</p>
 </div>
 
-<div id='CVE-2011-4137'>
-<h2>CVE-2011-4137</h2>
+<div id='handle-timeouts'>
+<h2>Timeouts and resource limits</h2>
+<p>Web servers typically enforce timeouts and resource limits on requests. These limits are liberal so that occasional, legitimate high-density requests can be serviced.</p>
+<p>Zen Beer Garden differs by only using liberal limits during normal operation, and switching to tight limits during overloads. Some servers, such as Jetty, also tighten up their timeouts in response to overloads.</p>
+<p>TODO: Link Jetty</p>
 </div>
 
 <div id='handle-switch'>
@@ -310,12 +313,14 @@
 
 <div id='surv-string'>
 <h2>The result of errors in string parsing</h2>
+<p>When looking at the tasks the vulnerable code performs, we noticed that many vulnerabilities occurred while parsing strings. <a href="javascript:Sidenote.openColumnLoud('#surv-string','#surv-string-ex','Examples')">Examples</a>.</p>
+<p>We posit that parsing errors are common primarily because parsers are complex and because attackers have a rich input space to operate within.</p>
+<p><img src="img/parsing.png"></p>
 </div>
 
-<div id='ex-re'>
-<h2>Excessive regular-expression backtracking</h2>
-<p>See for example the Django vulnerability CVE-2009-3695 as well as our regex-overload experiment in Section 6.3.5</p>
-<p>TODO: Full report</p>
+<div id='nist'>
+<h2>NIST</h2>
+<p>National Institute of Standards and Technology. <a href="http://nvd.nist.gov/">National Vulnerability Database</a>.</p>
 </div>
 
 <div id='hd-lately'>
@@ -459,6 +464,10 @@
 </ul>
 </div>
 
+<div id='CVE-2011-4137'>
+<h2>CVE-2011-4137</h2>
+</div>
+
 <div id='CVE-2008-3790'>
 <h2>CVE-2008-3790</h2>
 </div>
@@ -565,13 +574,6 @@
 <p>All that is needed is the ability to generate a large volume of traffic towards the victim. There exist a variety of generic, off-the-shelf tools that can be used to launch effective low-density attacks. For example, the <a href="javascript:Sidenote.openColumnLoud('#ld-specialize','#cannon','Low Orbit Ion Cannon')">Low Orbit Ion Cannon</a> can target any web service on the Internet.</p>
 </div>
 
-<div id='handle-timeouts'>
-<h2>Timeouts and resource limits</h2>
-<p>Web servers typically enforce timeouts and resource limits on requests. These limits are liberal so that occasional, legitimate high-density requests can be serviced.</p>
-<p>Zen Beer Garden differs by only using liberal limits during normal operation, and switching to tight limits during overloads. Some servers, such as Jetty, also tighten up their timeouts in response to overloads.</p>
-<p>TODO: Link Jetty</p>
-</div>
-
 <div id='solr'>
 <h2>Solr</h2>
 <ol>
@@ -624,9 +626,10 @@
 <h2>Bug 44818</h2>
 </div>
 
-<div id='nist'>
-<h2>NIST</h2>
-<p>National Institute of Standards and Technology. <a href="http://nvd.nist.gov/">National Vulnerability Database</a>.</p>
+<div id='ex-re'>
+<h2>Excessive regular-expression backtracking</h2>
+<p>See for example the Django vulnerability CVE-2009-3695 as well as our regex-overload experiment in Section 6.3.5</p>
+<p>TODO: Full report</p>
 </div>
 
 <div id='Ticket-19973'>
@@ -761,9 +764,13 @@
 <p>&#42; <em>As long Doormen and Bouncers don’t get overloaded, legitimate requesters are patient, legitimate requesters are willing to work, your boss is competent, etc.</em></p>
 </div>
 
-<div id='handle-rate'>
-<h2>Rate limiting</h2>
-<p>A common approach to DoS defense is rate limiting. If you can sufficiently limit the attacker&#8217;s rate of admission, it is possible to defend against high-density attacks. However, most off-the-shelf admission controls have a limited ability to rate limit attackers. For example, a rate limiter based on IP addresses won&#8217;t work against an adversary with many IP addresses. Similarly, a rate limiter based on username won&#8217;t work against logged out users.</p>
+<div id='surv-string-ex'>
+<h2>Examples of string-parsing vulnerabilities</h2>
+<ul>
+<li>Parsing XML: Java <a href="javascript:Sidenote.openColumnLoud('#surv-string-ex','#CVE-2009-2625','CVE-2009-2625')">CVE-2009-2625</a></li>
+<li>Parsing HTTP requests: Java <a href="javascript:Sidenote.openColumnLoud('#surv-string-ex','#CVE-2009-3877','CVE-2009-3877')">CVE-2009-3877</a></li>
+<li>Parsing Base36 integers: Django <a href="javascript:Sidenote.openColumnLoud('#surv-string-ex','#CVE-2010-4535','CVE-2010-4535')">CVE-2010-4535</a></li>
+</ul>
 </div>
 
 <div id='CVE-2012-1588'>
@@ -857,6 +864,11 @@
 </ol>
 </div>
 
+<div id='handle-rate'>
+<h2>Rate limiting</h2>
+<p>A common approach to DoS defense is rate limiting. If you can sufficiently limit the attacker&#8217;s rate of admission, it is possible to defend against high-density attacks. However, most off-the-shelf admission controls have a limited ability to rate limit attackers. For example, a rate limiter based on IP addresses won&#8217;t work against an adversary with many IP addresses. Similarly, a rate limiter based on username won&#8217;t work against logged out users.</p>
+</div>
+
 <div id='hd'>
 <h2>High-density attacks</h2>
 <p>A high-density attack is when a tiny bomb causes a huge explosion.</p>
@@ -879,7 +891,7 @@
 <p>37% of vulnerabilities are triggered with &#8220;large&#8221; inputs. <a href="javascript:Sidenote.openColumnLoud('#surv-manip','#surv-manip-large','Examples')">Examples</a></p>
 <p>21% of vulnerabilities are triggered with &#8220;corner-case&#8221; input (not counting large input as a corner case). <a href="javascript:Sidenote.openColumnLoud('#surv-manip','#surv-manip-corner','Example')">Example</a>.</p>
 <p>11% of vulnerabilities are triggered with malformed input &#8212; input that is either syntactically or
-semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip','#surv-manip-mal','Examples')">Examples</a></p>
+semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip','#surv-manip-mal','Examples')">Examples</a>.</p>
 <p><img src="img/invalid.png"></p>
 </div>
 
