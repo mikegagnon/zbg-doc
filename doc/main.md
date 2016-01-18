@@ -322,6 +322,8 @@ Low-density vulnerabilities are [more prevalent](##prevalent) than high-density 
 
 High-density attacks are [powerful](##hd-compare-power), [economical](##hd-compare-econ), [stealthy](##hd-compare-stealth), [specialized](##specialized), [less recyclable](##recycle), and they vary in [sophistication](##sophisticated).
 
+<img src="img/compare.png">
+
 ~recycle
 ## Less recyclable
 
