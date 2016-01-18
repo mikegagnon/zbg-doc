@@ -52,21 +52,51 @@
 <p>Content-delivery networks offer a form of economical over-provisioning.</p>
 </div>
 
+<div id='handle-cycles'>
+<h2>CPU cycles</h2>
+<p>Ari Jules and John Brainard, &#8220;<a href="http://www.internetsociety.org/sites/default/files/juels.pdf">Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks</a>,&#8221; in Proceedings of NDSS &#8216;99 (Networks and Distributed Security Systems), 1999.</p>
+</div>
+
 <div id='spec-legit'>
 <h2>Legitimate requests</h2>
 <p>A request is legitimate if it is <em>not</em> intended to overload the worker.</p>
 <p>A request is malicious if it is intended to overload the worker.</p>
 </div>
 
-<div id='hd-asym'>
-<h2>Small forces defeat larger forces</h2>
-<p>For example, the Rebels used high-density attacks to destroy the Death Star, twice.</p>
-<p><img src="img/deathstar.jpg"></p>
+<div id='handle-sig'>
+<h2>The &#8220;signature&#8221; defense</h2>
+<p>Firewalls and signature-based intrusion-detection systems are generally ineffective against 0-day high-density attacks because it is difficult to know, a priori, how high-density requests will appear different from low-density requests. Such knowledge is necessary to develop signatures ahead of time.</p>
+<p><a href="javascript:Sidenote.openColumnLoud('#handle-sig','#zbg','ZBG')">ZBG</a> uses a form of signature-based detection by dynamically learning signatures, in real time while an attack happens.</p>
+</div>
+
+<div id='handle-net'>
+<h2>Network bandwidth</h2>
+<p>Michael Walfish, Mythili Vutukuru, Hari Balakrishnan, David Karger, and Scott Shenker, &#8220;<a href="http://nms.csail.mit.edu/papers/speakup-tocs10.pdf">DDoS Defense by Offense</a>,&#8221; in ACM SIGCOMM, 2006</p>
+</div>
+
+<div id='handle-doorman'>
+<h2>The &#8220;doorman&#8221; defense</h2>
+<p>The &#8220;<a href="javascript:Sidenote.openColumnLoud('#handle-doorman','#spec','doorman')">doorman</a>&#8221; defense rate limits attackers by charging visitors &#8220;admission fees.&#8221; For example a doorman can require visitors pay admission by spending their own <a href="javascript:Sidenote.openColumnLoud('#handle-doorman','#handle-cycles','CPU cycles')">CPU cycles</a>, <a href="javascript:Sidenote.openColumnLoud('#handle-doorman','#handle-net','network bandwidth')">network bandwidth</a>, and even <a href="javascript:Sidenote.openColumnLoud('#handle-doorman','#handle-human','human labor')">human labor</a>.</p>
+<p><a href="javascript:Sidenote.openColumnLoud('#handle-doorman','#zbg','ZBG')">ZBG</a> uses the Doorman defense to rate limit attackers according to their CPU resources.</p>
 </div>
 
 <div id='bg-tech'>
 <h2>2012 Beer Garden Technical Report</h2>
 <p>TODO</p>
+</div>
+
+<div id='handle-overloaded'>
+<h2>Overloaded server behavior</h2>
+<p>During overloads, typical web servers reject incoming requests.</p>
+<p>In contrast, Zen Beer Garden evicts over-budget tasks in favor of new requests. Since over-budget tasks tend to be malicious, Zen Beer Garden&#8217;s behavior favors legitimate requests.</p>
+</div>
+
+<div id='hd-compare'>
+<h2>Compared to conventional low-density attacks</h2>
+<p><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#density','Mass, volume, and density metaphor')">Mass, volume, and density metaphor</a></p>
+<p>Low-density attacks are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#low-density','conventional floods')">conventional floods</a>.</p>
+<p>Low-density vulnerabilities are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#prevalent','more prevalent')">more prevalent</a> than high-density vulnerabilities.</p>
+<p>High-density attacks are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-power','powerful')">powerful</a>, <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-econ','economical')">economical</a>, <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-stealth','stealthy')">stealthy</a>, <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#specialized','specialized')">specialized</a>, <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#recycle','less recyclable')">less recyclable</a>, and they vary in <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#sophisticated','sophistication')">sophistication</a>.</p>
 </div>
 
 <div id='simple-hd'>
@@ -105,6 +135,11 @@
 <p>For example: <em>Nancy can complete 95% of professional requests within 3 hours.</em></p>
 </div>
 
+<div id='handle-bouncer'>
+<h2>The &#8220;bouncer&#8221; defense</h2>
+<p>Similar to Beer Garden&#8217;s <a href="javascript:Sidenote.openColumnLoud('#handle-bouncer','#spec','Bouncer')">Bouncer</a> component, some overloaded web servers will <a href="javascript:Sidenote.openColumnLoud('#handle-bouncer','#zhou','selectively terminate greedy requests')">selectively terminate greedy requests</a>. These systems are designed to handle occasional bursts of unintentional high-density requests and cannot handle high volumes of high-density requests unless they also rate limit the attacker.</p>
+</div>
+
 <div id='density'>
 <h2>Density</h2>
 <p>In the density metaphor, mass measures the victim&#8217;s resource consumption.</p>
@@ -122,6 +157,11 @@
 <p>If the worker continues to be busy, the Doorman increases the amounts of work he asks of requesters.</p>
 <p><em>If Nancy is bombarded by reps, she might ask reps for 10-page essays. Of course, every essay must come with a one-page summary.</em></p>
 <p>As the worker becomes less busy, the Doorman decreases the amounts of work he asks of requesters.</p>
+</div>
+
+<div id='handle-patch'>
+<h2>Vulnerability patching</h2>
+<p>Perhaps the most common way developers defend against high-density attacks is identifying and patching specific high-density vulnerabilities. This approach only provides a limited defense since prevention and identification is laborious and error prone. Further, patching cannot defend against 0-day attacks (unlike Zen Beer Garden).</p>
 </div>
 
 <div id='abstract-success'>
@@ -148,6 +188,17 @@
 <p>The <a href="javascript:Sidenote.openColumnLoud('#abstract-simple','#spec','algorithm')">algorithm</a> can be summed up as: &#8220;If you&#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&#8221;</p>
 </div>
 
+<div id='handle-human'>
+<h2>Human labor</h2>
+<p>Angelos Stavrou et al., &#8220;<a href="https://www.cs.columbia.edu/~angelos/Papers/2005/websos-jcn.pdf">WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks</a>,&#8221; in Computer Networks: The International Journal of Computer and Telecommunications Networking - Web security, vol. 48, 2005.</p>
+</div>
+
+<div id='abstract-apps'>
+<h2>Four different web applications</h2>
+<p>TODO</p>
+<p>PHP, Python, Java, and Ruby.</p>
+</div>
+
 <div id='spec-eventually'>
 <h2>Eventually</h2>
 <p>Assume the worst case scenario. I.e., assume <em>N</em> requests arrive every moment for <em>M</em> moments, where <em>N</em> and <em>M</em> are arbitrarily large.</p>
@@ -162,10 +213,13 @@
 <p>I would love a Github pull request on <a href="https://github.com/mikegagnon/sidenote">Sidenote</a>  so that we can enlarge images with an overlay, on click. :-)</p>
 </div>
 
-<div id='recycle'>
-<h2>Less recyclable</h2>
-<p>Low-density attacks are generally recyclable, in the sense that the same attack can be recycled and used again. They are recyclable since low-density vulnerabilities are inherent to the design of the Internet; defenders have a limited ability to defend themselves from high- volume, low-density attacks.</p>
-<p>In contrast, high-density attacks are not generally recyclable since they target specific implementation level vulnerabilities. In most cases, once the defender is subjected to an attack it is straightforward to fix the implementation &#8212; making it invulnerable to that specific attack.</p>
+<div id='spec-bbf'>
+<h2>Busy, Bored, and Free</h2>
+<ul>
+<li>A worker is busy if she has been working on her current request for less than <em>Z</em> seconds.</li>
+<li>A worker is bored if she has been working on her current request for <em>Z</em> seconds or more.</li>
+<li>A worker is free if she isn&#8217;t doing any work at all.</li>
+</ul>
 </div>
 
 <div id='spec-sec'>
@@ -173,6 +227,11 @@
 <p>Zen Beer Garden is 100% effective.&#42;</p>
 <p>If you use the Zen Beer Garden defense, you will never&#42; become overloaded. No matter what,&#42; <em>Y%</em> of legitimate requests are guaranteed to eventually complete.</p>
 <p>&#42; <em>As long Doormen and Bouncers don’t get overloaded, legitimate requesters are patient, legitimate requesters are willing to work, your boss is competent, etc.</em></p>
+</div>
+
+<div id='handle-rate'>
+<h2>Rate limiting</h2>
+<p>A common approach to DoS defense is rate limiting. If you can sufficiently limit the attacker&#8217;s rate of admission, it is possible to defend against high-density attacks. However, most off-the-shelf admission controls have a limited ability to rate limit attackers. For example, a rate limiter based on IP addresses won&#8217;t work against an adversary with many IP addresses. Similarly, a rate limiter based on username won&#8217;t work against logged out users.</p>
 </div>
 
 <div id='main'>
@@ -192,11 +251,11 @@
 <p>See Alexander Klink and Julian Walde, &#8220;<a href="https://events.ccc.de/congress/2011/Fahrplan/attachments/2007_28C3_Effective_DoS_on_web_application_platforms.pdf">Efficient Denial of Service Attacks on Web Application Platforms</a>,&#8221; in The 28th Chaos Communication Congress, 2011.</p>
 </div>
 
-<div id='spec-intro'>
-<h2>Introduction to Zen Beer Garden</h2>
-<p>You should protect workers from overloads by placing Doormen and Bouncers between workers and requesters.</p>
-<p>Theoretically, the Zen Beer Garden defense is 100% effective, even against the most threatening deluges.</p>
-<p>In practice, the Zen Beer Garden defense tends to be effective, although there are many reasons the defense might fail.</p>
+<div id='columns'>
+<h2>How columns work</h2>
+<p>To increase or decrease the number of columns, click &#8220;<strong>more columns</strong>&#8221; or &#8220;<strong>fewer columns</strong>&#8221; in the upper right corner of the page</p>
+<p>If a column is moved off screen, and you want to see that column again, just click the &#8220;<strong>back</strong>&#8221; or &#8220;<strong>forward</strong>&#8221; blue arrows.</p>
+<p><img src="img/arrows.png"></p>
 </div>
 
 <div id='zbg'>
@@ -222,12 +281,26 @@
 <p>To successfully execute a low-density attack against a well-resourced victim, attackers most often require an entire army of attacking machines (i.e. a botnet).</p>
 </div>
 
-<div id='hd-compare'>
-<h2>Compared to conventional low-density attacks</h2>
-<p><a href="javascript:Sidenote.openColumnLoud('#hd-compare','#density','Mass, volume, and density metaphor')">Mass, volume, and density metaphor</a></p>
-<p>Low-density attacks are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#low-density','conventional floods')">conventional floods</a>.</p>
-<p>Low-density vulnerabilities are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#prevalent','more prevalent')">more prevalent</a> than high-density vulnerabilities.</p>
-<p>High-density attacks are <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-power','powerful')">powerful</a>, <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-econ','economical')">economical</a>, <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#hd-compare-stealth','stealthy')">stealthy</a>, <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#specialized','specialized')">specialized</a>, <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#recycle','less recyclable')">less recyclable</a>, and they vary in <a href="javascript:Sidenote.openColumnLoud('#hd-compare','#sophisticated','sophistication')">sophistication</a>.</p>
+<div id='handle'>
+<h2>How do web applications handle high-density attacks?</h2>
+<ul>
+<li><a href="javascript:Sidenote.openColumnLoud('#handle','#handle-overloaded','Overloaded server behavior')">Overloaded server behavior</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#handle','#handle-timeouts','Timeouts and resource limits')">Timeouts and resource limits</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#handle','#handle-patch','Vulnerability patching')">Vulnerability patching</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#handle','#handle-bouncer','The &amp;#8220;bouncer&amp;#8221; defense')">The &#8220;bouncer&#8221; defense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#handle','#handle-rate','Rate limiting')">Rate limiting</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#handle','#handle-doorman','The &amp;#8220;doorman&amp;#8221; defense')">The &#8220;doorman&#8221; defense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#handle','#handle-sig','The &amp;#8220;signature&amp;#8221; defense')">The &#8220;signature&#8221; defense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#handle','#handle-over','Over-provisioning resources')">Over-provisioning resources</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#handle','#handle-cache','Caching / memoization')">Caching / memoization</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#handle','#handle-switch','Switch to lightweight software')">Switch to lightweight software</a></li>
+</ul>
+</div>
+
+<div id='zhou'>
+<h2>Zhou and Yang</h2>
+<p>Jingyu Zhou and Tao Yang, &#8220;<a href="http://www2006.wwwconference.org/programme/files/pdf/2011.pdf">Selective early request termination for busy internet services</a>,&#8221; in WWW &#8216;06 Proceedings of the 15th international conference on World Wide Web, vol. 2006.</p>
+<p>TODO: Link</p>
 </div>
 
 <div id='index'>
@@ -249,6 +322,21 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#sophisticated','High-density attacks vary in *sophisticated*')">High-density attacks vary in <em>sophisticated</em></a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#hd-survey','High-density vulnerabilities are everywhere')">High-density vulnerabilities are everywhere</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#columns','How columns work')">How columns work</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle','How do web applications handle high-density attacks?')">How do web applications handle high-density attacks?</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-cache','How do web applications handle high-density attacks? Caching / memoization')">How do web applications handle high-density attacks? Caching / memoization</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-overloaded','How do web applications handle high-density attacks? Overloaded server behavior')">How do web applications handle high-density attacks? Overloaded server behavior</a></li>
+<li>
+<p><a href="javascript:Sidenote.openColumnLoud('#index','#handle-over','How do web applications handle high-density attacks? Over-provisioning resources')">How do web applications handle high-density attacks? Over-provisioning resources</a></p>
+</li>
+<li>
+<p><a href="javascript:Sidenote.openColumnLoud('#index','#handle-rate','How do web applications handle high-density attacks? Rate limiting')">How do web applications handle high-density attacks? Rate limiting</a></p>
+</li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-switch','How do web applications handle high-density attacks? Switch to lightweight software')">How do web applications handle high-density attacks? Switch to lightweight software</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-bouncer','How do web applications handle high-density attacks? The &amp;#8220;bouncer&amp;#8221; defense')">How do web applications handle high-density attacks? The &#8220;bouncer&#8221; defense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-doorman','How do web applications handle high-density attacks? The &amp;#8220;doorman&amp;#8221; defense')">How do web applications handle high-density attacks? The &#8220;doorman&#8221; defense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-sig','How do web applications handle high-density attacks? The &amp;#8220;signature&amp;#8221; defense')">How do web applications handle high-density attacks? The &#8220;signature&#8221; defense</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-timeouts','How do web applications handle high-density attacks? Timeouts and resource limits')">How do web applications handle high-density attacks? Timeouts and resource limits</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#index','#handle-patch','How do web applications handle high-density attacks? Vulnerability patching')">How do web applications handle high-density attacks? Vulnerability patching</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#enlarge','How to enlarge an image')">How to enlarge an image</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#howto','How to read this document')">How to read this document</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#index','#spec-handback','If the Bouncer hands it back, then the Doorman turns the tables on the requester')">If the Bouncer hands it back, then the Doorman turns the tables on the requester</a></li>
@@ -288,6 +376,12 @@
 <p>If the worker is busy, the Bouncer hands the request back to the Doorman.</p>
 </div>
 
+<div id='handle-over'>
+<h2>Over-provisioning resources</h2>
+<p>As a generic defense against DoS attacks, administrators may over-provision servers, allocating significantly more resources than are needed for legitimate traffic. Content-delivery networks, such as Akamai, provide such over provisioning as a service.</p>
+<p>Such systems are still vulnerable to high-density attacks, because &#8220;infinite-density&#8221; attacks can consume even the largest resource pools.</p>
+</div>
+
 <div id='howto'>
 <h2>How to read this document</h2>
 <p>This document is presented in <a href="https://github.com/mikegagnon/sidenote">Sidenote</a> format.</p>
@@ -309,13 +403,10 @@
 <p>Many high-density vulnerabilities require sophisticated attacks. <a href="javascript:Sidenote.openColumnLoud('#sophisticated','#complex-hd','Sophisticated example')">Sophisticated example</a>.</p>
 </div>
 
-<div id='spec-bbf'>
-<h2>Busy, Bored, and Free</h2>
-<ul>
-<li>A worker is busy if she has been working on her current request for less than <em>Z</em> seconds.</li>
-<li>A worker is bored if she has been working on her current request for <em>Z</em> seconds or more.</li>
-<li>A worker is free if she isn&#8217;t doing any work at all.</li>
-</ul>
+<div id='recycle'>
+<h2>Less recyclable</h2>
+<p>Low-density attacks are generally recyclable, in the sense that the same attack can be recycled and used again. They are recyclable since low-density vulnerabilities are inherent to the design of the Internet; defenders have a limited ability to defend themselves from high- volume, low-density attacks.</p>
+<p>In contrast, high-density attacks are not generally recyclable since they target specific implementation level vulnerabilities. In most cases, once the defender is subjected to an attack it is straightforward to fix the implementation &#8212; making it invulnerable to that specific attack.</p>
 </div>
 
 <div id='hd-terms'>
@@ -367,13 +458,13 @@
 <p>High-density attacks allow <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-asym','small forces to defeat larger forces')">small forces to defeat larger forces</a>.</p>
 <p>High-density <a href="javascript:Sidenote.openColumnLoud('#hd','#hd-survey','vulnerabilities')">vulnerabilities</a> are everywhere.</p>
 <p><a href="javascript:Sidenote.openColumnLoud('#hd','#hd-lately','Lately')">Lately</a>, attackers have been increasingly utilizing high-density attacks since the defenses against conventional DoS attacks are becoming increasingly effective.</p>
+<p>How do web applications <a href="javascript:Sidenote.openColumnLoud('#hd','#handle','handle')">handle</a> high-density attacks?</p>
 </div>
 
-<div id='columns'>
-<h2>How columns work</h2>
-<p>To increase or decrease the number of columns, click &#8220;<strong>more columns</strong>&#8221; or &#8220;<strong>fewer columns</strong>&#8221; in the upper right corner of the page</p>
-<p>If a column is moved off screen, and you want to see that column again, just click the &#8220;<strong>back</strong>&#8221; or &#8220;<strong>forward</strong>&#8221; blue arrows.</p>
-<p><img src="img/arrows.png"></p>
+<div id='hd-asym'>
+<h2>Small forces defeat larger forces</h2>
+<p>For example, the Rebels used high-density attacks to destroy the Death Star, twice.</p>
+<p><img src="img/deathstar.jpg"></p>
 </div>
 
 <div id='prevalent'>
@@ -409,6 +500,13 @@
 </ul>
 </div>
 
+<div id='handle-timeouts'>
+<h2>Timeouts and resource limits</h2>
+<p>Web servers typically enforce timeouts and resource limits on requests. These limits are liberal so that occasional, legitimate high-density requests can be serviced.</p>
+<p>Zen Beer Garden differs by only using liberal limits during normal operation, and switching to tight limits during overloads. Some servers, such as Jetty, also tighten up their timeouts in response to overloads.</p>
+<p>TODO: Link Jetty</p>
+</div>
+
 <div id='spec-overloads'>
 <h2>Overloads</h2>
 <p>A worker can become overloaded under a variety of circumstances.</p>
@@ -418,10 +516,26 @@
 <p>Workers should protect themselves from overloads by employing the Zen Beer Garden defense.</p>
 </div>
 
-<div id='abstract-apps'>
-<h2>Four different web applications</h2>
-<p>TODO</p>
-<p>PHP, Python, Java, and Ruby.</p>
+<div id='handle-switch'>
+<h2>Switch to lightweight software</h2>
+<p>During overloads web applications can <a href="javascript:Sidenote.openColumnLoud('#handle-switch','#bib-handle-switch','switch')">switch</a> to using more efficient software components, even if it means sacrificing the user experience somewhat. For example, if an overloaded web application replaced an attacked O(N<sup>2</sup>) algorithm for a less desirable O(N) algorithm, the application would defeat the attack.</p>
+</div>
+
+<div id='spec-intro'>
+<h2>Introduction to Zen Beer Garden</h2>
+<p>You should protect workers from overloads by placing Doormen and Bouncers between workers and requesters.</p>
+<p>Theoretically, the Zen Beer Garden defense is 100% effective, even against the most threatening deluges.</p>
+<p>In practice, the Zen Beer Garden defense tends to be effective, although there are many reasons the defense might fail.</p>
+</div>
+
+<div id='handle-cache'>
+<h2>Caching / memoization</h2>
+<p>Caching the results of requests can turn duplicate high-density requests into low-density requests. However clever adversaries can often evade caching by making each high-density request distinct, or by causing the cache to flush. Also, the semantics of applications do not always permit caching.</p>
+</div>
+
+<div id='bib-handle-switch'>
+<h2>Switch</h2>
+<p>T. F. Abdelzaher and N. Bhatti, &#8220;<a href="http://www8.org/w8-papers/4c-server/web/web.pdf">Web content adaptation to improve server overload behavior</a>,&#8221; in World Wide Web Conference, 1999.</p>
 </div>
 
 <div id='specialized'>

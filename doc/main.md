@@ -33,6 +33,18 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [High-density attacks vary in *sophisticated*](##sophisticated)
 - [High-density vulnerabilities are everywhere](##hd-survey)
 - [How columns work](##columns)
+- [How do web applications handle high-density attacks?](##handle)
+- [How do web applications handle high-density attacks? Caching / memoization](##handle-cache)
+- [How do web applications handle high-density attacks? Overloaded server behavior](##handle-overloaded)
+- [How do web applications handle high-density attacks? Over-provisioning resources](##handle-over)
+
+- [How do web applications handle high-density attacks? Rate limiting](##handle-rate)
+- [How do web applications handle high-density attacks? Switch to lightweight software](##handle-switch)
+- [How do web applications handle high-density attacks? The "bouncer" defense](##handle-bouncer)
+- [How do web applications handle high-density attacks? The "doorman" defense](##handle-doorman)
+- [How do web applications handle high-density attacks? The "signature" defense](##handle-sig)
+- [How do web applications handle high-density attacks? Timeouts and resource limits](##handle-timeouts)
+- [How do web applications handle high-density attacks? Vulnerability patching](##handle-patch)
 - [How to enlarge an image](##enlarge)
 - [How to read this document](##howto)
 - [If the Bouncer hands it back, then the Doorman turns the tables on the requester](##spec-handback)
@@ -117,6 +129,110 @@ High-density attacks allow [small forces to defeat larger forces](##hd-asym).
 High-density [vulnerabilities](##hd-survey) are everywhere.
 
 [Lately](##hd-lately), attackers have been increasingly utilizing high-density attacks since the defenses against conventional DoS attacks are becoming increasingly effective.
+
+How do web applications [handle](##handle) high-density attacks?
+
+~handle
+## How do web applications handle high-density attacks?
+
+- [Overloaded server behavior](##handle-overloaded)
+- [Timeouts and resource limits](##handle-timeouts)
+- [Vulnerability patching](##handle-patch)
+- [The "bouncer" defense](##handle-bouncer)
+- [Rate limiting](##handle-rate)
+- [The "doorman" defense](##handle-doorman)
+- [The "signature" defense](##handle-sig)
+- [Over-provisioning resources](##handle-over)
+- [Caching / memoization](##handle-cache)
+- [Switch to lightweight software](##handle-switch)
+
+~handle-switch
+## Switch to lightweight software
+
+During overloads web applications can [switch](##bib-handle-switch) to using more efficient software components, even if it means sacrificing the user experience somewhat. For example, if an overloaded web application replaced an attacked O(N<sup>2</sup>) algorithm for a less desirable O(N) algorithm, the application would defeat the attack.
+
+~bib-handle-switch
+## Switch
+
+T. F. Abdelzaher and N. Bhatti, "[Web content adaptation to improve server overload behavior](http://www8.org/w8-papers/4c-server/web/web.pdf)," in World Wide Web Conference, 1999.
+
+~handle-cache
+## Caching / memoization
+
+Caching the results of requests can turn duplicate high-density requests into low-density requests. However clever adversaries can often evade caching by making each high-density request distinct, or by causing the cache to flush. Also, the semantics of applications do not always permit caching.
+
+~handle-over
+## Over-provisioning resources
+
+As a generic defense against DoS attacks, administrators may over-provision servers, allocating significantly more resources than are needed for legitimate traffic. Content-delivery networks, such as Akamai, provide such over provisioning as a service.
+
+Such systems are still vulnerable to high-density attacks, because "infinite-density" attacks can consume even the largest resource pools.
+
+~handle-sig
+## The "signature" defense
+
+Firewalls and signature-based intrusion-detection systems are generally ineffective against 0-day high-density attacks because it is difficult to know, a priori, how high-density requests will appear different from low-density requests. Such knowledge is necessary to develop signatures ahead of time.
+
+[ZBG](##zbg) uses a form of signature-based detection by dynamically learning signatures, in real time while an attack happens.
+
+~handle-doorman
+## The "doorman" defense
+
+The "[doorman](##spec)" defense rate limits attackers by charging visitors "admission fees." For example a doorman can require visitors pay admission by spending their own [CPU cycles](##handle-cycles), [network bandwidth](##handle-net), and even [human labor](##handle-human).
+
+[ZBG](##zbg) uses the Doorman defense to rate limit attackers according to their CPU resources.
+
+~handle-cycles
+## CPU cycles
+
+Ari Jules and John Brainard, "[Client Puzzles: A Cryptographic Countermeasure Against Connection Depletion Attacks](http://www.internetsociety.org/sites/default/files/juels.pdf)," in Proceedings of NDSS '99 (Networks and Distributed Security Systems), 1999.
+
+~handle-net
+## Network bandwidth
+
+Michael Walfish, Mythili Vutukuru, Hari Balakrishnan, David Karger, and Scott Shenker, "[DDoS Defense by Offense](http://nms.csail.mit.edu/papers/speakup-tocs10.pdf)," in ACM SIGCOMM, 2006
+
+~handle-human
+## Human labor
+
+Angelos Stavrou et al., "[WebSOS: An Overlay-based System For Protecting Web Servers From Denial of Service Attacks](https://www.cs.columbia.edu/~angelos/Papers/2005/websos-jcn.pdf)," in Computer Networks: The International Journal of Computer and Telecommunications Networking - Web security, vol. 48, 2005.
+
+~handle-rate
+## Rate limiting
+A common approach to DoS defense is rate limiting. If you can sufficiently limit the attacker's rate of admission, it is possible to defend against high-density attacks. However, most off-the-shelf admission controls have a limited ability to rate limit attackers. For example, a rate limiter based on IP addresses won't work against an adversary with many IP addresses. Similarly, a rate limiter based on username won't work against logged out users.
+
+~handle-bouncer
+## The "bouncer" defense
+
+Similar to Beer Garden's [Bouncer](##spec) component, some overloaded web servers will [selectively terminate greedy requests](##zhou). These systems are designed to handle occasional bursts of unintentional high-density requests and cannot handle high volumes of high-density requests unless they also rate limit the attacker.
+
+~zhou
+## Zhou and Yang
+
+Jingyu Zhou and Tao Yang, "[Selective early request termination for busy internet services](http://www2006.wwwconference.org/programme/files/pdf/2011.pdf)," in WWW '06 Proceedings of the 15th international conference on World Wide Web, vol. 2006.
+
+TODO: Link
+
+~handle-patch
+## Vulnerability patching
+
+Perhaps the most common way developers defend against high-density attacks is identifying and patching specific high-density vulnerabilities. This approach only provides a limited defense since prevention and identification is laborious and error prone. Further, patching cannot defend against 0-day attacks (unlike Zen Beer Garden).
+
+~handle-timeouts
+## Timeouts and resource limits
+
+Web servers typically enforce timeouts and resource limits on requests. These limits are liberal so that occasional, legitimate high-density requests can be serviced.
+
+Zen Beer Garden differs by only using liberal limits during normal operation, and switching to tight limits during overloads. Some servers, such as Jetty, also tighten up their timeouts in response to overloads.
+
+TODO: Link Jetty
+
+~handle-overloaded
+## Overloaded server behavior
+
+During overloads, typical web servers reject incoming requests.
+
+In contrast, Zen Beer Garden evicts over-budget tasks in favor of new requests. Since over-budget tasks tend to be malicious, Zen Beer Garden's behavior favors legitimate requests.
 
 ~hd-ex
 ## Example work-based high-density attacks
