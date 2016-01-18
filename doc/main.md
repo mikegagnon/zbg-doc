@@ -430,8 +430,7 @@ We were able to classify 57% of the vulnerabilities as either implementation err
 ~imp-design-imp
 ## Example implementation errors
 
-- Integer error: PHP [CVE-2011-1471](##CVE-2011-1471)
-- Floating-point error: Java [CVE-2010-4476](##CVE-2010-4476)
+- [CVE-2011-1471](##CVE-2011-1471)
 
 ~imp-design-design
 ## Example design errors
@@ -458,9 +457,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 ~surv-manip-mal
 ## Examples of malformed-input vulnerabilities
 
-- Malformed XML: Java [CVE-2009-2625](##CVE-2009-2625)
-- HTTP requests: Ruby [CVE-2006-5467](##CVE-2006-5467)
-- Markdown: Django [Ticket 7336](##Ticket-7336) can trigger excessive resource consumption
+- [CVE-2011-1471](##CVE-2011-1471)
 
 ~surv-manip-corner
 ## Example of "corner-case" vulnerability
@@ -645,6 +642,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Bug-60082
 ## Bug #60082
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -658,6 +657,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Bug-61240
 ## Bug #61240
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -670,6 +671,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2009-4017
 ## CVE-2009-4017
+
+**Software project**: 
 
 **Year**: 
 
@@ -685,6 +688,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2009-4418
 ## CVE-2009-4418
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -698,6 +703,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2010-4645
 ## CVE-2010-4645
+
+**Software project**: 
 
 **Year**: 
 
@@ -713,6 +720,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2011-1471
 ## CVE-2011-1471
 
+**Software project**: PHP
+
 **Year**: 2011
 
 **Confidence**: high[*](##conf)
@@ -726,6 +735,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2011-4885
 ## CVE-2011-4885
+
+**Software project**: PHP
 
 **Year**: 2011
 
@@ -741,6 +752,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2012-2336
 ## CVE-2012-2336
 
+**Software project**: PHP
+
 **Year**: 2012
 
 **Confidence**: high[*](##conf)
@@ -753,6 +766,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2012-0845
 ## CVE-2012-0845
+
+**Software project**: 
 
 **Year**: 
 
@@ -768,6 +783,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2012-0876
 ## CVE-2012-0876
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -781,6 +798,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2012-1150
 ## CVE-2012-1150
+
+**Software project**: 
 
 **Year**: 
 
@@ -796,6 +815,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2012-2921
 ## CVE-2012-2921
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -809,6 +830,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Issue-13891
 ## Issue-13891
+
+**Software project**: 
 
 **Year**: 
 
@@ -828,6 +851,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2004-0983
 ## CVE-2004-0983
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -841,6 +866,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2006-5467
 ## CVE-2006-5467
+
+**Software project**: 
 
 **Year**: 
 
@@ -856,6 +883,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2008-3656
 ## CVE-2008-3656
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -869,6 +898,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2008-3790
 ## CVE-2008-3790
+
+**Software project**: 
 
 **Year**: 
 
@@ -884,6 +915,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2008-4310
 ## CVE-2008-4310
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -898,6 +931,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2011-4815
 ## CVE-2011-4815
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -911,6 +946,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2011-4838
 ## CVE-2011-4838
+
+**Software project**: 
 
 **Year**: 
 
@@ -929,6 +966,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2007-3698
 ## CVE-2007-3698
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -942,6 +981,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2008-5349
 ## CVE-2008-5349
+
+**Software project**: 
 
 **Year**: 
 
@@ -957,6 +998,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2009-1100
 ## CVE-2009-1100
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -970,6 +1013,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2009-1190
 ## CVE-2009-1190
+
+**Software project**: 
 
 **Year**: 
 
@@ -985,6 +1030,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2009-2625
 ## CVE-2009-2625
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -998,6 +1045,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2009-3876
 ## CVE-2009-3876
+
+**Software project**: 
 
 **Year**: 
 
@@ -1013,6 +1062,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2009-3877
 ## CVE-2009-3877
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1026,6 +1077,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2010-4476
 ## CVE-2010-4476
+
+**Software project**: 
 
 **Year**: 
 
@@ -1044,6 +1097,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2007-5712
 ## CVE-2007-5712
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1057,6 +1112,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2009-3695
 ## CVE-2009-3695
+
+**Software project**: 
 
 **Year**: 
 
@@ -1072,6 +1129,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2010-4535
 ## CVE-2010-4535
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1085,6 +1144,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2011-4137
 ## CVE-2011-4137
+
+**Software project**: 
 
 **Year**: 
 
@@ -1100,6 +1161,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2012-3443
 ## CVE-2012-3443
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1113,6 +1176,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2012-3444
 ## CVE-2012-3444
+
+**Software project**: 
 
 **Year**: 
 
@@ -1128,6 +1193,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Ticket-7336
 ## Ticket 7336
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1142,6 +1209,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Ticket-9479
 ## Ticket 9479
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1155,6 +1224,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Ticket-13275
 ## Ticket 13275
+
+**Software project**: 
 
 **Year**: 
 
@@ -1173,6 +1244,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2012-1588
 ##CVE-2012-1588
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1186,6 +1259,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Drupd0ssh-exploit
 ## Drupd0s.sh exploit
+
+**Software project**: 
 
 **Year**: 
 
@@ -1201,6 +1276,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~SA-CONTRIB-2012-126
 ## SA-CONTRIB-2012-126
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1214,6 +1291,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Ticket-1265946
 ## Ticket 1265946
+
+**Software project**: 
 
 **Year**: 
 
@@ -1232,6 +1311,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Ticket-11685
 ## Ticket #11685
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1245,6 +1326,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Ticket-19973
 ## Ticket #19973
+
+**Software project**: 
 
 **Year**: 
 
@@ -1263,6 +1346,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Issue-1525
 ## Issue #1525
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1277,6 +1362,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Issue-2619
 ## Issue #2619
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1290,6 +1377,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Issue-3672
 ## Issue #3672
+
+**Software project**: 
 
 **Year**: 
 
@@ -1309,6 +1398,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Bug-7601
 ## Bug 7601
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1322,6 +1413,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Bug-18489
 ## Bug 18489
+
+**Software project**: 
 
 **Year**: 
 
@@ -1337,6 +1430,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2006-0322
 ## CVE-2006-0322
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1350,6 +1445,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2012-4885
 ## CVE-2012-4885
+
+**Software project**: 
 
 **Year**: 
 
@@ -1368,6 +1465,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Defect-633
 ## Defect #633
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1381,6 +1480,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Defect-3449
 ## Defect #3449
+
+**Software project**: 
 
 **Year**: 
 
@@ -1396,6 +1497,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Defect-5942
 ## Defect #5942
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1409,6 +1512,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Defect-6796
 ## Defect #6796
+
+**Software project**: 
 
 **Year**: 
 
@@ -1424,6 +1529,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Defect-7699
 ## Defect #7699
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1437,6 +1544,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Defect-9796
 ## Defect #9796
+
+**Software project**: 
 
 **Year**: 
 
@@ -1452,6 +1561,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Defect-11106
 ## Defect #11106
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1466,6 +1577,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Defect-11275
 ## Defect #11275
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1479,6 +1592,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Patch-9484
 ## Patch #9484
+
+**Software project**: 
 
 **Year**: 
 
@@ -1497,6 +1612,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Issue-SOLR-138
 ## Issue SOLR-138
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1510,6 +1627,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Issue-SOLR-2631
 ## Issue SOLR-2631
+
+**Software project**: 
 
 **Year**: 
 
@@ -1525,6 +1644,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Issue-SOLR-2855
 ## Issue SOLR-2855
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1538,6 +1659,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Issue-SOLR-3243
 ## Issue SOLR-3243
+
+**Software project**: 
 
 **Year**: 
 
@@ -1553,6 +1676,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Issue-SOLR-3606
 ## Issue SOLR-3606
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1566,6 +1691,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~Issue-SOLR-3652
 ## Issue SOLR-3652
+
+**Software project**: 
 
 **Year**: 
 
@@ -1584,6 +1711,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Bug-44818
 ## Bug 44818
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1597,6 +1726,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2005-3510
 ## CVE-2005-3510
+
+**Software project**: 
 
 **Year**: 
 
@@ -1612,6 +1743,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2011-0534
 ## CVE-2011-0534
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1625,6 +1758,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2011-2526
 ## CVE-2011-2526
+
+**Software project**: 
 
 **Year**: 
 
@@ -1640,6 +1775,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2011-4858
 ## CVE-2011-4858
 
+**Software project**: 
+
 **Year**: 
 
 **Confidence**: [*](##conf)
@@ -1653,6 +1790,8 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 ~CVE-2012-0022
 ## CVE-2012-0022
+
+**Software project**: 
 
 **Year**: 
 
