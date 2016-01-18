@@ -420,6 +420,18 @@ Our survey reveals that high-density vulnerabilities are often:
 ~surv-imp-design
 ## Implementation and design errors
 
+We were able to classify 57% of the vulnerabilities as either implementation errors (24%) or design errors (33%). [Note](##imp-design-note). 
+
+Example implementation errors include integer errors (e.g. PHP [CVE-2011-1471](##CVE-2011-1471)) and floating-point errors (e.g. Java [CVE-2010-4476](##CVE-2010-4476)).
+
+Example design errors including poorly designed hash tables (e.g. PHP [CVE-2011-4885](##CVE-2011-4885)) and regular expressions (Ruby [CVE-2008-3656](##CVE-2008-3656)).
+
+<img src="img/imp-design.png">
+
+~imp-design-note
+## Note
+For the remaining 43% of vulnerabilities we had insufficient information to determine whether they were implementation or design errors.
+
 ~surv-manip
 ## Triggered by manipulating the input in common ways
 

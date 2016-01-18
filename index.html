@@ -99,10 +99,11 @@
 </ol>
 </div>
 
-<div id='ex-sql'>
-<h2>Exorbitantly expensive database operations</h2>
-<p>See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8</p>
-<p>TODO: Full report</p>
+<div id='spec-wr'>
+<h2>Workers and Requests</h2>
+<p>A worker is a thing that attempts to complete requests.</p>
+<p>Every worker can complete a certain percentage of <a href="javascript:Sidenote.openColumnLoud('#spec-wr','#spec-legit','legitimate requests')">legitimate requests</a> (<em>Y</em>%) within a certain amount of time (<em>Z</em> seconds).</p>
+<p>For example: <em>Nancy can complete 95% of professional requests within 3 hours.</em></p>
 </div>
 
 <div id='Bug-18489'>
@@ -118,6 +119,15 @@
 
 <div id='surv-imp-design'>
 <h2>Implementation and design errors</h2>
+<p>We were able to classify 57% of the vulnerabilities as either implementation errors (24%) or design errors (33%). <a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#imp-design-note','Note')">Note</a>. </p>
+<p>Example implementation errors include integer errors (e.g. PHP <a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#CVE-2011-1471','CVE-2011-1471')">CVE-2011-1471</a>) and floating-point errors (e.g. Java <a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a>).</p>
+<p>Example design errors including poorly designed hash tables (e.g. PHP <a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#CVE-2011-4885','CVE-2011-4885')">CVE-2011-4885</a>) and regular expressions (Ruby <a href="javascript:Sidenote.openColumnLoud('#surv-imp-design','#CVE-2008-3656','CVE-2008-3656')">CVE-2008-3656</a>).</p>
+<p><img src="img/imp-design.png"></p>
+</div>
+
+<div id='imp-design-note'>
+<h2>Note</h2>
+<p>For the remaining 43% of vulnerabilities we had insufficient information to determine whether they were implementation or design errors.</p>
 </div>
 
 <div id='density'>
@@ -236,8 +246,10 @@
 <p>See also our <a href="javascript:Sidenote.openColumnLoud('#hd-ex','#hd-survey','survey of 71 high-density vulnerabilities')">survey of 71 high-density vulnerabilities</a>.</p>
 </div>
 
-<div id='Drupd0ssh-exploit'>
-<h2>Drupd0s.sh exploit</h2>
+<div id='ex-sql'>
+<h2>Exorbitantly expensive database operations</h2>
+<p>See for example Django Ticket 9479 in our survey as well as our SQL-overload experiment in Section 6.2.8</p>
+<p>TODO: Full report</p>
 </div>
 
 <div id='Issue-SOLR-3652'>
@@ -629,6 +641,10 @@
 <h2>Ticket 9479</h2>
 </div>
 
+<div id='Drupd0ssh-exploit'>
+<h2>Drupd0s.sh exploit</h2>
+</div>
+
 <div id='Issue-2619'>
 <h2>Issue #2619</h2>
 </div>
@@ -664,11 +680,18 @@
 <p>In contrast, low-density attacks are less potent and necessitate a large volume of malicious requests in order to succeed.</p>
 </div>
 
-<div id='spec-wr'>
-<h2>Workers and Requests</h2>
-<p>A worker is a thing that attempts to complete requests.</p>
-<p>Every worker can complete a certain percentage of <a href="javascript:Sidenote.openColumnLoud('#spec-wr','#spec-legit','legitimate requests')">legitimate requests</a> (<em>Y</em>%) within a certain amount of time (<em>Z</em> seconds).</p>
-<p>For example: <em>Nancy can complete 95% of professional requests within 3 hours.</em></p>
+<div id='java'>
+<h2>Java</h2>
+<ol>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2007-3698','CVE-2007-3698')">CVE-2007-3698</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2008-5349','CVE-2008-5349')">CVE-2008-5349</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-1100','CVE-2009-1100')">CVE-2009-1100</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-1190','CVE-2009-1190')">CVE-2009-1190</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-2625','CVE-2009-2625')">CVE-2009-2625</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-3876','CVE-2009-3876')">CVE-2009-3876</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-3877','CVE-2009-3877')">CVE-2009-3877</a></li>
+<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
+</ol>
 </div>
 
 <div id='handle-bouncer'>
@@ -1119,20 +1142,6 @@
 <li><a href="javascript:Sidenote.openColumnLoud('#tomcat','#CVE-2011-2526','CVE-2011-2526')">CVE-2011-2526</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#tomcat','#CVE-2011-4858','CVE-2011-4858')">CVE-2011-4858</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#tomcat','#CVE-2012-0022','CVE-2012-0022')">CVE-2012-0022</a></li>
-</ol>
-</div>
-
-<div id='java'>
-<h2>Java</h2>
-<ol>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2007-3698','CVE-2007-3698')">CVE-2007-3698</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2008-5349','CVE-2008-5349')">CVE-2008-5349</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-1100','CVE-2009-1100')">CVE-2009-1100</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-1190','CVE-2009-1190')">CVE-2009-1190</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-2625','CVE-2009-2625')">CVE-2009-2625</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-3876','CVE-2009-3876')">CVE-2009-3876</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2009-3877','CVE-2009-3877')">CVE-2009-3877</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#java','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
 </ol>
 </div>
 
