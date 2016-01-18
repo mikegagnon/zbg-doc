@@ -66,6 +66,18 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [Note: not all network protocols are inherently vulnerable to low-density attacks](##atm)
 - [Note: we couldn't find vulnerabilities for some systems](##surv-note-na)
 - [PHP infinite-loop high-density vulnerability](##CVE-2010-4645)
+- [Survey Django](##django)
+- [Survey Drupal](##drupal)
+- [Survey Java](##java)
+- [Survey MediaWiki](##mediawiki)
+- [Survey PHP](##php)
+- [Survey Python](##python)
+- [Survey Redmine](##redmine)
+- [Survey Ruby on Rails](##ror)
+- [Survey Ruby](##ruby)
+- [Survey Solr](##solr)
+- [Survey Tomcat](##tomcat)
+- [Survey WordPress](##wordpress)
 - [The algorithm can be summed up as: "If you're busy and someone hands you a lemon, hand it back and ask for lemonade."](##spec)
 - [The algorithm: Workers and Requests](##spec-wr)
 - [The algorithm: Busy, Bored, and Free](##spec-bbf)
@@ -86,6 +98,7 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 - [We surveyed 16 software software projects](##surv-soft)
 - [ZBG succeeded for two of the web applications](##abstract-success).
 - [Zen Beer Garden defends against these attacks using a simple approach](##abstract-simple)
+
 
 
 ~bib
@@ -322,28 +335,30 @@ For example, the Rebels used high-density attacks to destroy the Death Star, twi
 ~hd-survey
 ## Vulnerabilities
 
-To understand the prevalence and characteristics of high-density vulnerabilities, we [surveyed 16 software software projects](##surv-soft) by [searching](##surv-method) public databases.
+We [surveyed 16 software software projects](##surv-soft).
+
+We performed our survey by [searching](##surv-method) public databases.
 
 ~surv-soft
 ## Surveyed 16 software software projects
 
 - Languages
-    - PHP
-    - Python
-    - Ruby
-    - Java
+    - [PHP](##php)
+    - [Python](##python)
+    - [Ruby](##ruby)
+    - [Java](##java)
 - Web-application frameworks
-    - Django
-    - Drupal
-    - WordPress
-    - Ruby on Rails
+    - [Django](##django)
+    - [Drupal](##drupal)
+    - [WordPress](##wordpress)
+    - [Ruby on Rails](##ror)
 - Web applications
-    - MediaWiki
+    - [MediaWiki](##mediawiki)
     - OSQA[*](##surv-note-na)
-    - Redmine
-    - Solr
+    - [Redmine](##redmine)
+    - [Solr](##solr)
 - Servers:
-    - Tomcat
+    - [Tomcat](##tomcat)
     - Nginx[*](##surv-note-na)
     - Jetty[*](##surv-note-na)
     - Mongrel[*](##surv-note-na)
@@ -352,6 +367,43 @@ To understand the prevalence and characteristics of high-density vulnerabilities
 ## Note: we couldn't find vulnerabilities for some systems
 
 While we found several CPU consumption issues in OSQA, Nginx, Jetty, and Mongrel, none of them seemed intentionally exploitable by a remote attacker. We therefore don’t include any OSQA, Nginx, Jetty, or Mongrel vulnerabilities in this survey.
+
+~php
+## PHP
+
+~python
+## Python
+
+~ruby
+## Ruby
+
+~java
+## Java
+
+~django
+## Django
+
+~drupal
+## Drupal
+
+~wordpress
+## Wordpress
+
+~ror
+## Ruby on Rails
+
+~mediawiki
+## Mediawiki
+
+~redmine
+## Redmine
+
+~solr
+## Solr
+
+~tomcat
+## Tomcat
+
 
 ~surv-method
 ## Methodology
