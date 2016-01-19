@@ -431,6 +431,7 @@ We were able to classify 57% of the vulnerabilities as either implementation err
 ## Example implementation errors
 
 - PHP [CVE-2011-1471](##CVE-2011-1471)
+- PHP [CVE-2012-2336](##CVE-2012-2336)
 
 ~imp-design-design
 ## Example design errors
@@ -457,6 +458,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 ## Examples of malformed-input vulnerabilities
 
 - PHP [CVE-2011-1471](##CVE-2011-1471)
+- PHP [CVE-2012-2336](##CVE-2012-2336)
 
 ~surv-manip-corner
 ## Examples of "corner-case" vulnerability
@@ -477,6 +479,9 @@ We posit that parsing errors are common primarily because parsers are complex an
 
 ~surv-string-ex
 ## Examples of string-parsing vulnerabilities
+
+- PHP [CVE-2012-2336](##CVE-2012-2336)
+
 
 ~surv-soft
 ## Survey of 16 software software projects
