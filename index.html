@@ -614,7 +614,7 @@ leading to worst-case algorithmic performance.</p>
 <div id='abstract-simple'>
 <h2>Simple approach</h2>
 <p>Zen Beer Garden protects each worker with a <em>Doorman</em> and a <em>Bouncer</em>.</p>
-<p>The Doorman charges admission fees, which limits the amount of requests the worker receives.</p>
+<p>During overloads, the Doorman makes requesters do work, which slows the rate of malicious requests.</p>
 <p>The Bouncer kicks out requests that overload the worker.</p>
 <p>The <a href="javascript:Sidenote.openColumnLoud('#abstract-simple','#spec','algorithm')">algorithm</a> can be summed up as: &#8220;If you&#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&#8221;</p>
 </div>

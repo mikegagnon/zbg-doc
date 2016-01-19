@@ -2068,7 +2068,7 @@ Akamai’s 2012 [The State of the Internet](https://www.akamai.com/us/en/about/n
 
 Zen Beer Garden protects each worker with a *Doorman* and a *Bouncer*.
 
-The Doorman charges admission fees, which limits the amount of requests the worker receives.
+During overloads, the Doorman makes requesters do work, which slows the rate of malicious requests.
 
 The Bouncer kicks out requests that overload the worker.
 
