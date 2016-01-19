@@ -461,6 +461,8 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Python [CVE-2012-0876](##CVE-2012-0876)
 - Python [CVE-2012-1150](##CVE-2012-1150)
 - Ruby [CVE-2011-4815](##CVE-2011-4815)
+- Ruby [CVE-2011-4838](##CVE-2011-4838)
+- Ruby [CVE-2008-3656](##CVE-2008-3656)
 
 ~surv-manip-large
 ## Examples of "large" input vulnerabilities
@@ -470,6 +472,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Python [CVE-2012-0876](##CVE-2012-0876)
 - Python [CVE-2012-1150](##CVE-2012-1150)
 - Ruby [CVE-2011-4815](##CVE-2011-4815)
+- Ruby [CVE-2011-4838](##CVE-2011-4838)
 
 
 ~surv-manip-corner
@@ -480,6 +483,8 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Python [CVE-2012-0876](##CVE-2012-0876)
 - Python [CVE-2012-1150](##CVE-2012-1150)
 - Ruby [CVE-2011-4815](##CVE-2011-4815)
+- Ruby [CVE-2011-4838](##CVE-2011-4838)
+- Ruby [CVE-2008-3656](##CVE-2008-3656)
 
 
 ~surv-manip-mal
@@ -919,17 +924,19 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2008-3656
 ## CVE-2008-3656
 
-**Software project**: 
+**Software project**: Ruby
 
-**Year**: 
+**Year**: 2008
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "Algorithmic complexity vulnerability in the WEBrick::HTTPUtils.split_header_value function in WEBrick::HTTP::DefaultFileHandler in WEBrick in Ruby 1.8.5 and earlier, 1.8.6 through 1.8.6-p286, 1.8.7 through 1.8.7-p71, and 1.9 through r18423 allows context-dependent attackers to cause a denial of service (CPU consumption) via a crafted HTTP request that is processed by a backtracking regular expression."
 
-**Characteristics**: 
+**Characteristics**: design error, corner-case input
 
-[Link]()
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=2008-3656)
+
+[Link](http://www.ruby-lang.org/en/news/2008/08/08/multiple-vulnerabilities-in-ruby/)
 
 
 ~CVE-2008-3790
@@ -988,19 +995,24 @@ Note: this vulnerability is for the CRuby implementation of the Ruby runtime.
 ~CVE-2011-4838
 ## CVE-2011-4838
 
-**Software project**: 
+**Software project**: Ruby
 
-**Year**: 
+**Year**: 2011
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: An attacker can cause hash collisions in hash tables used to implement the dict data structure,
+leading to worst-case algorithmic performance.
 
-**Characteristics**: 
+Note: this vulnerability is for the JRuby implementation of the Ruby runtime.
 
-[Link]()
+**Characteristics**: design error, large input, corner-case input
 
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4838)
 
+[Link](http://www.ocert.org/advisories/ocert-2011-003.html)
+
+[Efficient Denial of Service Attacks on Web Application Platforms](##klink)
 
 
 
