@@ -657,32 +657,32 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~Bug-60082
 ## Bug #60082
 
-**Software project**: 
+**Software project**: PHP
 
-**Year**: 
+**Year**: 2011
 
-**Confidence**: [*](##conf)
+**Confidence**: medium[*](##conf)
 
-**Summary**: 
+**Summary**: "100% CPU / when using references with ArrayObject(&$ref)." 
 
-**Characteristics**: 
+**Characteristics**: unknown
 
-[Link]()
+[Link](https://bugs.php.net/bug.php?id=60082)
 
 ~Bug-61240
 ## Bug #61240
 
-**Software project**: 
+**Software project**: PHP
 
-**Year**: 
+**Year**: 2012
 
-**Confidence**: [*](##conf)
+**Confidence**: medium[*](##conf)
 
-**Summary**: 
+**Summary**: "In the document of curl_multi_exec, has a example in the document. it can run in php 5.2, but php 5.3 and php 5.4 cause cpu load 100%. Note: it seems that high CPU consumption only occurs if the developer misuses the libcurl library."
 
-**Characteristics**: 
+**Characteristics**: API misuse
 
-[Link]()
+[Link](https://bugs.php.net/bug.php?id=61240)
 
 ~CVE-2009-4017
 ## CVE-2009-4017
