@@ -68,12 +68,12 @@
 
 <div id='CVE-2010-4645'>
 <h2>CVE-2010-4645</h2>
-<p><strong>Software project</strong>: </p>
-<p><strong>Year</strong>: </p>
-<p><strong>Confidence</strong>: <a href="javascript:Sidenote.openColumnLoud('#CVE-2010-4645','#conf','*')">*</a></p>
-<p><strong>Summary</strong>: </p>
-<p><strong>Characteristics</strong>: </p>
-<p><a href="">Link</a></p>
+<p><strong>Software project</strong>: PHP</p>
+<p><strong>Year</strong>: 2010</p>
+<p><strong>Confidence</strong>: high<a href="javascript:Sidenote.openColumnLoud('#CVE-2010-4645','#conf','*')">*</a></p>
+<p><strong>Summary</strong>: &#8220;attackers [can] cause a denial of service (infinite loop) via a certain floating-point value in scientific notation, which is not properly handled in x87 FPU registers&#8221;</p>
+<p><strong>Characteristics</strong>: Implementation error, corner-case input, floating point parsing</p>
+<p><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645">Link</a></p>
 </div>
 
 <div id='abstract-success'>
@@ -88,6 +88,7 @@
 <ul>
 <li>PHP <a href="javascript:Sidenote.openColumnLoud('#imp-design-imp','#CVE-2011-1471','CVE-2011-1471')">CVE-2011-1471</a></li>
 <li>PHP <a href="javascript:Sidenote.openColumnLoud('#imp-design-imp','#CVE-2012-2336','CVE-2012-2336')">CVE-2012-2336</a></li>
+<li>PHP <a href="javascript:Sidenote.openColumnLoud('#imp-design-imp','#CVE-2010-4645','CVE-2010-4645')">CVE-2010-4645</a></li>
 </ul>
 </div>
 
@@ -220,7 +221,6 @@
 <p>We have <a href="javascript:Sidenote.openColumnLoud('#main','#zbg','experimentally verified')">experimentally verified</a> that Zen Beer Garden can successfully defend web applications against high-density attacks.</p>
 <hr>
 <p><a href="javascript:Sidenote.openColumnLoud('#main','#howto','How to read this document')">How to read this document</a>.</p>
-<p><a href="javascript:Sidenote.openColumnLoud('#main','#index','Index')">Index</a></p>
 <p><a href="javascript:Sidenote.openColumnLoud('#main','#bib','Bibliography')">Bibliography</a></p>
 </div>
 
@@ -687,6 +687,9 @@
 
 <div id='surv-manip-large'>
 <h2>Examples of &#8220;large&#8221; input vulnerabilities</h2>
+<ul>
+<li>PHP <a href="javascript:Sidenote.openColumnLoud('#surv-manip-large','#CVE-2009-4418','CVE-2009-4418')">CVE-2009-4418</a></li>
+</ul>
 </div>
 
 <div id='hd-compare-econ'>
@@ -1035,6 +1038,7 @@
 <h2>Example design errors</h2>
 <ul>
 <li>PHP <a href="javascript:Sidenote.openColumnLoud('#imp-design-design','#CVE-2011-4885','CVE-2011-4885')">CVE-2011-4885</a></li>
+<li>PHP <a href="javascript:Sidenote.openColumnLoud('#imp-design-design','#CVE-2009-4418','CVE-2009-4418')">CVE-2009-4418</a></li>
 </ul>
 </div>
 
@@ -1297,12 +1301,12 @@ semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip',
 
 <div id='CVE-2009-4418'>
 <h2>CVE-2009-4418</h2>
-<p><strong>Software project</strong>: </p>
-<p><strong>Year</strong>: </p>
-<p><strong>Confidence</strong>: <a href="javascript:Sidenote.openColumnLoud('#CVE-2009-4418','#conf','*')">*</a></p>
-<p><strong>Summary</strong>: </p>
-<p><strong>Characteristics</strong>: </p>
-<p><a href="">Link</a></p>
+<p><strong>Software project</strong>: PHP</p>
+<p><strong>Year</strong>: 2009</p>
+<p><strong>Confidence</strong>: high<a href="javascript:Sidenote.openColumnLoud('#CVE-2009-4418','#conf','*')">*</a></p>
+<p><strong>Summary</strong>: &#8220;attackers [can] cause a denial of service (resource consumption) via a deeply nested serialized variable&#8221;</p>
+<p><strong>Characteristics</strong>: Design error, large input </p>
+<p><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4418">Link</a></p>
 </div>
 
 <div id='bg-tech'>
@@ -1327,9 +1331,10 @@ semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip',
 </div>
 
 <div id='surv-manip-corner'>
-<h2>Examples of &#8220;corner-case&#8221; vulnerability</h2>
+<h2>Examples of &#8220;corner-case&#8221; vulnerabilities</h2>
 <ul>
 <li>PHP <a href="javascript:Sidenote.openColumnLoud('#surv-manip-corner','#CVE-2011-4885','CVE-2011-4885')">CVE-2011-4885</a></li>
+<li>PHP <a href="javascript:Sidenote.openColumnLoud('#surv-manip-corner','#CVE-2010-4645','CVE-2010-4645')">CVE-2010-4645</a></li>
 </ul>
 </div>
 
@@ -1463,7 +1468,6 @@ semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip',
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4476','CVE-2010-4476')">CVE-2010-4476</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4535','CVE-2010-4535')">CVE-2010-4535</a></li>
-<li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4645','CVE-2010-4645')">CVE-2010-4645</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2010-4645','CVE-2010-4645')">CVE-2010-4645</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2011-0534','CVE-2011-0534')">CVE-2011-0534</a></li>
 <li><a href="javascript:Sidenote.openColumnLoud('#bib','#CVE-2011-1471','CVE-2011-1471')">CVE-2011-1471</a></li>

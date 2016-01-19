@@ -15,12 +15,11 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 
 [How to read this document](##howto).
 
-[Index](##index)
-
 [Bibliography](##bib)
 
 ~index
 ## Index
+
 
 - [2012 Beer Garden Technical Report](##bg-tech)
 - [A note on terminology](##hd-terms)
@@ -131,7 +130,6 @@ We have [experimentally verified](##zbg) that Zen Beer Garden can successfully d
 1. [CVE-2010-4476](##CVE-2010-4476)
 1. [CVE-2010-4476](##CVE-2010-4476)
 1. [CVE-2010-4535](##CVE-2010-4535)
-1. [CVE-2010-4645](##CVE-2010-4645)
 1. [CVE-2010-4645](##CVE-2010-4645)
 1. [CVE-2011-0534](##CVE-2011-0534)
 1. [CVE-2011-1471](##CVE-2011-1471)
@@ -363,11 +361,6 @@ See also our [survey of 71 high-density vulnerabilities](##hd-survey).
 
 See for example the [PHP](##CVE-2010-4645) and [Java](##CVE-2010-4476) floating-point vulnerabilities.
 
-~CVE-2010-4645
-## CVE-2010-4645
-
-"strtod.c, as used in the zend_strtod function in PHP 5.2 before 5.2.17 and 5.3 before 5.3.5, and other products, allows context-dependent attackers to cause a **denial of service (infinite loop)** via a certain floating-point value in scientific notation, which is not properly handled in x87 FPU registers, as demonstrated using 2.2250738585072011e-308." -- [https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645)
-
 ~CVE-2010-4476
 ## CVE-2010-4476
 
@@ -427,16 +420,7 @@ We were able to classify 57% of the vulnerabilities as either implementation err
 
 <img src="img/imp-design.png">
 
-~imp-design-imp
-## Example implementation errors
 
-- PHP [CVE-2011-1471](##CVE-2011-1471)
-- PHP [CVE-2012-2336](##CVE-2012-2336)
-
-~imp-design-design
-## Example design errors
-
-- PHP [CVE-2011-4885](##CVE-2011-4885)
 
 ~imp-design-note
 ## Note
@@ -454,19 +438,53 @@ semantically invalid. [Examples](##surv-manip-mal).
 
 <img src="img/invalid.png">
 
+
+
+
+
+
+
+
+~imp-design-imp
+## Example implementation errors
+
+- PHP [CVE-2011-1471](##CVE-2011-1471)
+- PHP [CVE-2012-2336](##CVE-2012-2336)
+- PHP [CVE-2010-4645](##CVE-2010-4645)
+
+~imp-design-design
+## Example design errors
+
+- PHP [CVE-2011-4885](##CVE-2011-4885)
+- PHP [CVE-2009-4418](##CVE-2009-4418)
+
+~surv-manip-large
+## Examples of "large" input vulnerabilities
+
+- PHP [CVE-2009-4418](##CVE-2009-4418)
+
+~surv-manip-corner
+## Examples of "corner-case" vulnerabilities
+
+- PHP [CVE-2011-4885](##CVE-2011-4885)
+- PHP [CVE-2010-4645](##CVE-2010-4645)
+
 ~surv-manip-mal
 ## Examples of malformed-input vulnerabilities
 
 - PHP [CVE-2011-1471](##CVE-2011-1471)
 - PHP [CVE-2012-2336](##CVE-2012-2336)
 
-~surv-manip-corner
-## Examples of "corner-case" vulnerability
+~surv-string-ex
+## Examples of string-parsing vulnerabilities
 
-- PHP [CVE-2011-4885](##CVE-2011-4885)
+- PHP [CVE-2012-2336](##CVE-2012-2336)
 
-~surv-manip-large
-## Examples of "large" input vulnerabilities
+
+
+
+
+
 
 ~surv-string
 ## The result of errors in string parsing
@@ -477,10 +495,7 @@ We posit that parsing errors are common primarily because parsers are complex an
 
 <img src="img/parsing.png">
 
-~surv-string-ex
-## Examples of string-parsing vulnerabilities
 
-- PHP [CVE-2012-2336](##CVE-2012-2336)
 
 
 ~surv-soft
@@ -686,33 +701,33 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2009-4418
 ## CVE-2009-4418
 
-**Software project**: 
+**Software project**: PHP
 
-**Year**: 
+**Year**: 2009
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "attackers [can] cause a denial of service (resource consumption) via a deeply nested serialized variable"
 
-**Characteristics**: 
+**Characteristics**: Design error, large input 
 
-[Link]()
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4418)
 
 
 ~CVE-2010-4645
 ## CVE-2010-4645
 
-**Software project**: 
+**Software project**: PHP
 
-**Year**: 
+**Year**: 2010
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "attackers [can] cause a denial of service (infinite loop) via a certain floating-point value in scientific notation, which is not properly handled in x87 FPU registers"
 
-**Characteristics**: 
+**Characteristics**: Implementation error, corner-case input, floating point parsing
 
-[Link]()
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645)
 
 
 ~CVE-2011-1471
