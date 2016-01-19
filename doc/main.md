@@ -684,7 +684,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: unknown
 
-[Link](https://bugs.php.net/bug.php?id=60082)
+[bugs.php.net](https://bugs.php.net/bug.php?id=60082)
 
 ~Bug-61240
 ## Bug #61240
@@ -699,7 +699,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: unknown
 
-[Link](https://bugs.php.net/bug.php?id=61240)
+[bugs.php.net](https://bugs.php.net/bug.php?id=61240)
 
 ~CVE-2009-4017
 ## CVE-2009-4017
@@ -714,7 +714,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: design error, large input
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4017)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4017)
 
 
 
@@ -731,7 +731,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: design error, large input 
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4418)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4418)
 
 
 ~CVE-2010-4645
@@ -747,7 +747,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: implementation error, corner-case input
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645)
 
 
 ~CVE-2011-1471
@@ -763,7 +763,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: implementation error, malformed input
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1471)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1471)
 
 
 ~CVE-2011-4885
@@ -779,7 +779,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: design error, corner-case input
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4885)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4885)
 
 
 ~CVE-2012-2336
@@ -795,7 +795,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: implementation error, malformed input, string parsing
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2336)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2336)
 
 ~CVE-2012-0845
 ## CVE-2012-0845
@@ -810,9 +810,9 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: unknown
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=/CVE-2012-0845)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=/CVE-2012-0845)
 
-[Link](http://bugs.python.org/issue14001)
+[bugs.python.org](http://bugs.python.org/issue14001)
 
 
 ~CVE-2012-0876
@@ -828,9 +828,9 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: design error, large input, corner-case input, string parsing
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0876)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0876)
 
-[Link](http://bugs.python.org/issue14234)
+[bugs.python.org](http://bugs.python.org/issue14234)
 
 ~CVE-2012-1150
 ## CVE-2012-1150
@@ -845,11 +845,11 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: design error, large input, corner-case input
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1150)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1150)
 
-[Link](http://bugs.python.org/issue13703)
+[bugs.python.org](http://bugs.python.org/issue13703)
 
-[Link](http://www.ocert.org/advisories/ocert-2011-003.html)
+[www.ocert.org](http://www.ocert.org/advisories/ocert-2011-003.html)
 
 [Efficient Denial of Service Attacks on Web Application Platforms](##klink)
 
@@ -866,7 +866,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: Memory consumption, string parsing
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2921)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2921)
 
 
 ~Issue-13891
@@ -882,7 +882,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: Malformed input
 
-[Link](http://bugs.python.org/issue13891)
+[bugs.python.org](http://bugs.python.org/issue13891)
 
 
 
@@ -934,9 +934,9 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: design error, corner-case input
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=2008-3656)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=2008-3656)
 
-[Link](http://www.ruby-lang.org/en/news/2008/08/08/multiple-vulnerabilities-in-ruby/)
+[www.ruby-lang.org](http://www.ruby-lang.org/en/news/2008/08/08/multiple-vulnerabilities-in-ruby/)
 
 
 ~CVE-2008-3790
@@ -986,9 +986,9 @@ Note: this vulnerability is for the CRuby implementation of the Ruby runtime.
 
 **Characteristics**: design error, large input, corner-case input
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4815)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4815)
 
-[Link](http://www.ocert.org/advisories/ocert-2011-003.html)
+[www.ocert.org](http://www.ocert.org/advisories/ocert-2011-003.html)
 
 [Efficient Denial of Service Attacks on Web Application Platforms](##klink)
 
@@ -1008,9 +1008,9 @@ Note: this vulnerability is for the JRuby implementation of the Ruby runtime.
 
 **Characteristics**: design error, large input, corner-case input
 
-[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4838)
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4838)
 
-[Link](http://www.ocert.org/advisories/ocert-2011-003.html)
+[www.ocert.org](http://www.ocert.org/advisories/ocert-2011-003.html)
 
 [Efficient Denial of Service Attacks on Web Application Platforms](##klink)
 
