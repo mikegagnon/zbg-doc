@@ -463,6 +463,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Ruby [CVE-2011-4815](##CVE-2011-4815)
 - Ruby [CVE-2011-4838](##CVE-2011-4838)
 - Ruby [CVE-2008-3656](##CVE-2008-3656)
+- Ruby [CVE-2008-3790](##CVE-2008-3790)
 
 ~surv-manip-large
 ## Examples of "large" input vulnerabilities
@@ -493,12 +494,14 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2011-1471](##CVE-2011-1471)
 - PHP [CVE-2012-2336](##CVE-2012-2336)
 - Python [Issue 13891](##Issue-13891)
+
 ~surv-string-ex
 ## Examples of string-parsing vulnerabilities
 
 - PHP [CVE-2012-2336](##CVE-2012-2336)
 - Python [CVE-2012-0876](##CVE-2012-0876)
 - Python [CVE-2012-2921](##CVE-2012-2921)
+- Ruby [CVE-2008-3790](##CVE-2008-3790)
 
 
 
@@ -942,18 +945,19 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2008-3790
 ## CVE-2008-3790
 
-**Software project**: 
+**Software project**: Ruby
 
-**Year**: 
+**Year**: 2008
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "The REXML module in Ruby 1.8.6 through 1.8.6-p287, 1.8.7 through 1.8.7-p72, and 1.9 allows context-dependent attackers to cause a denial of service (CPU consumption) via an XML document with recursively nested entities, aka an ".""
 
-**Characteristics**: 
+**Characteristics**: design error, string parsing
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3790)
 
+[www.ruby-lang.org](http://www.ruby-lang.org/en/news/2008/08/23/dos-vulnerability-in-rexml/)
 
 ~CVE-2008-4310
 ## CVE-2008-4310
