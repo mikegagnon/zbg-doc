@@ -490,7 +490,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 
 - PHP [CVE-2012-2336](##CVE-2012-2336)
 - Python [CVE-2012-0876](##CVE-2012-0876)
-
+- Python [CVE-2012-2921](##CVE-2012-2921)
 
 
 
@@ -848,17 +848,17 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2012-2921
 ## CVE-2012-2921
 
-**Software project**: 
+**Software project**: Python
 
-**Year**: 
+**Year**: 2012
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "Universal Feed Parser (aka feedparser or python-feedparser) before 5.1.2 allows remote attackers to cause a denial of service (memory consumption) via a crafted XML ENTITY declaration in a non-ASCII encoded document."
 
-**Characteristics**: 
+**Characteristics**: Memory consumption, string parsing
 
-[Link]()
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2921)
 
 
 ~Issue-13891
