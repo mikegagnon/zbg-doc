@@ -506,7 +506,9 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Python [CVE-2012-2921](##CVE-2012-2921)
 - Ruby [CVE-2008-3790](##CVE-2008-3790)
 - Ruby [CVE-2006-5467](##CVE-2006-5467)
-
+- Java [CVE-2010-4476](##CVE-2010-4476)
+- Java [CVE-2009-3877](##CVE-2009-3877)
+- Java [CVE-2009-3876](##CVE-2009-3876)
 
 
 
@@ -1108,33 +1110,33 @@ Note: this vulnerability is for the JRuby implementation of the Ruby runtime.
 ~CVE-2009-3876
 ## CVE-2009-3876
 
-**Software project**: 
+**Software project**: Java
 
-**Year**: 
+**Year**: 2009
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "Unspecified vulnerability in Sun Java SE in JDK and JRE 5.0 before Update 22, JDK and JRE 6 before Update 17, SDK and JRE 1.3.x before 1.3.1_27, and SDK and JRE 1.4.x before 1.4.2_24 allows remote attackers to cause a denial of service (memory consumption) via crafted DER encoded data, which is not properly decoded by the ASN.1 DER input stream parser, aka Bug Id 6864911."
 
-**Characteristics**: 
+**Characteristics**: memory consumption, string parsing
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3876)
 
 
 ~CVE-2009-3877
 ## CVE-2009-3877
 
-**Software project**: 
+**Software project**: Java
 
-**Year**: 
+**Year**: 2009
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "Unspecified vulnerability in Sun Java SE in JDK and JRE 5.0 before Update 22, JDK and JRE 6 before Update 17, SDK and JRE 1.3.x before 1.3.1_27, and SDK and JRE 1.4.x before 1.4.2_24 allows remote attackers to cause a denial of service (memory consumption) via crafted HTTP headers, which are not properly parsed by the ASN.1 DER input stream parser, aka Bug Id 6864911."
 
-**Characteristics**: 
+**Characteristics**: memory consumption, string parsing
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3877)
 
 
 ~CVE-2010-4476
@@ -1148,7 +1150,7 @@ Note: this vulnerability is for the JRuby implementation of the Ruby runtime.
 
 **Summary**: "The Double.parseDouble method in Java Runtime Environment (JRE) in Oracle Java SE and Java for Business 6 Update 23 and earlier, 5.0 Update 27 and earlier, and 1.4.2_29 and earlier, as used in OpenJDK, Apache, JBossweb, and other products, allows remote attackers to cause a denial of service via a crafted string that triggers an infinite loop of estimations during conversion to a double-precision binary floating-point number, as demonstrated using 2.2250738585072012e-308"
 
-**Characteristics**: implementation error, corner-case input
+**Characteristics**: implementation error, corner-case input, string parsing
 
 [cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4476)
 
