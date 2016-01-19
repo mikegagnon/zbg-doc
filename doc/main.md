@@ -459,6 +459,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2009-4418](##CVE-2009-4418)
 - PHP [CVE-2009-4017](##CVE-2009-4017)
 - Python [CVE-2012-0876](##CVE-2012-0876)
+- Python [CVE-2012-1150](##CVE-2012-1150)
 
 ~surv-manip-large
 ## Examples of "large" input vulnerabilities
@@ -466,6 +467,8 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2009-4418](##CVE-2009-4418)
 - PHP [CVE-2009-4017](##CVE-2009-4017)
 - Python [CVE-2012-0876](##CVE-2012-0876)
+- Python [CVE-2012-1150](##CVE-2012-1150)
+
 
 ~surv-manip-corner
 ## Examples of "corner-case" vulnerabilities
@@ -473,6 +476,8 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2011-4885](##CVE-2011-4885)
 - PHP [CVE-2010-4645](##CVE-2010-4645)
 - Python [CVE-2012-0876](##CVE-2012-0876)
+- Python [CVE-2012-1150](##CVE-2012-1150)
+
 
 ~surv-manip-mal
 ## Examples of malformed-input vulnerabilities
@@ -822,18 +827,23 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2012-1150
 ## CVE-2012-1150
 
-**Software project**: 
+**Software project**: Python
 
-**Year**: 
+**Year**: 2012
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "An attacker can cause hash collisions in hash tables used to implement the dict data structure, leading to worst-case algorithmic performance"
 
-**Characteristics**: 
+**Characteristics**: design error, large input, corner-case input
 
-[Link]()
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1150)
 
+[Link](http://bugs.python.org/issue13703)
+
+[Link](http://www.ocert.org/advisories/ocert-2011-003.html)
+
+[Efficient Denial of Service Attacks on Web Application Platforms](##klink)
 
 ~CVE-2012-2921
 ## CVE-2012-2921
