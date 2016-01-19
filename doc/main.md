@@ -431,7 +431,7 @@ For the remaining 43% of vulnerabilities we had insufficient information to dete
 
 37% of vulnerabilities are triggered with "large" inputs. [Examples](##surv-manip-large).
 
-21% of vulnerabilities are triggered with "corner-case" input (not counting large input as a corner case). [Examples](##surv-manip-corner).
+21% of vulnerabilities are triggered with "corner-case" input. [Examples](##surv-manip-corner).
 
 11% of vulnerabilities are triggered with malformed input -- input that is either syntactically or
 semantically invalid. [Examples](##surv-manip-mal).
@@ -458,18 +458,21 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2011-4885](##CVE-2011-4885)
 - PHP [CVE-2009-4418](##CVE-2009-4418)
 - PHP [CVE-2009-4017](##CVE-2009-4017)
+- Python [CVE-2012-0876](##CVE-2012-0876)
 
 ~surv-manip-large
 ## Examples of "large" input vulnerabilities
 
 - PHP [CVE-2009-4418](##CVE-2009-4418)
 - PHP [CVE-2009-4017](##CVE-2009-4017)
+- Python [CVE-2012-0876](##CVE-2012-0876)
 
 ~surv-manip-corner
 ## Examples of "corner-case" vulnerabilities
 
 - PHP [CVE-2011-4885](##CVE-2011-4885)
 - PHP [CVE-2010-4645](##CVE-2010-4645)
+- Python [CVE-2012-0876](##CVE-2012-0876)
 
 ~surv-manip-mal
 ## Examples of malformed-input vulnerabilities
@@ -481,6 +484,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 ## Examples of string-parsing vulnerabilities
 
 - PHP [CVE-2012-2336](##CVE-2012-2336)
+- Python [CVE-2012-0876](##CVE-2012-0876)
 
 
 
@@ -793,26 +797,27 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Characteristics**: unknown
 
-[Link](http://bugs.python.org/issue14001)
-
 [Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=/CVE-2012-0845)
+
+[Link](http://bugs.python.org/issue14001)
 
 
 ~CVE-2012-0876
 ## CVE-2012-0876
 
-**Software project**: 
+**Software project**: Python
 
-**Year**: 
+**Year**: 2012
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "The XML parser (xmlparse.c) in expat before 2.1.0 computes hash values without restricting the ability to trigger hash collisions predictably, which allows context-dependent attackers to cause a denial of service (CPU consumption) via an XML file with many identifiers with the same value."
 
-**Characteristics**: 
+**Characteristics**: design error, large input, corner-case input, string parsing
 
-[Link]()
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0876)
 
+[Link](http://bugs.python.org/issue14234)
 
 ~CVE-2012-1150
 ## CVE-2012-1150
