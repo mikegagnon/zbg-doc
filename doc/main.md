@@ -460,6 +460,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2009-4017](##CVE-2009-4017)
 - Python [CVE-2012-0876](##CVE-2012-0876)
 - Python [CVE-2012-1150](##CVE-2012-1150)
+- Ruby [CVE-2011-4815](##CVE-2011-4815)
 
 ~surv-manip-large
 ## Examples of "large" input vulnerabilities
@@ -468,6 +469,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2009-4017](##CVE-2009-4017)
 - Python [CVE-2012-0876](##CVE-2012-0876)
 - Python [CVE-2012-1150](##CVE-2012-1150)
+- Ruby [CVE-2011-4815](##CVE-2011-4815)
 
 
 ~surv-manip-corner
@@ -477,6 +479,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2010-4645](##CVE-2010-4645)
 - Python [CVE-2012-0876](##CVE-2012-0876)
 - Python [CVE-2012-1150](##CVE-2012-1150)
+- Ruby [CVE-2011-4815](##CVE-2011-4815)
 
 
 ~surv-manip-mal
@@ -964,18 +967,23 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2011-4815
 ## CVE-2011-4815
 
-**Software project**: 
+**Software project**: Ruby
 
-**Year**: 
+**Year**: 2011
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: An attacker can cause hash collisions in hash tables used to implement the dict data structure, leading to worst-case algorithmic performance.
 
-**Characteristics**: 
+Note: this vulnerability is for the CRuby implementation of the Ruby runtime.
 
-[Link]()
+**Characteristics**: design error, large input, corner-case input
 
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4815)
+
+[Link](http://www.ocert.org/advisories/ocert-2011-003.html)
+
+[Efficient Denial of Service Attacks on Web Application Platforms](##klink)
 
 ~CVE-2011-4838
 ## CVE-2011-4838
