@@ -453,6 +453,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2010-4645](##CVE-2010-4645)
 - Ruby [CVE-2006-5467](##CVE-2006-5467)
 - Java [CVE-2010-4476](##CVE-2010-4476)
+- Java [CVE-2009-2625](##CVE-2009-2625)
 
 ~imp-design-design
 ## Example design errors
@@ -497,6 +498,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2012-2336](##CVE-2012-2336)
 - Python [Issue 13891](##Issue-13891)
 - Ruby [CVE-2006-5467](##CVE-2006-5467)
+- Java [CVE-2009-2625](##CVE-2009-2625)
 
 ~surv-string-ex
 ## Examples of string-parsing vulnerabilities
@@ -509,6 +511,8 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Java [CVE-2010-4476](##CVE-2010-4476)
 - Java [CVE-2009-3877](##CVE-2009-3877)
 - Java [CVE-2009-3876](##CVE-2009-3876)
+- Java [CVE-2009-2625](##CVE-2009-2625)
+
 
 
 
@@ -1094,17 +1098,18 @@ Note: this vulnerability is for the JRuby implementation of the Ruby runtime.
 ~CVE-2009-2625
 ## CVE-2009-2625
 
-**Software project**: 
+**Software project**: Java
 
-**Year**: 
+**Year**: 2009
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "MLScanner.java in Apache Xerces2 Java, as used in Sun Java Runtime Environment (JRE) in JDK and JRE 6 before Update 15 and JDK and JRE 5.0 before Update 20, and in other products, allows remote attackers to cause a denial of service (infinite loop and application hang) via malformed XML input, as demonstrated by the Codenomicon XML
+fuzzing framework."
 
-**Characteristics**: 
+**Characteristics**: implementation error, malformed input, string parsing
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-2625)
 
 
 ~CVE-2009-3876
