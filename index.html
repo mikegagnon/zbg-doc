@@ -620,6 +620,7 @@ leading to worst-case algorithmic performance.</p>
 <p>During overloads, the Doorman makes requesters do work, which slows the rate of malicious requests.</p>
 <p>The Bouncer kicks out requests that overload the worker.</p>
 <p>The <a href="javascript:Sidenote.openColumnLoud('#abstract-simple','#spec','algorithm')">algorithm</a> can be summed up as: &#8220;If you&#8217;re busy and someone hands you a lemon, hand it back and ask for lemonade.&#8221;</p>
+<p><a href="javascript:Sidenote.openColumnLoud('#abstract-simple','#why-work','Why does this approach work?')">Why does this approach work?</a></p>
 </div>
 
 <div id='Defect-6796'>
@@ -874,6 +875,17 @@ leading to worst-case algorithmic performance.</p>
 <p><strong>Summary</strong>: </p>
 <p><strong>Characteristics</strong>: </p>
 <p><a href="">Link</a></p>
+</div>
+
+<div id='why-work'>
+<h2>Why does this approach work?</h2>
+<p>Imagine you&#8217;re Wikipedia.</p>
+<p>You&#8217;ve got many legitimate users cruising your site.</p>
+<p>There&#8217;s a small number of attackers, each with their own laptop, who bombard your site with high-density bombs as fast as they can.</p>
+<p>Because the Doorman makes requesters do work, the attackers are slowed down. The Doorman increases the amount of work until the system recovers, then the Doorman decreases the amount of work.</p>
+<p>Now, each attacker can only drop one bombs slowly.</p>
+<p>Then, the Bouncer kicks out the bombs that do get admitted into the system.</p>
+<p>Consequently, the attackers can&#8217;t enter your site fast enough to cause a blackout.</p>
 </div>
 
 <div id='Issue-2619'>

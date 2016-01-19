@@ -2079,6 +2079,25 @@ The Bouncer kicks out requests that overload the worker.
 
 The [algorithm](##spec) can be summed up as: "If you're busy and someone hands you a lemon, hand it back and ask for lemonade."
 
+[Why does this approach work?](##why-work)
+
+~why-work
+## Why does this approach work?
+
+Imagine you're Wikipedia.
+
+You've got many legitimate users cruising your site.
+
+There's a small number of attackers, each with their own laptop, who bombard your site with high-density bombs as fast as they can.
+
+Because the Doorman makes requesters do work, the attackers are slowed down. The Doorman increases the amount of work until the system recovers, then the Doorman decreases the amount of work.
+
+Now, each attacker can only drop one bombs slowly.
+
+Then, the Bouncer kicks out the bombs that do get admitted into the system.
+
+Consequently, the attackers can't enter your site fast enough to cause a blackout.
+
 ~spec
 ## Algorithm
 
