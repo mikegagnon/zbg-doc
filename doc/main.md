@@ -484,7 +484,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 
 - PHP [CVE-2011-1471](##CVE-2011-1471)
 - PHP [CVE-2012-2336](##CVE-2012-2336)
-
+- Python [Issue 13891](##Issue-13891)
 ~surv-string-ex
 ## Examples of string-parsing vulnerabilities
 
@@ -862,19 +862,19 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 
 ~Issue-13891
-## Issue-13891
+## Issue 13891
 
-**Software project**: 
+**Software project**: Python
 
-**Year**: 
+**Year**: 2012
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "UDP listening programs written in python on this version are susceptible to malformed-UDP-packet based DoS attacks which cause severe CPU spikes in the python process."
 
-**Characteristics**: 
+**Characteristics**: Malformed input
 
-[Link]()
+[Link](http://bugs.python.org/issue13891)
 
 
 
