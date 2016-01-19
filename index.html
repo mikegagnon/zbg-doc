@@ -72,7 +72,7 @@
 <p><strong>Year</strong>: 2010</p>
 <p><strong>Confidence</strong>: high<a href="javascript:Sidenote.openColumnLoud('#CVE-2010-4645','#conf','*')">*</a></p>
 <p><strong>Summary</strong>: &#8220;attackers [can] cause a denial of service (infinite loop) via a certain floating-point value in scientific notation, which is not properly handled in x87 FPU registers&#8221;</p>
-<p><strong>Characteristics</strong>: Implementation error, corner-case input, floating point parsing</p>
+<p><strong>Characteristics</strong>: implementation error, corner-case input</p>
 <p><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645">Link</a></p>
 </div>
 
@@ -1074,7 +1074,7 @@
 <p><strong>Year</strong>: 2012</p>
 <p><strong>Confidence</strong>: medium<a href="javascript:Sidenote.openColumnLoud('#Bug-61240','#conf','*')">*</a></p>
 <p><strong>Summary</strong>: &#8220;In the document of curl_multi_exec, has a example in the document. it can run in php 5.2, but php 5.3 and php 5.4 cause cpu load 100%. Note: it seems that high CPU consumption only occurs if the developer misuses the libcurl library.&#8221;</p>
-<p><strong>Characteristics</strong>: API misuse</p>
+<p><strong>Characteristics</strong>: unknown</p>
 <p><a href="https://bugs.php.net/bug.php?id=61240">Link</a></p>
 </div>
 
@@ -1220,12 +1220,13 @@ semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip',
 
 <div id='CVE-2012-0845'>
 <h2>CVE-2012-0845</h2>
-<p><strong>Software project</strong>: </p>
-<p><strong>Year</strong>: </p>
-<p><strong>Confidence</strong>: <a href="javascript:Sidenote.openColumnLoud('#CVE-2012-0845','#conf','*')">*</a></p>
-<p><strong>Summary</strong>: </p>
-<p><strong>Characteristics</strong>: </p>
-<p><a href="">Link</a></p>
+<p><strong>Software project</strong>: Python</p>
+<p><strong>Year</strong>: 2012</p>
+<p><strong>Confidence</strong>: high<a href="javascript:Sidenote.openColumnLoud('#CVE-2012-0845','#conf','*')">*</a></p>
+<p><strong>Summary</strong>: &#8220;A denial of service flaw was found in the way Simple XML-RPC Server module of Python processed client connections, that were closed prior the complete request body has been received. A remote attacker could use this flaw to cause Python Simple XML-RPC based server process to consume excessive amount of CPU.&#8221;</p>
+<p><strong>Characteristics</strong>: unknown</p>
+<p><a href="http://bugs.python.org/issue14001">Link</a></p>
+<p><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=/CVE-2012-0845">Link</a></p>
 </div>
 
 <div id='specialized'>
@@ -1291,7 +1292,7 @@ semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip',
 <p><strong>Year</strong>: 2011</p>
 <p><strong>Confidence</strong>: high<a href="javascript:Sidenote.openColumnLoud('#CVE-2011-4885','#conf','*')">*</a></p>
 <p><strong>Summary</strong>: PHP &#8220;computes hash values for form parameters without restricting the ability to trigger hash collisions predictably, which allows remote attackers to cause a denial of service (CPU consumption) by sending many crafted parameters.&#8221;</p>
-<p><strong>Characteristics</strong>: Algorithmic-complexity vulnerability, HashDoS, design error, corner-case input</p>
+<p><strong>Characteristics</strong>: design error, corner-case input</p>
 <p><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4885">Link</a></p>
 </div>
 
@@ -1307,7 +1308,7 @@ semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip',
 <p><strong>Year</strong>: 2009</p>
 <p><strong>Confidence</strong>: high<a href="javascript:Sidenote.openColumnLoud('#CVE-2009-4418','#conf','*')">*</a></p>
 <p><strong>Summary</strong>: &#8220;attackers [can] cause a denial of service (resource consumption) via a deeply nested serialized variable&#8221;</p>
-<p><strong>Characteristics</strong>: Design error, large input </p>
+<p><strong>Characteristics</strong>: design error, large input </p>
 <p><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4418">Link</a></p>
 </div>
 
@@ -1356,7 +1357,7 @@ semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip',
 <p><strong>Year</strong>: 2012</p>
 <p><strong>Confidence</strong>: high<a href="javascript:Sidenote.openColumnLoud('#CVE-2012-2336','#conf','*')">*</a></p>
 <p><strong>Summary</strong>: PHP-CGI &#8220;does not properly handle query strings that lack an = (equals sign) character, which allows remote attackers to cause a denial of service (resource consumption) by placing command-line options in the query string&#8221;</p>
-<p><strong>Characteristics</strong>: Implementation error, malformed input, query-string parsing</p>
+<p><strong>Characteristics</strong>: implementation error, malformed input, string parsing</p>
 <p><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2336">Link</a></p>
 </div>
 
@@ -1400,7 +1401,7 @@ semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip',
 <p><strong>Year</strong>: 2009</p>
 <p><strong>Confidence</strong>: high<a href="javascript:Sidenote.openColumnLoud('#CVE-2009-4017','#conf','*')">*</a></p>
 <p><strong>Summary</strong>: PHP &#8220;does not restrict the number of temporary files created when handling a multipart/form- data POST request, which allows remote attackers to cause a denial of service (resource exhaustion)&#8221;</p>
-<p><strong>Characteristics</strong>: Design error, large input</p>
+<p><strong>Characteristics</strong>: design error, large input</p>
 <p><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4017">Link</a></p>
 </div>
 
@@ -1659,7 +1660,7 @@ semantically invalid. <a href="javascript:Sidenote.openColumnLoud('#surv-manip',
 <p><strong>Year</strong>: 2011</p>
 <p><strong>Confidence</strong>: high<a href="javascript:Sidenote.openColumnLoud('#CVE-2011-1471','#conf','*')">*</a></p>
 <p><strong>Summary</strong>: &#8220;Integer signedness error in zip_stream.c in the Zip extension in PHP before 5.3.6 allows context-dependent attackers to cause a denial of service (CPU consumption) via a malformed archive file that triggers errors in zip_fread function calls.&#8221; </p>
-<p><strong>Characteristics</strong>: Implementation error, malformed input</p>
+<p><strong>Characteristics</strong>: implementation error, malformed input</p>
 <p><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1471">Link</a></p>
 </div>
 

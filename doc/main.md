@@ -783,17 +783,19 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2012-0845
 ## CVE-2012-0845
 
-**Software project**: 
+**Software project**: Python
 
-**Year**: 
+**Year**: 2012
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "A denial of service flaw was found in the way Simple XML-RPC Server module of Python processed client connections, that were closed prior the complete request body has been received. A remote attacker could use this flaw to cause Python Simple XML-RPC based server process to consume excessive amount of CPU."
 
-**Characteristics**: 
+**Characteristics**: unknown
 
-[Link]()
+[Link](http://bugs.python.org/issue14001)
+
+[Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=/CVE-2012-0845)
 
 
 ~CVE-2012-0876
