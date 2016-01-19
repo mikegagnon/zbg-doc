@@ -680,7 +680,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Summary**: "In the document of curl_multi_exec, has a example in the document. it can run in php 5.2, but php 5.3 and php 5.4 cause cpu load 100%. Note: it seems that high CPU consumption only occurs if the developer misuses the libcurl library."
 
-**Characteristics**: API misuse
+**Characteristics**: unknown
 
 [Link](https://bugs.php.net/bug.php?id=61240)
 
@@ -695,7 +695,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Summary**: PHP "does not restrict the number of temporary files created when handling a multipart/form- data POST request, which allows remote attackers to cause a denial of service (resource exhaustion)"
 
-**Characteristics**: Design error, large input
+**Characteristics**: design error, large input
 
 [Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4017)
 
@@ -712,7 +712,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Summary**: "attackers [can] cause a denial of service (resource consumption) via a deeply nested serialized variable"
 
-**Characteristics**: Design error, large input 
+**Characteristics**: design error, large input 
 
 [Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-4418)
 
@@ -728,7 +728,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Summary**: "attackers [can] cause a denial of service (infinite loop) via a certain floating-point value in scientific notation, which is not properly handled in x87 FPU registers"
 
-**Characteristics**: Implementation error, corner-case input, floating point parsing
+**Characteristics**: implementation error, corner-case input
 
 [Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4645)
 
@@ -744,7 +744,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Summary**: "Integer signedness error in zip_stream.c in the Zip extension in PHP before 5.3.6 allows context-dependent attackers to cause a denial of service (CPU consumption) via a malformed archive file that triggers errors in zip_fread function calls." 
 
-**Characteristics**: Implementation error, malformed input
+**Characteristics**: implementation error, malformed input
 
 [Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-1471)
 
@@ -760,7 +760,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Summary**: PHP "computes hash values for form parameters without restricting the ability to trigger hash collisions predictably, which allows remote attackers to cause a denial of service (CPU consumption) by sending many crafted parameters."
 
-**Characteristics**: Algorithmic-complexity vulnerability, HashDoS, design error, corner-case input
+**Characteristics**: design error, corner-case input
 
 [Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4885)
 
@@ -776,7 +776,7 @@ Confidence marks how confident we are that the issue is actually exploitable.
 
 **Summary**: PHP-CGI "does not properly handle query strings that lack an = (equals sign) character, which allows remote attackers to cause a denial of service (resource consumption) by placing command-line options in the query string"
 
-**Characteristics**: Implementation error, malformed input, query-string parsing
+**Characteristics**: implementation error, malformed input, string parsing
 
 [Link](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-2336)
 
