@@ -451,6 +451,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2011-1471](##CVE-2011-1471)
 - PHP [CVE-2012-2336](##CVE-2012-2336)
 - PHP [CVE-2010-4645](##CVE-2010-4645)
+- Ruby [CVE-2006-5467](##CVE-2006-5467)
 
 ~imp-design-design
 ## Example design errors
@@ -494,6 +495,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2011-1471](##CVE-2011-1471)
 - PHP [CVE-2012-2336](##CVE-2012-2336)
 - Python [Issue 13891](##Issue-13891)
+- Ruby [CVE-2006-5467](##CVE-2006-5467)
 
 ~surv-string-ex
 ## Examples of string-parsing vulnerabilities
@@ -502,6 +504,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Python [CVE-2012-0876](##CVE-2012-0876)
 - Python [CVE-2012-2921](##CVE-2012-2921)
 - Ruby [CVE-2008-3790](##CVE-2008-3790)
+- Ruby [CVE-2006-5467](##CVE-2006-5467)
 
 
 
@@ -893,34 +896,37 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2004-0983
 ## CVE-2004-0983
 
-**Software project**: 
+**Software project**: Ruby
 
-**Year**: 
+**Year**: 2004
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "The CGI module in Ruby 1.6 before 1.6.8, and 1.8 before 1.8.2, allows remote attackers to cause a denial of service (infinite loop and CPU consumption) via a certain HTTP request."
 
-**Characteristics**: 
+**Characteristics**: unknown
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2004-0983)
 
 
 ~CVE-2006-5467
 ## CVE-2006-5467
 
-**Software project**: 
+**Software project**: Ruby
 
-**Year**: 
+**Year**: 2006
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "The cgi.rb CGI library for Ruby 1.8 allows remote attackers to cause a denial of service (infinite loop and CPU consumption) via an HTTP request with a multipart MIME body that contains an invalid boundary specifier, as demonstrated using a specifier that begins with a "-" instead of "&ndash;&ndash;" and contains an inconsistent ID."
 
-**Characteristics**: 
+**Characteristics**: implementation error, malformed input, string parsing
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-5467)
 
+[rubyforge.org](http://rubyforge.org/pipermail/mongrel-users/2006-October/001946.html)
+
+[blog.evanweaver.com](http://blog.evanweaver.com/2006/10/25/mongrel-denial-of-service-vulnerability/)
 
 ~CVE-2008-3656
 ## CVE-2008-3656
@@ -960,17 +966,17 @@ Confidence marks how confident we are that the issue is actually exploitable.
 ~CVE-2008-4310
 ## CVE-2008-4310
 
-**Software project**: 
+**Software project**: Ruby
 
-**Year**: 
+**Year**: 2008
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "httputils.rb in WEBrick in Ruby 1.8.1 and 1.8.5, as used in Red Hat Enterprise Linux 4 and 5, allows remote attackers to cause a denial of service (CPU consumption) via a crafted HTTP request. NOTE: this issue exists because of an incomplete fix for CVE-2008-3656."
 
-**Characteristics**: 
+**Characteristics**: unknown
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-4310)
 
 
 ~CVE-2011-4815
