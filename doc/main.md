@@ -513,8 +513,6 @@ semantically invalid. [Examples](##surv-manip-mal).
 
 When looking at the tasks the vulnerable code performs, we noticed that many vulnerabilities occurred while parsing strings. [Examples](##surv-string-ex).
 
-We posit that parsing errors are common primarily because parsers are complex and because attackers have a rich input space to operate within.
-
 <img src="img/parsing.png">
 
 
