@@ -452,6 +452,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - PHP [CVE-2012-2336](##CVE-2012-2336)
 - PHP [CVE-2010-4645](##CVE-2010-4645)
 - Ruby [CVE-2006-5467](##CVE-2006-5467)
+- Java [CVE-2010-4476](##CVE-2010-4476)
 
 ~imp-design-design
 ## Example design errors
@@ -487,7 +488,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Ruby [CVE-2011-4815](##CVE-2011-4815)
 - Ruby [CVE-2011-4838](##CVE-2011-4838)
 - Ruby [CVE-2008-3656](##CVE-2008-3656)
-
+- Java [CVE-2010-4476](##CVE-2010-4476)
 
 ~surv-manip-mal
 ## Examples of malformed-input vulnerabilities
@@ -1139,17 +1140,17 @@ Note: this vulnerability is for the JRuby implementation of the Ruby runtime.
 ~CVE-2010-4476
 ## CVE-2010-4476
 
-**Software project**: 
+**Software project**: Java
 
-**Year**: 
+**Year**: 2010
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "The Double.parseDouble method in Java Runtime Environment (JRE) in Oracle Java SE and Java for Business 6 Update 23 and earlier, 5.0 Update 27 and earlier, and 1.4.2_29 and earlier, as used in OpenJDK, Apache, JBossweb, and other products, allows remote attackers to cause a denial of service via a crafted string that triggers an infinite loop of estimations during conversion to a double-precision binary floating-point number, as demonstrated using 2.2250738585072012e-308"
 
-**Characteristics**: 
+**Characteristics**: implementation error, corner-case input
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4476)
 
 
 
