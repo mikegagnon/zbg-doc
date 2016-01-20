@@ -468,6 +468,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Ruby [CVE-2008-3656](##CVE-2008-3656)
 - Ruby [CVE-2008-3790](##CVE-2008-3790)
 - Java [CVE-2009-1190](##CVE-2009-1190)
+- Django [CVE-2012-3444](##CVE-2012-3444)
 
 ~surv-manip-large
 ## Examples of "large" input vulnerabilities
@@ -479,6 +480,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Ruby [CVE-2011-4815](##CVE-2011-4815)
 - Ruby [CVE-2011-4838](##CVE-2011-4838)
 - Java [CVE-2009-1190](##CVE-2009-1190)
+- Django [CVE-2012-3444](##CVE-2012-3444)
 
 
 ~surv-manip-corner
@@ -1250,17 +1252,19 @@ fuzzing framework."
 ~CVE-2012-3444
 ## CVE-2012-3444
 
-**Software project**: 
+**Software project**: Django
 
-**Year**: 
+**Year**: 2012
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "The get_image_dimensions function in the image-handling functionality in Django before 1.3.2 and 1.4.x before 1.4.1 uses a constant chunk size in all attempts to determine dimensions, which allows remote attackers to cause a denial of service (process or thread consumption) via a large TIFF image."
 
-**Characteristics**: 
+**Characteristics**: design error, large input
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3444)
+
+[www.djangoproject.com](https://www.djangoproject.com/weblog/2012/jul/30/security-releases-issued/)
 
 
 ~Ticket-7336
