@@ -469,6 +469,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Ruby [CVE-2008-3790](##CVE-2008-3790)
 - Java [CVE-2009-1190](##CVE-2009-1190)
 - Django [CVE-2012-3444](##CVE-2012-3444)
+- Django [CVE-2012-3443](##CVE-2012-3443)
 
 ~surv-manip-large
 ## Examples of "large" input vulnerabilities
@@ -481,6 +482,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Ruby [CVE-2011-4838](##CVE-2011-4838)
 - Java [CVE-2009-1190](##CVE-2009-1190)
 - Django [CVE-2012-3444](##CVE-2012-3444)
+- Django [CVE-2012-3443](##CVE-2012-3443)
 
 
 ~surv-manip-corner
@@ -1236,17 +1238,17 @@ fuzzing framework."
 ~CVE-2012-3443
 ## CVE-2012-3443
 
-**Software project**: 
+**Software project**: Django
 
-**Year**: 
+**Year**: 2012
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "The django.forms.ImageField class in the form system in Django before 1.3.2 and 1.4.x before 1.4.1 completely decompresses image data during image validation, which allows remote attackers to cause a denial of service (memory consumption) by uploading an image file."
 
-**Characteristics**: 
+**Characteristics**: memory consumption, design error, large input
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-3443)
 
 
 ~CVE-2012-3444
