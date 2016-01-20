@@ -376,7 +376,7 @@ TODO: Full report
 ~ex-re
 ## Excessive regular-expression backtracking
 
-See for example the Django vulnerability CVE-2009-3695 as well as our regex-overload experiment in Section 6.3.5
+See for example the Django vulnerability [CVE-2009-3695](##CVE-2009-3695) as well as our regex-overload experiment in Section 6.3.5
 
 TODO: Full report
 
@@ -472,6 +472,8 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Django [CVE-2012-3444](##CVE-2012-3444)
 - Django [CVE-2012-3443](##CVE-2012-3443)
 - Django [CVE-2011-4137](##CVE-2011-4137)
+- Django [Ticket 13275](##Ticket-13275)
+- Django [CVE-2009-3695](##CVE-2009-3695)
 
 ~surv-manip-large
 ## Examples of "large" input vulnerabilities
@@ -500,6 +502,8 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Ruby [CVE-2008-3656](##CVE-2008-3656)
 - Java [CVE-2010-4476](##CVE-2010-4476)
 - Java [CVE-2009-1190](##CVE-2009-1190)
+- Django [Ticket 13275](##Ticket-13275)
+- Django [CVE-2009-3695](##CVE-2009-3695)
 
 ~surv-manip-mal
 ## Examples of malformed-input vulnerabilities
@@ -1195,17 +1199,19 @@ fuzzing framework."
 ~CVE-2009-3695
 ## CVE-2009-3695
 
-**Software project**: 
+**Software project**: Django
 
-**Year**: 
+**Year**: 2009 
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "Algorithmic complexity vulnerability in the forms library in Django 1.0 before 1.0.4 and 1.1 before 1.1.1 allows remote attackers to cause a denial of service (CPU consumption) via a crafted (1) EmailField (email address) or (2) URLField (URL) that triggers a large amount of backtracking in a regular expression."
 
-**Characteristics**: 
+**Characteristics**: design error, corner-case input
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-3695/)
+
+[www.djangoproject.com](https://www.djangoproject.com/weblog/2009/oct/09/security/)
 
 
 ~CVE-2010-4535
@@ -1311,17 +1317,17 @@ fuzzing framework."
 ~Ticket-13275
 ## Ticket 13275
 
-**Software project**: 
+**Software project**: Django
 
-**Year**: 
+**Year**: 2010
 
-**Confidence**: [*](##conf)
+**Confidence**: medium[*](##conf)
 
-**Summary**: 
+**Summary**: "url_backwards_re appears to hang in some circumstances. When we've seen this before it has been due to catastrophic backtracking, so I'm guessing that's the cause here, though I can't say with complete certainty that that is the the issue."
 
-**Characteristics**: 
+**Characteristics**: design error, corner-case input
 
-[Link]()
+[code.djangoproject.com](https://code.djangoproject.com/ticket/13275)
 
 
 
