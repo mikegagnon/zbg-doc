@@ -467,6 +467,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Ruby [CVE-2011-4838](##CVE-2011-4838)
 - Ruby [CVE-2008-3656](##CVE-2008-3656)
 - Ruby [CVE-2008-3790](##CVE-2008-3790)
+- Java [CVE-2009-1190](##CVE-2009-1190)
 
 ~surv-manip-large
 ## Examples of "large" input vulnerabilities
@@ -477,6 +478,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Python [CVE-2012-1150](##CVE-2012-1150)
 - Ruby [CVE-2011-4815](##CVE-2011-4815)
 - Ruby [CVE-2011-4838](##CVE-2011-4838)
+- Java [CVE-2009-1190](##CVE-2009-1190)
 
 
 ~surv-manip-corner
@@ -490,6 +492,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Ruby [CVE-2011-4838](##CVE-2011-4838)
 - Ruby [CVE-2008-3656](##CVE-2008-3656)
 - Java [CVE-2010-4476](##CVE-2010-4476)
+- Java [CVE-2009-1190](##CVE-2009-1190)
 
 ~surv-manip-mal
 ## Examples of malformed-input vulnerabilities
@@ -512,6 +515,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Java [CVE-2009-3877](##CVE-2009-3877)
 - Java [CVE-2009-3876](##CVE-2009-3876)
 - Java [CVE-2009-2625](##CVE-2009-2625)
+- Java [CVE-2009-1190](##CVE-2009-1190)
 
 
 
@@ -1034,65 +1038,65 @@ Note: this vulnerability is for the JRuby implementation of the Ruby runtime.
 ~CVE-2007-3698
 ## CVE-2007-3698
 
-**Software project**: 
+**Software project**: Java
 
-**Year**: 
+**Year**: 2007
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "The Java Secure Socket Extension (JSSE) in Sun JDK and JRE 6 Update 1 and earlier, JDK and JRE 5.0 Updates 7 through 11, and SDK and JRE 1.4.2_11 through 1.4.2_14, when using JSSE for SSL/TLS support, allows remote attackers to cause a denial of service (CPU consumption) via certain SSL/TLS handshake requests."
 
-**Characteristics**: 
+**Characteristics**: unknown
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-3698)
 
 
 ~CVE-2008-5349
 ## CVE-2008-5349
 
-**Software project**: 
+**Software project**: Java
 
-**Year**: 
+**Year**: 2008
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "Unspecified vulnerability in Java Runtime Environment (JRE) for Sun JDK and JRE 6 Update 10 and earlier, and JDK and JRE 5.0 Update 16 and earlier, allows remote attackers to cause a denial of service (CPU consumption) via a crafted RSA public key."
 
-**Characteristics**: 
+**Characteristics**: unknown
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-5349)
 
 
 ~CVE-2009-1100
 ## CVE-2009-1100
 
-**Software project**: 
+**Software project**: Java
 
-**Year**: 
+**Year**: 2009
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "Multiple unspecified vulnerabilities in Java SE Development Kit (JDK) and Java Runtime Environment (JRE) 5.0 Update 17 and earlier, and 6 Update 12 and earlier, allow remote attackers to cause a denial of service (disk consumption) via vectors related to temporary font files and (1) ""limits on Font creation,"" aka CR 6522586, and (2) another unspecified vector, aka CR 6632886."
 
-**Characteristics**: 
+**Characteristics**: Disk consumption
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1100)
 
 
 ~CVE-2009-1190
 ## CVE-2009-1190
 
-**Software project**: 
+**Software project**: Java
 
-**Year**: 
+**Year**: 2009
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "Algorithmic complexity vulnerability in the java.util.regex.Pattern.compile method in Sun Java Development Kit (JDK) before 1.6, when used with spring.jar in SpringSource Spring Framework 1.1.0 through 2.5.6 and 3.0.0.M1 through 3.0.0.M2 and dm Server 1.0.0 through 1.0.2, allows remote attackers to cause a denial of service (CPU consumption) via serializable data with a long regex string containing multiple optional groups, a related issue to CVE-2004-2540."
 
-**Characteristics**: 
+**Characteristics**: design error, large input, corner-case input, string parsing
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2009-1190)
 
 
 ~CVE-2009-2625
