@@ -454,6 +454,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Ruby [CVE-2006-5467](##CVE-2006-5467)
 - Java [CVE-2010-4476](##CVE-2010-4476)
 - Java [CVE-2009-2625](##CVE-2009-2625)
+- Django [CVE-2010-4535](##CVE-2010-4535)
 
 ~imp-design-design
 ## Example design errors
@@ -470,6 +471,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Java [CVE-2009-1190](##CVE-2009-1190)
 - Django [CVE-2012-3444](##CVE-2012-3444)
 - Django [CVE-2012-3443](##CVE-2012-3443)
+- Django [CVE-2011-4137](##CVE-2011-4137)
 
 ~surv-manip-large
 ## Examples of "large" input vulnerabilities
@@ -483,6 +485,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Java [CVE-2009-1190](##CVE-2009-1190)
 - Django [CVE-2012-3444](##CVE-2012-3444)
 - Django [CVE-2012-3443](##CVE-2012-3443)
+- Django [CVE-2010-4535](##CVE-2010-4535)
 
 
 ~surv-manip-corner
@@ -506,6 +509,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Python [Issue 13891](##Issue-13891)
 - Ruby [CVE-2006-5467](##CVE-2006-5467)
 - Java [CVE-2009-2625](##CVE-2009-2625)
+- Django [CVE-2010-4535](##CVE-2010-4535)
 
 ~surv-string-ex
 ## Examples of string-parsing vulnerabilities
@@ -520,6 +524,7 @@ semantically invalid. [Examples](##surv-manip-mal).
 - Java [CVE-2009-3876](##CVE-2009-3876)
 - Java [CVE-2009-2625](##CVE-2009-2625)
 - Java [CVE-2009-1190](##CVE-2009-1190)
+- Django [CVE-2010-4535](##CVE-2010-4535)
 
 
 
@@ -1206,34 +1211,36 @@ fuzzing framework."
 ~CVE-2010-4535
 ## CVE-2010-4535
 
-**Software project**: 
+**Software project**: Django
 
-**Year**: 
+**Year**: 2010
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "The password reset functionality in django.contrib.auth in Django before 1.1.3, 1.2.x before 1.2.4, and 1.3.x before 1.3 beta 1 does not validate the length of a string representing a base36 timestamp, which allows remote attackers to cause a denial of service (resource consumption) via a URL that specifies a large base36 integer."
 
-**Characteristics**: 
+**Characteristics**: Implementation error, large input, malformed input, string parsing
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-4535)
 
+[www.djangoproject.com](https://www.djangoproject.com/weblog/2010/dec/22/security/)
 
 ~CVE-2011-4137
 ## CVE-2011-4137
 
-**Software project**: 
+**Software project**: Django
 
-**Year**: 
+**Year**: 2011
 
-**Confidence**: [*](##conf)
+**Confidence**: high[*](##conf)
 
-**Summary**: 
+**Summary**: "The verify_exists functionality in the URLField implementation in Django before 1.2.7 and 1.3.x before 1.3.1 relies on Python libraries that attempt access to an arbitrary URL with no timeout, which allows remote attackers to cause a denial of service (resource consumption) via a URL associated with (1) a slow response, (2) a completed TCP connection with no application data sent, or (3) a large amount of application data, a related issue to CVE-2011-1521."
 
-**Characteristics**: 
+**Characteristics**: design error
 
-[Link]()
+[cve.mitre.org](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-4137)
 
+[www.djangoproject.com](https://www.djangoproject.com/weblog/2011/sep/09/security-releases-issued/)
 
 ~CVE-2012-3443
 ## CVE-2012-3443
